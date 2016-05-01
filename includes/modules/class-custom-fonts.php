@@ -4,7 +4,7 @@
  *
  * Adds custom font settings to Customizer and generates font CSS code
  *
- * @package Beetle Pro
+ * @package Gridbox Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Beetle_Pro_Custom_Fonts' ) ) :
+if ( ! class_exists( 'Gridbox_Pro_Custom_Fonts' ) ) :
 
-class Beetle_Pro_Custom_Fonts {
+class Gridbox_Pro_Custom_Fonts {
 
 	/**
 	 * Custom Fonts Setup
@@ -23,21 +23,21 @@ class Beetle_Pro_Custom_Fonts {
 	*/
 	static function setup() {
 		
-		// Return early if Beetle Theme is not active
-		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
+		// Return early if Gridbox Theme is not active
+		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
 		
 		// Include Font List Control Files
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/customizer/class-font-list.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/customizer/class-customize-font-control.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/customizer/class-customize-font-list-control.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/customizer/class-font-list.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/customizer/class-customize-font-control.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/customizer/class-customize-font-list-control.php';
 		
 		// Add Custom Color CSS code to custom stylesheet output
-		add_filter( 'beetle_pro_custom_css_stylesheet', array( __CLASS__, 'custom_fonts_css' ) ); 
+		add_filter( 'gridbox_pro_custom_css_stylesheet', array( __CLASS__, 'custom_fonts_css' ) ); 
 		
 		// Load custom fonts from Google web font API
-		add_filter( 'beetle_google_fonts_url', array( __CLASS__, 'google_fonts_url' ) );
+		add_filter( 'gridbox_google_fonts_url', array( __CLASS__, 'google_fonts_url' ) );
 		
 		// Add Font Settings in Customizer
 		add_action( 'customize_register', array( __CLASS__, 'font_settings' ) );
@@ -52,10 +52,10 @@ class Beetle_Pro_Custom_Fonts {
 	static function custom_fonts_css( $custom_css ) {
 		
 		// Get Theme Options from Database
-		$theme_options = Beetle_Pro_Customizer::get_theme_options();
+		$theme_options = Gridbox_Pro_Customizer::get_theme_options();
 		
 		// Get Default Fonts from settings
-		$default_options = Beetle_Pro_Customizer::get_default_options();
+		$default_options = Gridbox_Pro_Customizer::get_default_options();
 		
 		// Set Font CSS Variable
 		$font_css = '';
@@ -130,16 +130,16 @@ class Beetle_Pro_Custom_Fonts {
 	/**
 	 * Replace default Google Fonts URL with custom Fonts from theme settings
 	 *
-	 * @uses beetle_google_fonts_url filter hook
+	 * @uses gridbox_google_fonts_url filter hook
 	 * @return string Google Font URL
 	 */
 	static function google_fonts_url( $google_fonts_url ) { 
 
 		// Get Theme Options from Database
-		$theme_options = Beetle_Pro_Customizer::get_theme_options();
+		$theme_options = Gridbox_Pro_Customizer::get_theme_options();
 		
 		// Default Fonts which haven't to be load from Google
-		$default_fonts = Beetle_Pro_Custom_Font_Lists::default_browser_fonts();
+		$default_fonts = Gridbox_Pro_Custom_Font_Lists::default_browser_fonts();
 		
 		// Set Google Font Array
 		$google_font_families = array();
@@ -202,99 +202,99 @@ class Beetle_Pro_Custom_Fonts {
 	static function font_settings( $wp_customize ) {
 
 		// Add Section for Theme Fonts
-		$wp_customize->add_section( 'beetle_pro_section_fonts', array(
-			'title'    => __( 'Theme Fonts', 'beetle-pro' ),
+		$wp_customize->add_section( 'gridbox_pro_section_fonts', array(
+			'title'    => __( 'Theme Fonts', 'gridbox-pro' ),
 			'priority' => 70,
-			'panel' => 'beetle_options_panel' 
+			'panel' => 'gridbox_options_panel' 
 			)
 		);
 		
 		// Get Default Fonts from settings
-		$default_options = Beetle_Pro_Customizer::get_default_options();
+		$default_options = Gridbox_Pro_Customizer::get_default_options();
 
 		// Add settings and controls for theme fonts
-		$wp_customize->add_setting( 'beetle_theme_options[text_font]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[text_font]', array(
 			'default'           => $default_options['text_font'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr'
 			)
 		);
-		$wp_customize->add_control( new Beetle_Pro_Customize_Font_Control( 
+		$wp_customize->add_control( new Gridbox_Pro_Customize_Font_Control( 
 			$wp_customize, 'text_font', array(
-				'label'      => __( 'Base Font', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_fonts',
-				'settings'   => 'beetle_theme_options[text_font]',
+				'label'      => __( 'Base Font', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_fonts',
+				'settings'   => 'gridbox_theme_options[text_font]',
 				'priority' => 1
 			) ) 
 		);
 		
-		$wp_customize->add_setting( 'beetle_theme_options[title_font]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[title_font]', array(
 			'default'           => $default_options['title_font'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr'
 			)
 		);
-		$wp_customize->add_control( new Beetle_Pro_Customize_Font_Control( 
+		$wp_customize->add_control( new Gridbox_Pro_Customize_Font_Control( 
 			$wp_customize, 'title_font', array(
-				'label'      => _x( 'Headings', 'font setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_fonts',
-				'settings'   => 'beetle_theme_options[title_font]',
+				'label'      => _x( 'Headings', 'font setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_fonts',
+				'settings'   => 'gridbox_theme_options[title_font]',
 				'priority' => 2
 			) ) 
 		);
 		
-		$wp_customize->add_setting( 'beetle_theme_options[navi_font]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[navi_font]', array(
 			'default'           => $default_options['navi_font'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr'
 			)
 		);
-		$wp_customize->add_control( new Beetle_Pro_Customize_Font_Control( 
+		$wp_customize->add_control( new Gridbox_Pro_Customize_Font_Control( 
 			$wp_customize, 'navi_font', array(
-				'label'      => _x( 'Navigation', 'font setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_fonts',
-				'settings'   => 'beetle_theme_options[navi_font]',
+				'label'      => _x( 'Navigation', 'font setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_fonts',
+				'settings'   => 'gridbox_theme_options[navi_font]',
 				'priority' => 3
 			) ) 
 		);
 		
-		$wp_customize->add_setting( 'beetle_theme_options[widget_title_font]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[widget_title_font]', array(
 			'default'           => $default_options['widget_title_font'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr'
 			)
 		);
-		$wp_customize->add_control( new Beetle_Pro_Customize_Font_Control( 
+		$wp_customize->add_control( new Gridbox_Pro_Customize_Font_Control( 
 			$wp_customize, 'widget_title_font', array(
-				'label'      => _x( 'Widget Titles', 'font setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_fonts',
-				'settings'   => 'beetle_theme_options[widget_title_font]',
+				'label'      => _x( 'Widget Titles', 'font setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_fonts',
+				'settings'   => 'gridbox_theme_options[widget_title_font]',
 				'priority' => 4
 			) ) 
 		);
 		
 		// Choose Available Fonts
-		$wp_customize->add_setting( 'beetle_theme_options[available_fonts]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[available_fonts]', array(
 			'default'           => 'favorites',
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => array( 'Beetle_Pro_Custom_Fonts', 'beetle_pro_sanitize_available_fonts' )
+			'sanitize_callback' => array( 'Gridbox_Pro_Custom_Fonts', 'gridbox_pro_sanitize_available_fonts' )
 			)
 		);
-		$wp_customize->add_control( new Beetle_Pro_Customize_Font_List_Control( 
-			$wp_customize, 'beetle_control_available_fonts', array(
-				'label'      => __( 'Choose available Fonts', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_fonts',
-				'settings'   => 'beetle_theme_options[available_fonts]',
+		$wp_customize->add_control( new Gridbox_Pro_Customize_Font_List_Control( 
+			$wp_customize, 'gridbox_control_available_fonts', array(
+				'label'      => __( 'Choose available Fonts', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_fonts',
+				'settings'   => 'gridbox_theme_options[available_fonts]',
 				'choices' => array(
-					'default' => __( 'Default Browser Fonts (12)', 'beetle-pro' ),
-					'favorites' => __( 'ThemeZee Favorite Fonts (35)', 'beetle-pro' ),
-					'popular' => __( 'Most Popular Google Fonts (100)', 'beetle-pro' ),
-					'all' => __( 'All Google Fonts (650)', 'beetle-pro' )
+					'default' => __( 'Default Browser Fonts (12)', 'gridbox-pro' ),
+					'favorites' => __( 'ThemeZee Favorite Fonts (35)', 'gridbox-pro' ),
+					'popular' => __( 'Most Popular Google Fonts (100)', 'gridbox-pro' ),
+					'all' => __( 'All Google Fonts (650)', 'gridbox-pro' )
 					),
 				'priority' => 5
 			) ) 
@@ -320,6 +320,6 @@ class Beetle_Pro_Custom_Fonts {
 }
 
 // Run Class
-add_action( 'init', array( 'Beetle_Pro_Custom_Fonts', 'setup' ) );
+add_action( 'init', array( 'Gridbox_Pro_Custom_Fonts', 'setup' ) );
 
 endif;

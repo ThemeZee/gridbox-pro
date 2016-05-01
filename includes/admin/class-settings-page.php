@@ -1,10 +1,10 @@
 <?php
 /***
- * Beetle Pro Settings Page Class
+ * Gridbox Pro Settings Page Class
  *
  * Adds a new tab on the themezee plugins page and displays the settings page.
  *
- * @package Beetle Pro
+ * @package Gridbox Pro
  */
  
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists('Beetle_Pro_Settings_Page') ) :
+if ( ! class_exists('Gridbox_Pro_Settings_Page') ) :
 
-class Beetle_Pro_Settings_Page {
+class Gridbox_Pro_Settings_Page {
 
 	/**
 	 * Setup the Settings Page class
@@ -35,16 +35,16 @@ class Beetle_Pro_Settings_Page {
 	*/
 	static function add_settings_page() {
 	
-		// Return early if Beetle Theme is not active
-		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
+		// Return early if Gridbox Theme is not active
+		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
 			
 		add_theme_page(
-			esc_html__( 'Pro Version', 'beetle-pro' ),
-			esc_html__( 'Pro Version', 'beetle-pro' ),
+			esc_html__( 'Pro Version', 'gridbox-pro' ),
+			esc_html__( 'Pro Version', 'gridbox-pro' ),
 			'manage_options',
-			'beetle-pro',
+			'gridbox-pro',
 			array( __CLASS__, 'display_settings_page' )
 		);
 		
@@ -60,15 +60,15 @@ class Beetle_Pro_Settings_Page {
 		ob_start();
 	?>
 
-		<div id="beetle-pro-settings" class="beetle-pro-settings-wrap wrap">
+		<div id="gridbox-pro-settings" class="gridbox-pro-settings-wrap wrap">
 			
-			<h1><?php esc_html_e( 'Beetle Pro', 'beetle-pro' ); ?></h1>
+			<h1><?php esc_html_e( 'Gridbox Pro', 'gridbox-pro' ); ?></h1>
 			<?php settings_errors(); ?>
 			
-			<form class="beetle-pro-settings-form" method="post" action="options.php">
+			<form class="gridbox-pro-settings-form" method="post" action="options.php">
 				<?php
-					settings_fields( 'beetle_pro_settings' );
-					do_settings_sections( 'beetle_pro_settings' );
+					settings_fields( 'gridbox_pro_settings' );
+					do_settings_sections( 'gridbox_pro_settings' );
 					submit_button();
 				?>
 			</form>
@@ -80,7 +80,7 @@ class Beetle_Pro_Settings_Page {
 	
 }
 
-// Run Beetle Pro Settings Page Class
-Beetle_Pro_Settings_Page::setup();
+// Run Gridbox Pro Settings Page Class
+Gridbox_Pro_Settings_Page::setup();
 
 endif;

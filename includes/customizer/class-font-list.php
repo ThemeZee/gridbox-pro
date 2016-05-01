@@ -4,10 +4,10 @@
  *
  * Builds the different available custom font sets and returns the current font array to choose from.
  *
- * @package Beetle Pro
+ * @package Gridbox Pro
  */
 
-class Beetle_Pro_Custom_Font_Lists {
+class Gridbox_Pro_Custom_Font_Lists {
 	
 	public static function get_fonts($type) {
 					
@@ -18,28 +18,28 @@ class Beetle_Pro_Custom_Font_Lists {
 		switch($type):
 		
 			case 'all':
-				$fonts = Beetle_Pro_Custom_Font_Lists::all_google_fonts();
+				$fonts = Gridbox_Pro_Custom_Font_Lists::all_google_fonts();
 			break;
 			
 			case 'popular':
-				$fonts = Beetle_Pro_Custom_Font_Lists::popular_google_fonts();
+				$fonts = Gridbox_Pro_Custom_Font_Lists::popular_google_fonts();
 			break;
 			
 			case 'default':
-				$fonts = Beetle_Pro_Custom_Font_Lists::default_browser_fonts();
+				$fonts = Gridbox_Pro_Custom_Font_Lists::default_browser_fonts();
 			break;
 			
 			default:
-				$fonts = Beetle_Pro_Custom_Font_Lists::favorite_google_fonts();
+				$fonts = Gridbox_Pro_Custom_Font_Lists::favorite_google_fonts();
 			break;
 		
 		endswitch;
 		
 		// Get Theme Options
-		$theme_options = Beetle_Pro_Customizer::get_theme_options();
+		$theme_options = Gridbox_Pro_Customizer::get_theme_options();
 		
 		// Get Default Fonts from settings
-		$default_options = Beetle_Pro_Customizer::get_default_options();
+		$default_options = Gridbox_Pro_Customizer::get_default_options();
 		
 		// Add current selected fonts to array in any case
 		if ( isset($theme_options['text_font']) and ! in_array( $theme_options['text_font'], $fonts, true ) ) :

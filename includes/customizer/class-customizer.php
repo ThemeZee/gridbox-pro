@@ -4,7 +4,7 @@
  *
  * Setup the Customizer and theme options for the Pro plugin
  *
- * @package Beetle Pro
+ * @package Gridbox Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Beetle_Pro_Customizer' ) ) :
+if ( ! class_exists( 'Gridbox_Pro_Customizer' ) ) :
 
-class Beetle_Pro_Customizer {
+class Gridbox_Pro_Customizer {
 
 	/**
 	 * Customizer Setup
@@ -23,8 +23,8 @@ class Beetle_Pro_Customizer {
 	*/
 	static function setup() {
 		
-		// Return early if Beetle Theme is not active
-		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
+		// Return early if Gridbox Theme is not active
+		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
 		
@@ -33,7 +33,7 @@ class Beetle_Pro_Customizer {
 		add_action( 'customize_controls_print_styles', array( __CLASS__, 'customize_preview_css' ) );
 		
 		// Remove Upgrade section
-		remove_action( 'customize_register', 'beetle_customize_register_upgrade_settings' );
+		remove_action( 'customize_register', 'gridbox_customize_register_upgrade_settings' );
 	}
 	
 	/**
@@ -47,7 +47,7 @@ class Beetle_Pro_Customizer {
 		$theme_options = wp_parse_args( 
 			
 			// Get saved theme options from WP database
-			get_option( 'beetle_theme_options', array() ), 
+			get_option( 'gridbox_theme_options', array() ), 
 			
 			// Merge with Default Options if setting was not saved yet
 			self::get_default_options() 
@@ -98,7 +98,7 @@ class Beetle_Pro_Customizer {
 	 */
 	static function customize_preview_js() {
 		
-		wp_enqueue_script( 'beetle-pro-customizer-js', BEETLE_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), BEETLE_PRO_VERSION, true );
+		wp_enqueue_script( 'gridbox-pro-customizer-js', GRIDBOX_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), GRIDBOX_PRO_VERSION, true );
 	
 	}
 
@@ -109,13 +109,13 @@ class Beetle_Pro_Customizer {
 	 */
 	static function customize_preview_css() {
 		
-		wp_enqueue_style( 'beetle-pro-customizer-css', BEETLE_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), BEETLE_PRO_VERSION );
+		wp_enqueue_style( 'gridbox-pro-customizer-css', GRIDBOX_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), GRIDBOX_PRO_VERSION );
 	
 	}
 
 }
 
 // Run Class
-add_action( 'init', array( 'Beetle_Pro_Customizer', 'setup' ) );
+add_action( 'init', array( 'Gridbox_Pro_Customizer', 'setup' ) );
 
 endif;

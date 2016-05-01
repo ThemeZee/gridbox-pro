@@ -3,13 +3,13 @@
  *
  * Reloads changes on Theme Customizer Preview asynchronously for better usability
  *
- * @package Beetle Pro
+ * @package Gridbox Pro
  */
 
 ( function( $ ) {
 
 	/* Top Navigation Color Option */
-	wp.customize( 'beetle_theme_options[top_navi_color]', function( value ) {
+	wp.customize( 'gridbox_theme_options[top_navi_color]', function( value ) {
 		value.bind( function( newval ) {
 			$('.header-bar-wrap, .top-navigation-menu ul')
 				.css( 'background', newval );
@@ -17,7 +17,7 @@
 	} );
 	
 	/* Slider Color Option */
-	wp.customize( 'beetle_theme_options[slider_color]', function( value ) {
+	wp.customize( 'gridbox_theme_options[slider_color]', function( value ) {
 		value.bind( function( newval ) {
 			$('.post-slider-controls .zeeflex-direction-nav a')
 				.css( 'background', newval );
@@ -27,7 +27,7 @@
 	} );
 
 	/* Footer Color Option */
-	wp.customize( 'beetle_theme_options[footer_area_color]', function( value ) {
+	wp.customize( 'gridbox_theme_options[footer_area_color]', function( value ) {
 		value.bind( function( newval ) {
 			$('.footer-wrap, .footer-widgets-background')
 				.css('background', newval );
@@ -35,7 +35,7 @@
 	} );
 	
 	/* Footer Navi Color Option */
-	wp.customize( 'beetle_theme_options[footer_navi_color]', function( value ) {
+	wp.customize( 'gridbox_theme_options[footer_navi_color]', function( value ) {
 		value.bind( function( newval ) {
 			$('.footer-navigation')
 				.css('background', newval );
@@ -44,17 +44,17 @@
 	
 	
 	/* Theme Fonts */	
-	wp.customize( 'beetle_theme_options[text_font]', function( value ) {
+	wp.customize( 'gridbox_theme_options[text_font]', function( value ) {
 		value.bind( function( newval ) {
 		
 			// Embed Font
 			var fontFamilyUrl = newval.split(" ").join("+");
 			var googleFontPath = "http://fonts.googleapis.com/css?family="+fontFamilyUrl+":400,700";
-			var googleFontSource = "<link id='beetle-pro-custom-text-font' href='"+googleFontPath+"' rel='stylesheet' type='text/css'>";					
-			var checkLink = $("head").find("#beetle-pro-custom-text-font").length;
+			var googleFontSource = "<link id='gridbox-pro-custom-text-font' href='"+googleFontPath+"' rel='stylesheet' type='text/css'>";					
+			var checkLink = $("head").find("#gridbox-pro-custom-text-font").length;
 			
 			if (checkLink > 0) {
-				$("head").find("#beetle-pro-custom-text-font").remove();
+				$("head").find("#gridbox-pro-custom-text-font").remove();
 			}
 			$("head").append(googleFontSource);
 			
@@ -65,17 +65,17 @@
 		} );
 	} );
 	
-	wp.customize( 'beetle_theme_options[title_font]', function( value ) {
+	wp.customize( 'gridbox_theme_options[title_font]', function( value ) {
 		value.bind( function( newval ) {
 		
 			// Embed Font
 			var fontFamilyUrl = newval.split(" ").join("+");
 			var googleFontPath = "http://fonts.googleapis.com/css?family="+fontFamilyUrl+":400,700";
-			var googleFontSource = "<link id='beetle-pro-custom-title-font' href='"+googleFontPath+"' rel='stylesheet' type='text/css'>";					
-			var checkLink = $("head").find("#beetle-pro-custom-title-font").length;
+			var googleFontSource = "<link id='gridbox-pro-custom-title-font' href='"+googleFontPath+"' rel='stylesheet' type='text/css'>";					
+			var checkLink = $("head").find("#gridbox-pro-custom-title-font").length;
 			
 			if (checkLink > 0) {
-				$("head").find("#beetle-pro-custom-title-font").remove();
+				$("head").find("#gridbox-pro-custom-title-font").remove();
 			}
 			$("head").append(googleFontSource);
 			
@@ -86,17 +86,17 @@
 		} );
 	} );
 	
-	wp.customize( 'beetle_theme_options[navi_font]', function( value ) {
+	wp.customize( 'gridbox_theme_options[navi_font]', function( value ) {
 		value.bind( function( newval ) {
 		
 			// Embed Font
 			var fontFamilyUrl = newval.split(" ").join("+");
 			var googleFontPath = "http://fonts.googleapis.com/css?family="+fontFamilyUrl+":400,700";
-			var googleFontSource = "<link id='beetle-pro-custom-navi-font' href='"+googleFontPath+"' rel='stylesheet' type='text/css'>";					
-			var checkLink = $("head").find("#beetle-pro-custom-navi-font").length;
+			var googleFontSource = "<link id='gridbox-pro-custom-navi-font' href='"+googleFontPath+"' rel='stylesheet' type='text/css'>";					
+			var checkLink = $("head").find("#gridbox-pro-custom-navi-font").length;
 			
 			if (checkLink > 0) {
-				$("head").find("#beetle-pro-custom-navi-font").remove();
+				$("head").find("#gridbox-pro-custom-navi-font").remove();
 			}
 			$("head").append(googleFontSource);
 			
@@ -107,17 +107,17 @@
 		} );
 	} );
 	
-	wp.customize( 'beetle_theme_options[widget_title_font]', function( value ) {
+	wp.customize( 'gridbox_theme_options[widget_title_font]', function( value ) {
 		value.bind( function( newval ) {
 		
 			// Embed Font
 			var fontFamilyUrl = newval.split(" ").join("+");
 			var googleFontPath = "http://fonts.googleapis.com/css?family="+fontFamilyUrl+":400,700";
-			var googleFontSource = "<link id='beetle-pro-custom-widget-title-font' href='"+googleFontPath+"' rel='stylesheet' type='text/css'>";					
-			var checkLink = $("head").find("#beetle-pro-custom-widget-title-font").length;
+			var googleFontSource = "<link id='gridbox-pro-custom-widget-title-font' href='"+googleFontPath+"' rel='stylesheet' type='text/css'>";					
+			var checkLink = $("head").find("#gridbox-pro-custom-widget-title-font").length;
 			
 			if (checkLink > 0) {
-				$("head").find("#beetle-pro-custom-widget-title-font").remove();
+				$("head").find("#gridbox-pro-custom-widget-title-font").remove();
 			}
 			$("head").append(googleFontSource);
 			

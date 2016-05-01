@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Beetle Pro\n"
+"Project-Id-Version: Gridbox Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
 "POT-Creation-Date: 2016-03-31 15:55+0100\n"
 "PO-Revision-Date: 2016-03-31 15:55+0100\n"
@@ -20,18 +20,18 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: beetle-pro.php:178
+#: gridbox-pro.php:178
 msgid "Settings"
 msgstr ""
 
-#: beetle-pro.php:200
+#: gridbox-pro.php:200
 #, php-format
 msgid ""
 "The %1$s add-on needs the %2$s theme activated in order to work. You should "
 "deactivate %1$s if you have switched to another theme permanently."
 msgstr ""
 
-#: beetle-pro.php:222
+#: gridbox-pro.php:222
 #, php-format
 msgid ""
 "Please enter your license key for the %1$s add-on in order to receive "
@@ -67,7 +67,7 @@ msgid "Pro Version"
 msgstr ""
 
 #: includes/admin/class-settings-page.php:65
-msgid "Beetle Pro"
+msgid "Gridbox Pro"
 msgstr ""
 
 #: includes/admin/class-settings.php:132
@@ -75,7 +75,7 @@ msgid "License"
 msgstr ""
 
 #: includes/admin/class-settings.php:172
-msgid "Configure the Beetle Pro Addon."
+msgid "Configure the Gridbox Pro Addon."
 msgstr ""
 
 #: includes/admin/class-settings.php:182

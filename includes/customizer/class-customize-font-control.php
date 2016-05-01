@@ -2,7 +2,7 @@
 /**
  * Custom Font Control for the Customizer
  *
- * @package Beetle Pro
+ * @package Gridbox Pro
  */
 
 /**
@@ -15,28 +15,28 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 	 * Displays a custom Font control. Allows to switch fonts for particular elements on the theme.
 	 *
 	 */
-	class Beetle_Pro_Customize_Font_Control extends WP_Customize_Control {
+	class Gridbox_Pro_Customize_Font_Control extends WP_Customize_Control {
 	
 		private $fonts = false;
 		public $l10n = array();
 		
 		// critical for JS constructor
-		public $type = 'beetle_pro_custom_font';
+		public $type = 'gridbox_pro_custom_font';
 		
 		public function __construct($manager, $id, $args = array(), $options = array()) {
 		
 			// Make Buttons translateable
 			$this->l10n = array(
-				'previous' =>	__( 'Previous Font', 'beetle-pro' ),
-				'next' =>		__( 'Next Font', 'beetle-pro' ),
-				'standard' =>	_x( 'Default', 'default font button', 'beetle-pro' )
+				'previous' =>	__( 'Previous Font', 'gridbox-pro' ),
+				'next' =>		__( 'Next Font', 'gridbox-pro' ),
+				'standard' =>	_x( 'Default', 'default font button', 'gridbox-pro' )
 			);
 					
 			// Get Theme Options
-			$theme_options = Beetle_Pro_Customizer::get_theme_options();
+			$theme_options = Gridbox_Pro_Customizer::get_theme_options();
 			
 			// Set Fonts
-			$this->fonts = Beetle_Pro_Custom_Font_Lists::get_fonts($theme_options['available_fonts']);
+			$this->fonts = Gridbox_Pro_Custom_Font_Lists::get_fonts($theme_options['available_fonts']);
 	
 			parent::__construct( $manager, $id, $args );
 			
@@ -45,7 +45,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		public function enqueue() {
 
 			// Register and Enqueue Custom Font JS Constructor
-			wp_enqueue_script( 'beetle-pro-custom-font-control', BEETLE_PRO_PLUGIN_URL . 'assets/js/custom-font-control.js', array( 'customize-controls' ), BEETLE_PRO_VERSION, true );
+			wp_enqueue_script( 'gridbox-pro-custom-font-control', GRIDBOX_PRO_PLUGIN_URL . 'assets/js/custom-font-control.js', array( 'customize-controls' ), GRIDBOX_PRO_VERSION, true );
 		
 		}
 		

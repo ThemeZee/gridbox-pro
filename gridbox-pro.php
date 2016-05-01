@@ -1,17 +1,17 @@
 <?php
 /*
-Plugin Name: Beetle Pro
-Plugin URI: http://themezee.com/addons/beetle-pro/
-Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Beetle theme.
+Plugin Name: Gridbox Pro
+Plugin URI: http://themezee.com/addons/gridbox-pro/
+Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Gridbox theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
 Version: 1.0
-Text Domain: beetle-pro
+Text Domain: gridbox-pro
 Domain Path: /languages/
 License: GPL v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Beetle Pro
+Gridbox Pro
 Copyright(C) 2016, ThemeZee.com - support@themezee.com
 
 */
@@ -20,22 +20,22 @@ Copyright(C) 2016, ThemeZee.com - support@themezee.com
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Beetle_Pro' ) ) :
+if ( ! class_exists( 'Gridbox_Pro' ) ) :
 
 
 /**
- * Main Beetle_Pro Class
+ * Main Gridbox_Pro Class
  *
- * @package Beetle Pro
+ * @package Gridbox Pro
  */
-class Beetle_Pro {
+class Gridbox_Pro {
 
 	/**
 	 * Call all Functions to setup the Plugin
 	 *
-	 * @uses Beetle_Pro::constants() Setup the constants needed
-	 * @uses Beetle_Pro::includes() Include the required files
-	 * @uses Beetle_Pro::setup_actions() Setup the hooks and actions
+	 * @uses Gridbox_Pro::constants() Setup the constants needed
+	 * @uses Gridbox_Pro::includes() Include the required files
+	 * @uses Gridbox_Pro::setup_actions() Setup the hooks and actions
 	 * @return void
 	 */
 	static function setup() {
@@ -62,25 +62,25 @@ class Beetle_Pro {
 	static function constants() {
 		
 		// Define Plugin Name
-		define( 'BEETLE_PRO_NAME', 'Beetle Pro' );
+		define( 'GRIDBOX_PRO_NAME', 'Gridbox Pro' );
 
 		// Define Version Number
-		define( 'BEETLE_PRO_VERSION', '1.0' );
+		define( 'GRIDBOX_PRO_VERSION', '1.0' );
 		
 		// Define Plugin Name
-		define( 'BEETLE_PRO_PRODUCT_ID', 58393 );
+		define( 'GRIDBOX_PRO_PRODUCT_ID', 58393 );
 
 		// Define Update API URL
-		define( 'BEETLE_PRO_STORE_API_URL', 'https://themezee.com' ); 
+		define( 'GRIDBOX_PRO_STORE_API_URL', 'https://themezee.com' ); 
 
 		// Plugin Folder Path
-		define( 'BEETLE_PRO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+		define( 'GRIDBOX_PRO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 		// Plugin Folder URL
-		define( 'BEETLE_PRO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+		define( 'GRIDBOX_PRO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 		// Plugin Root File
-		define( 'BEETLE_PRO_PLUGIN_FILE', __FILE__ );
+		define( 'GRIDBOX_PRO_PLUGIN_FILE', __FILE__ );
 		
 	}
 	
@@ -91,7 +91,7 @@ class Beetle_Pro {
 	 */
 	static function translation() {
 
-		load_plugin_textdomain( 'beetle-pro', false, dirname( plugin_basename( BEETLE_PRO_PLUGIN_FILE ) ) . '/languages/' );
+		load_plugin_textdomain( 'gridbox-pro', false, dirname( plugin_basename( GRIDBOX_PRO_PLUGIN_FILE ) ) . '/languages/' );
 		
 	}
 	
@@ -103,27 +103,27 @@ class Beetle_Pro {
 	static function includes() {
 	
 		// Include Admin Classes
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/admin/class-plugin-updater.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/admin/class-settings.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/admin/class-settings-page.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/admin/class-plugin-updater.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/admin/class-settings.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/admin/class-settings-page.php';
 		
 		// Include Customizer Classes
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/customizer/class-customizer.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/customizer/class-customizer.php';
 		
 		// Include Pro Features
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-header-spacing.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-post-meta.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/modules/class-header-spacing.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/modules/class-post-meta.php';
 		
 		// Include Magazine Widgets
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-boxed.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-boxed.php';
 		
 		// Include Custom Stylesheet class
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
 
 	}
 	
@@ -142,7 +142,7 @@ class Beetle_Pro {
 		add_action( 'widgets_init', array( __CLASS__, 'register_widgets' ) );
 		
 		// Add Settings link to Plugin actions
-		add_filter( 'plugin_action_links_' . plugin_basename( BEETLE_PRO_PLUGIN_FILE ), array( __CLASS__, 'plugin_action_links' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( GRIDBOX_PRO_PLUGIN_FILE ), array( __CLASS__, 'plugin_action_links' ) );
 		
 		// Add admin notices
 		add_action( 'admin_notices', array( __CLASS__, 'admin_notices' ) );
@@ -159,13 +159,13 @@ class Beetle_Pro {
 	 */
 	static function enqueue_styles() {
 
-		// Return early if Beetle Theme is not active
-		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
+		// Return early if Gridbox Theme is not active
+		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
 		
 		// Enqueue Plugin Stylesheet
-		wp_enqueue_style( 'beetle-pro', BEETLE_PRO_PLUGIN_URL . 'assets/css/beetle-pro.css', array(), BEETLE_PRO_VERSION );
+		wp_enqueue_style( 'gridbox-pro', GRIDBOX_PRO_PLUGIN_URL . 'assets/css/gridbox-pro.css', array(), GRIDBOX_PRO_VERSION );
 		
 	}
 	
@@ -176,14 +176,12 @@ class Beetle_Pro {
 	 */
 	static function register_widgets() {
 		
-		// Return early if Beetle Theme is not active
-		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
+		// Return early if Gridbox Theme is not active
+		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
 		
-		register_widget( 'Beetle_Pro_Magazine_Posts_Boxed_Widget' );
-		register_widget( 'Beetle_Pro_Magazine_Posts_List_Widget' );
-		register_widget( 'Beetle_Pro_Magazine_Posts_Single_Widget' );
+		register_widget( 'Gridbox_Pro_Magazine_Posts_Boxed_Widget' );
 		
 	}
 	
@@ -194,7 +192,7 @@ class Beetle_Pro {
 	 */
 	static function plugin_action_links( $actions ) {
 
-		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=beetle-pro' ), __( 'Settings', 'beetle-pro' ) ) );
+		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=gridbox-pro' ), __( 'Settings', 'gridbox-pro' ) ) );
 		
 		return array_merge( $settings_link, $actions );
 	}
@@ -211,14 +209,14 @@ class Beetle_Pro {
 		// Display missing theme notice on themes and plugins page
 		if ( ( $pagenow == 'themes.php' && !isset( $_GET['page'] ) ) or $pagenow == 'plugins.php' ) :
 	
-			// Display notice if Beetle theme is not active
-			if ( ! get_theme_support( 'beetle-pro' ) ) : ?>
+			// Display notice if Gridbox theme is not active
+			if ( ! get_theme_support( 'gridbox-pro' ) ) : ?>
 			
 				<div class="notice notice-warning">
 					<p>
-						<?php printf( __( 'The %1$s add-on needs the %2$s theme activated in order to work. You should deactivate %1$s if you have switched to another theme permanently.', 'beetle-pro' ),
-							BEETLE_PRO_NAME,
-							'Beetle'
+						<?php printf( __( 'The %1$s add-on needs the %2$s theme activated in order to work. You should deactivate %1$s if you have switched to another theme permanently.', 'gridbox-pro' ),
+							GRIDBOX_PRO_NAME,
+							'Gridbox'
 						); ?>
 					</p>
 				</div>
@@ -232,15 +230,15 @@ class Beetle_Pro {
 		if ( $pagenow == 'update-core.php' or $pagenow == 'plugins.php' ) :
 		
 			// Get Settings
-			$options = Beetle_Pro_Settings::instance();
+			$options = Gridbox_Pro_Settings::instance();
 		
 			if( '' == $options->get( 'license_key' ) ) : ?>
 				
 				<div class="updated">
 					<p>
-						<?php printf( __( 'Please enter your license key for the %1$s add-on in order to receive updates and support. <a href="%2$s">Enter License Key</a>', 'beetle-pro' ),
-							BEETLE_PRO_NAME,
-							admin_url( 'themes.php?page=beetle-pro' ) ); 
+						<?php printf( __( 'Please enter your license key for the %1$s add-on in order to receive updates and support. <a href="%2$s">Enter License Key</a>', 'gridbox-pro' ),
+							GRIDBOX_PRO_NAME,
+							admin_url( 'themes.php?page=gridbox-pro' ) ); 
 						?>
 					</p>
 				</div>
@@ -263,18 +261,18 @@ class Beetle_Pro {
 			return;
 		endif;
 		
-		$options = Beetle_Pro_Settings::instance();
+		$options = Gridbox_Pro_Settings::instance();
 
 		if( $options->get( 'license_key' ) <> '' ) :
 			
 			$license_key = $options->get( 'license_key' );
 			
 			// setup the updater
-			$beetle_pro_updater = new Beetle_Pro_Plugin_Updater( BEETLE_PRO_STORE_API_URL, __FILE__, array(
-					'version' 	=> BEETLE_PRO_VERSION,
+			$gridbox_pro_updater = new Gridbox_Pro_Plugin_Updater( GRIDBOX_PRO_STORE_API_URL, __FILE__, array(
+					'version' 	=> GRIDBOX_PRO_VERSION,
 					'license' 	=> $license_key,
-					'item_name' => BEETLE_PRO_NAME,
-					'item_id'   => BEETLE_PRO_PRODUCT_ID,
+					'item_name' => GRIDBOX_PRO_NAME,
+					'item_id'   => GRIDBOX_PRO_PRODUCT_ID,
 					'author' 	=> 'ThemeZee'
 				)
 			);
@@ -286,6 +284,6 @@ class Beetle_Pro {
 }
 
 // Run Plugin
-Beetle_Pro::setup();
+Gridbox_Pro::setup();
 
 endif;

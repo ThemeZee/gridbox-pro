@@ -2,9 +2,9 @@
 /***
  * Footer Widgets
  *
- * Registers footer widget areas and hooks into the Beetle theme to display widgets
+ * Registers footer widget areas and hooks into the Gridbox theme to display widgets
  *
- * @package Beetle Pro
+ * @package Gridbox Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Beetle_Pro_Header_Bar' ) ) :
+if ( ! class_exists( 'Gridbox_Pro_Header_Bar' ) ) :
 
-class Beetle_Pro_Header_Bar {
+class Gridbox_Pro_Header_Bar {
 
 	/**
 	 * Footer Widgets Setup
@@ -23,13 +23,13 @@ class Beetle_Pro_Header_Bar {
 	*/
 	static function setup() {
 		
-		// Return early if Beetle Theme is not active
-		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
+		// Return early if Gridbox Theme is not active
+		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
 		
 		// Display Header Bar
-		add_action( 'beetle_header_bar', array( __CLASS__, 'display_header_bar' ) );
+		add_action( 'gridbox_header_bar', array( __CLASS__, 'display_header_bar' ) );
 		
 	}
 	
@@ -93,14 +93,14 @@ class Beetle_Pro_Header_Bar {
 	*/
 	static function register_nav_menus() {
 	
-		// Return early if Beetle Theme is not active
-		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
+		// Return early if Gridbox Theme is not active
+		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
 		
 		register_nav_menus( array(
-			'secondary' => esc_html__( 'Top Navigation', 'beetle-pro' ),
-			'social' => esc_html__( 'Header Social Icons', 'beetle-pro' ),
+			'secondary' => esc_html__( 'Top Navigation', 'gridbox-pro' ),
+			'social' => esc_html__( 'Header Social Icons', 'gridbox-pro' ),
 		) );
 		
 	}
@@ -108,9 +108,9 @@ class Beetle_Pro_Header_Bar {
 }
 
 // Run Class
-add_action( 'init', array( 'Beetle_Pro_Header_Bar', 'setup' ) );
+add_action( 'init', array( 'Gridbox_Pro_Header_Bar', 'setup' ) );
 
 // Register navigation menus in backend
-add_action( 'after_setup_theme', array( 'Beetle_Pro_Header_Bar', 'register_nav_menus' ), 20 );
+add_action( 'after_setup_theme', array( 'Gridbox_Pro_Header_Bar', 'register_nav_menus' ), 20 );
 
 endif;

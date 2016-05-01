@@ -5,16 +5,16 @@
  * Displays credit link and footer text based on theme options
  * Registers and displays footer navigation
  *
- * @package Beetle Pro
+ * @package Gridbox Pro
  */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Beetle_Pro_Footer_Line' ) ) :
+if ( ! class_exists( 'Gridbox_Pro_Footer_Line' ) ) :
 
-class Beetle_Pro_Footer_Line {
+class Gridbox_Pro_Footer_Line {
 
 	/**
 	 * Footer Line Setup
@@ -23,20 +23,20 @@ class Beetle_Pro_Footer_Line {
 	*/
 	static function setup() {
 		
-		// Return early if Beetle Theme is not active
-		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
+		// Return early if Gridbox Theme is not active
+		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
 		
 		// Display footer navigation
-		add_action( 'beetle_before_footer', array( __CLASS__, 'display_footer_navigation' ), 20 );
+		add_action( 'gridbox_before_footer', array( __CLASS__, 'display_footer_navigation' ), 20 );
 		
 		// Remove default footer text function and replace it with new one
-		remove_action( 'beetle_footer_text', 'beetle_footer_text' );
-		add_action( 'beetle_footer_text', array( __CLASS__, 'display_footer_text' ) );
+		remove_action( 'gridbox_footer_text', 'gridbox_footer_text' );
+		add_action( 'gridbox_footer_text', array( __CLASS__, 'display_footer_text' ) );
 		
 		// Display social icons in footer
-		add_action( 'beetle_footer_menu', array( __CLASS__, 'display_footer_social_menu' ) );
+		add_action( 'gridbox_footer_menu', array( __CLASS__, 'display_footer_social_menu' ) );
 		
 		// Add Footer Settings in Customizer
 		add_action( 'customize_register', array( __CLASS__, 'footer_settings' ) );
@@ -80,7 +80,7 @@ class Beetle_Pro_Footer_Line {
 	static function display_footer_text() { 
 
 		// Get Theme Options from Database
-		$theme_options = Beetle_Pro_Customizer::get_theme_options();
+		$theme_options = Gridbox_Pro_Customizer::get_theme_options();
 		
 		// Display Footer Text
 		if ( $theme_options['footer_text'] <> '' ) :
@@ -92,9 +92,9 @@ class Beetle_Pro_Footer_Line {
 		// Call Credit Link function of theme if credit link is activated
 		if ( true == $theme_options['credit_link'] ) :
 		
-			if ( function_exists( 'beetle_footer_text' ) ) :
+			if ( function_exists( 'gridbox_footer_text' ) ) :
 			
-				beetle_footer_text();
+				gridbox_footer_text();
 				
 			endif;
 			
@@ -141,42 +141,42 @@ class Beetle_Pro_Footer_Line {
 	static function footer_settings( $wp_customize ) {
 
 		// Add Sections for Footer Settings
-		$wp_customize->add_section( 'beetle_pro_section_footer', array(
-			'title'    => __( 'Footer Settings', 'beetle-pro' ),
+		$wp_customize->add_section( 'gridbox_pro_section_footer', array(
+			'title'    => __( 'Footer Settings', 'gridbox-pro' ),
 			'priority' => 90,
-			'panel' => 'beetle_options_panel' 
+			'panel' => 'gridbox_options_panel' 
 			)
 		);
 		
 		// Add Footer Text setting
-		$wp_customize->add_setting( 'beetle_theme_options[footer_text]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[footer_text]', array(
 			'default'           => '',
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => array( __CLASS__, 'sanitize_footer_text' )
 			)
 		);
-		$wp_customize->add_control( 'beetle_theme_options[footer_text]', array(
-			'label'    => __( 'Footer Text', 'beetle-pro' ),
-			'section'  => 'beetle_pro_section_footer',
-			'settings' => 'beetle_theme_options[footer_text]',
+		$wp_customize->add_control( 'gridbox_theme_options[footer_text]', array(
+			'label'    => __( 'Footer Text', 'gridbox-pro' ),
+			'section'  => 'gridbox_pro_section_footer',
+			'settings' => 'gridbox_theme_options[footer_text]',
 			'type'     => 'textarea',
 			'priority' => 1
 			)
 		);
 		
 		// Add Credit Link setting
-		$wp_customize->add_setting( 'beetle_theme_options[credit_link]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[credit_link]', array(
 			'default'           => true,
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
-			'sanitize_callback' => 'beetle_sanitize_checkbox'
+			'sanitize_callback' => 'gridbox_sanitize_checkbox'
 			)
 		);
-		$wp_customize->add_control( 'beetle_theme_options[credit_link]', array(
-			'label'    => __( 'Display Credit Link to ThemeZee on footer line', 'beetle-pro' ),
-			'section'  => 'beetle_pro_section_footer',
-			'settings' => 'beetle_theme_options[credit_link]',
+		$wp_customize->add_control( 'gridbox_theme_options[credit_link]', array(
+			'label'    => __( 'Display Credit Link to ThemeZee on footer line', 'gridbox-pro' ),
+			'section'  => 'gridbox_pro_section_footer',
+			'settings' => 'gridbox_theme_options[credit_link]',
 			'type'     => 'checkbox',
 			'priority' => 2
 			)
@@ -206,14 +206,14 @@ class Beetle_Pro_Footer_Line {
 	*/
 	static function register_footer_menu() {
 	
-		// Return early if Beetle Theme is not active
-		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
+		// Return early if Gridbox Theme is not active
+		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
 		
 		register_nav_menus( array(
-			'footer' => esc_html__( 'Footer Navigation', 'beetle-pro' ),
-			'footer-social' => esc_html__( 'Footer Social Icons', 'beetle-pro' ),
+			'footer' => esc_html__( 'Footer Navigation', 'gridbox-pro' ),
+			'footer-social' => esc_html__( 'Footer Social Icons', 'gridbox-pro' ),
 		) );
 		
 	}
@@ -221,9 +221,9 @@ class Beetle_Pro_Footer_Line {
 }
 
 // Run Class
-add_action( 'init', array( 'Beetle_Pro_Footer_Line', 'setup' ) );
+add_action( 'init', array( 'Gridbox_Pro_Footer_Line', 'setup' ) );
 
 // Register footer navigation in backend
-add_action( 'after_setup_theme', array( 'Beetle_Pro_Footer_Line', 'register_footer_menu' ), 30 );
+add_action( 'after_setup_theme', array( 'Gridbox_Pro_Footer_Line', 'register_footer_menu' ), 30 );
 
 endif;

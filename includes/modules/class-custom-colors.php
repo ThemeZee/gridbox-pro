@@ -4,7 +4,7 @@
  *
  * Adds color settings to Customizer and generates color CSS code
  *
- * @package Beetle Pro
+ * @package Gridbox Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Beetle_Pro_Custom_Colors' ) ) :
+if ( ! class_exists( 'Gridbox_Pro_Custom_Colors' ) ) :
 
-class Beetle_Pro_Custom_Colors {
+class Gridbox_Pro_Custom_Colors {
 
 	/**
 	 * Custom Colors Setup
@@ -23,13 +23,13 @@ class Beetle_Pro_Custom_Colors {
 	*/
 	static function setup() {
 		
-		// Return early if Beetle Theme is not active
-		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
+		// Return early if Gridbox Theme is not active
+		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
 		
 		// Add Custom Color CSS code to custom stylesheet output
-		add_filter( 'beetle_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) ); 
+		add_filter( 'gridbox_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) ); 
 		
 		// Add Custom Color Settings
 		add_action( 'customize_register', array( __CLASS__, 'color_settings' ) );
@@ -43,10 +43,10 @@ class Beetle_Pro_Custom_Colors {
 	static function custom_colors_css( $custom_css ) { 
 		
 		// Get Theme Options from Database
-		$theme_options = Beetle_Pro_Customizer::get_theme_options();
+		$theme_options = Gridbox_Pro_Customizer::get_theme_options();
 		
 		// Get Default Fonts from settings
-		$default_options = Beetle_Pro_Customizer::get_default_options();
+		$default_options = Gridbox_Pro_Customizer::get_default_options();
 
 		// Set Color CSS Variable
 		$color_css = '';
@@ -318,18 +318,18 @@ class Beetle_Pro_Custom_Colors {
 	static function color_settings( $wp_customize ) {
 
 		// Add Section for Theme Colors
-		$wp_customize->add_section( 'beetle_pro_section_colors', array(
-			'title'    => __( 'Theme Colors', 'beetle-pro' ),
+		$wp_customize->add_section( 'gridbox_pro_section_colors', array(
+			'title'    => __( 'Theme Colors', 'gridbox-pro' ),
 			'priority' => 60,
-			'panel' => 'beetle_options_panel' 
+			'panel' => 'gridbox_options_panel' 
 			)
 		);
 		
 		// Get Default Colors from settings
-		$default_options = Beetle_Pro_Customizer::get_default_options();
+		$default_options = Gridbox_Pro_Customizer::get_default_options();
 		
 		// Add Top Navigation Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[top_navi_color]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[top_navi_color]', array(
 			'default'           => $default_options['top_navi_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -337,16 +337,16 @@ class Beetle_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[top_navi_color]', array(
-				'label'      => _x( 'Top Navigation', 'color setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[top_navi_color]',
+			$wp_customize, 'gridbox_theme_options[top_navi_color]', array(
+				'label'      => _x( 'Top Navigation', 'color setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_colors',
+				'settings'   => 'gridbox_theme_options[top_navi_color]',
 				'priority' => 1
 			) ) 
 		);
 		
 		// Add Navigation Primary Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[navi_primary_color]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[navi_primary_color]', array(
 			'default'           => $default_options['navi_primary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
@@ -354,16 +354,16 @@ class Beetle_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[navi_primary_color]', array(
-				'label'      => _x( 'Navigation (primary)', 'color setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[navi_primary_color]',
+			$wp_customize, 'gridbox_theme_options[navi_primary_color]', array(
+				'label'      => _x( 'Navigation (primary)', 'color setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_colors',
+				'settings'   => 'gridbox_theme_options[navi_primary_color]',
 				'priority' => 2
 			) ) 
 		);
 		
 		// Add Navigation Secondary Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[navi_secondary_color]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[navi_secondary_color]', array(
 			'default'           => $default_options['navi_secondary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
@@ -371,16 +371,16 @@ class Beetle_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[navi_secondary_color]', array(
-				'label'      => _x( 'Navigation (secondary)', 'color setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[navi_secondary_color]',
+			$wp_customize, 'gridbox_theme_options[navi_secondary_color]', array(
+				'label'      => _x( 'Navigation (secondary)', 'color setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_colors',
+				'settings'   => 'gridbox_theme_options[navi_secondary_color]',
 				'priority' => 3
 			) ) 
 		);
 		
 		// Add Post Primary Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[content_primary_color]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[content_primary_color]', array(
 			'default'           => $default_options['content_primary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
@@ -388,16 +388,16 @@ class Beetle_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[content_primary_color]', array(
-				'label'      => _x( 'Content (primary)', 'color setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[content_primary_color]',
+			$wp_customize, 'gridbox_theme_options[content_primary_color]', array(
+				'label'      => _x( 'Content (primary)', 'color setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_colors',
+				'settings'   => 'gridbox_theme_options[content_primary_color]',
 				'priority' => 4
 			) ) 
 		);
 		
 		// Add Link and Button Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[content_secondary_color]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[content_secondary_color]', array(
 			'default'           => $default_options['content_secondary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
@@ -405,16 +405,16 @@ class Beetle_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[content_secondary_color]', array(
-				'label'      => _x( 'Content (secondary)', 'color setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[content_secondary_color]',
+			$wp_customize, 'gridbox_theme_options[content_secondary_color]', array(
+				'label'      => _x( 'Content (secondary)', 'color setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_colors',
+				'settings'   => 'gridbox_theme_options[content_secondary_color]',
 				'priority' => 5
 			) ) 
 		);
 		
 		// Add Slider Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[slider_color]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[slider_color]', array(
 			'default'           => $default_options['slider_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -422,16 +422,16 @@ class Beetle_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[slider_color]', array(
-				'label'      => _x( 'Post Slider', 'color setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[slider_color]',
+			$wp_customize, 'gridbox_theme_options[slider_color]', array(
+				'label'      => _x( 'Post Slider', 'color setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_colors',
+				'settings'   => 'gridbox_theme_options[slider_color]',
 				'priority' => 6
 			) ) 
 		);
 		
 		// Add Footer Widgets Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[footer_area_color]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[footer_area_color]', array(
 			'default'           => $default_options['footer_area_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -439,16 +439,16 @@ class Beetle_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[footer_area_color]', array(
-				'label'      => _x( 'Footer', 'color setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[footer_area_color]',
+			$wp_customize, 'gridbox_theme_options[footer_area_color]', array(
+				'label'      => _x( 'Footer', 'color setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_colors',
+				'settings'   => 'gridbox_theme_options[footer_area_color]',
 				'priority' => 7
 			) ) 
 		);
 		
 		// Add Footer Line Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[footer_navi_color]', array(
+		$wp_customize->add_setting( 'gridbox_theme_options[footer_navi_color]', array(
 			'default'           => $default_options['footer_navi_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -456,10 +456,10 @@ class Beetle_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[footer_navi_color]', array(
-				'label'      => _x( 'Footer Navigation', 'color setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[footer_navi_color]',
+			$wp_customize, 'gridbox_theme_options[footer_navi_color]', array(
+				'label'      => _x( 'Footer Navigation', 'color setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_colors',
+				'settings'   => 'gridbox_theme_options[footer_navi_color]',
 				'priority' 	=> 8
 			) ) 
 		);
@@ -469,6 +469,6 @@ class Beetle_Pro_Custom_Colors {
 }
 
 // Run Class
-add_action( 'init', array( 'Beetle_Pro_Custom_Colors', 'setup' ) );
+add_action( 'init', array( 'Gridbox_Pro_Custom_Colors', 'setup' ) );
 
 endif;
