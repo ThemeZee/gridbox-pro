@@ -80,9 +80,10 @@ class Gridbox_Pro_Custom_Fonts {
 		if ( $theme_options['title_font'] != $default_options['title_font'] ) { 
 		
 			$font_css .= '
-				/* Headings Font Setting */
+				/* Title Font Setting */
 				.site-title, 
-				.page-title, 
+				.archive-title,
+				.page-title,
 				.entry-title {
 					font-family: "'.esc_attr($theme_options['title_font']).'";
 				}
@@ -95,10 +96,7 @@ class Gridbox_Pro_Custom_Fonts {
 		
 			$font_css .= '
 				/* Navigation Font Setting */
-				.top-navigation-menu a,
-				.main-navigation-menu a,
-				.footer-navigation-menu a,
-				.footer-navigation .today {
+				.main-navigation-menu a {
 					font-family: "'.esc_attr($theme_options['navi_font']).'";
 				}
 				';
@@ -110,7 +108,6 @@ class Gridbox_Pro_Custom_Fonts {
 		
 			$font_css .= '
 				/* Widget Titles Font Setting */
-				.page-header .archive-title,
 				.comments-header .comments-title,
 				.comment-reply-title span,
 				.widget-title {

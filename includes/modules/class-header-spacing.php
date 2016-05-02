@@ -61,18 +61,13 @@ class Gridbox_Pro_Header_Spacing {
 		}
 		
 		// Set Navigation Spacing
-		if ( $theme_options['header_spacing'] <> 10 ) { 
+		if ( $theme_options['navi_spacing'] <> 10 ) { 
 		
-			$margin = $theme_options['header_spacing'] / 10;
+			$margin = $theme_options['navi_spacing'] / 10;
 		
 			$spacing_css .= '
-				@media only screen and (min-width: 60em) {
-
-					.header-main {
-						padding-top: '. $margin .'em;
-						padding-bottom: '. $margin .'em;
-					}
-					
+				.primary-navigation {
+					margin: '. $margin .'em 0;
 				}
 				';
 				
@@ -117,18 +112,18 @@ class Gridbox_Pro_Header_Spacing {
 			)
 		);
 		
-		// Add Header Spacing setting
-		$wp_customize->add_setting( 'gridbox_theme_options[header_spacing]', array(
+		// Add Navigation Spacing setting
+		$wp_customize->add_setting( 'gridbox_theme_options[navi_spacing]', array(
 			'default'           => 10,
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'absint'
 			)
 		);
-		$wp_customize->add_control( 'gridbox_theme_options[header_spacing]', array(
-			'label'    => __( 'Header Spacing (default: 10)', 'gridbox-pro' ),
+		$wp_customize->add_control( 'gridbox_theme_options[navi_spacing]', array(
+			'label'    => __( 'Navigation Spacing (default: 10)', 'gridbox-pro' ),
 			'section'  => 'gridbox_pro_section_header',
-			'settings' => 'gridbox_theme_options[header_spacing]',
+			'settings' => 'gridbox_theme_options[navi_spacing]',
 			'type'     => 'text',
 			'priority' => 3
 			)
