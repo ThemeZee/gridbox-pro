@@ -1,0 +1,38 @@
+/*
+ * Gridbox Settings CSS
+ *
+ * CSS Stylesheet for settings page on Appearance -> Pro Version
+ *
+ * @package Gridbox Pro
+ */
+
+/* License Settings */
+.gridbox-pro-settings-wrap {
+	margin: 25px 0 0;
+}
+
+.gridbox-pro-settings-wrap .license-status {
+	display: inline-block;
+	color: #fff;
+	background: #444;
+	margin: 0 12px 0 0;
+	padding: 4px 8px;
+	text-transform: uppercase;
+}
+
+.gridbox-pro-settings-wrap .license-active {
+	background: green;
+}
+
+.gridbox-pro-settings-wrap .license-invalid,
+.gridbox-pro-settings-wrap .license-expired {
+	background: red;
+}
+
+.gridbox-pro-settings-wrap .license-description {
+	margin: 16px 0 0;
+}
+
+.gridbox-pro-settings-wrap .license-renewal {
+	margin: 16px 0 0;
+}

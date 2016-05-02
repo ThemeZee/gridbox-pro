@@ -26,6 +26,8 @@ class Gridbox_Pro_Settings_Page {
 		// Add settings page to appearance menu
 		add_action( 'admin_menu', array( __CLASS__, 'add_settings_page' ), 12 );
 		
+		// Enqueue Settings CSS
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'settings_page_css' ) );
 	}
 	
 	/**
@@ -43,7 +45,7 @@ class Gridbox_Pro_Settings_Page {
 		add_theme_page(
 			esc_html__( 'Pro Version', 'gridbox-pro' ),
 			esc_html__( 'Pro Version', 'gridbox-pro' ),
-			'manage_options',
+			'edit_theme_options',
 			'gridbox-pro',
 			array( __CLASS__, 'display_settings_page' )
 		);
@@ -56,26 +58,50 @@ class Gridbox_Pro_Settings_Page {
 	 * @return void
 	*/
 	static function display_settings_page() { 
+		
+		// Get Theme Details from style.css
+		$theme = wp_get_theme(); 
 	
 		ob_start();
-	?>
+		?>
 
-		<div id="gridbox-pro-settings" class="gridbox-pro-settings-wrap wrap">
+		<div class="wrap pro-version-wrap">
+
+			<h1><?php echo GRIDBOX_PRO_NAME; ?> <?php echo GRIDBOX_PRO_VERSION; ?></h1>
 			
-			<h1><?php esc_html_e( 'Gridbox Pro', 'gridbox-pro' ); ?></h1>
-			<?php settings_errors(); ?>
-			
-			<form class="gridbox-pro-settings-form" method="post" action="options.php">
-				<?php
-					settings_fields( 'gridbox_pro_settings' );
-					do_settings_sections( 'gridbox_pro_settings' );
-					submit_button();
-				?>
-			</form>
+			<div id="gridbox-pro-settings" class="gridbox-pro-settings-wrap">
+				
+				<form class="gridbox-pro-settings-form" method="post" action="options.php">
+					<?php
+						settings_fields( 'gridbox_pro_settings' );
+						do_settings_sections( 'gridbox_pro_settings' );
+					?>
+				</form>
+				
+				<p><?php printf( __( 'You can find your license keys and manage your active sites on <a href="%s" target="_blank">themezee.com</a>.', 'gridbox-pro' ), __( 'https://themezee.com/license-keys/', 'gridbox-pro' ) . '?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=gridbox-pro&utm_content=license-keys' ); ?></p>
+				
+			</div>
 			
 		</div>
 <?php
 		echo ob_get_clean();
+	}
+	
+	/**
+	 * Enqueues CSS for Settings page
+	 *
+	 * @return void
+	*/
+	static function settings_page_css( $hook ) { 
+
+		// Load styles and scripts only on theme info page
+		if ( 'appearance_page_gridbox-pro' != $hook ) {
+			return;
+		}
+		
+		// Embed theme info css style
+		wp_enqueue_style( 'gridbox-pro-settings-css', plugins_url('/assets/css/settings.css', dirname( dirname(__FILE__) ) ), array(), GRIDBOX_PRO_VERSION );
+
 	}
 	
 }
