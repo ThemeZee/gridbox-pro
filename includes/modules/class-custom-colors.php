@@ -110,7 +110,7 @@ class Gridbox_Pro_Custom_Colors {
 				a:active,
 				.site-title a:hover,
 				.site-title a:active {
-					color: #353535;
+					color: #111133;
 				}
 				
 				button,
@@ -153,7 +153,7 @@ class Gridbox_Pro_Custom_Colors {
 				.tzwb-social-icons .social-icons-menu li a:hover,
 				.tzwb-social-icons .social-icons-menu li a:focus,
 				.tzwb-social-icons .social-icons-menu li a:active {
-					background: #353535;
+					background: #111133;
 				}
 				';
 				
@@ -184,7 +184,7 @@ class Gridbox_Pro_Custom_Colors {
 				.entry-title a:active,
 				.widget-title a:hover, 
 				.widget-title a:active {
-					color: #cc77bb;
+					color: #4477aa;
 				}
 				
 				.widget-header,
@@ -231,7 +231,7 @@ class Gridbox_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-					background: #cc77bb;
+					background: #4477aa;
 				}
 				';
 				

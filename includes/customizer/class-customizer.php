@@ -68,22 +68,19 @@ class Gridbox_Pro_Customizer {
 	static function get_default_options() {
 
 		$default_options = array(
-			'logo_spacing'						=> 0,
-			'header_spacing'					=> 20,
+			'logo_spacing'						=> 10,
+			'header_spacing'					=> 10,
 			'footer_text'						=> '',
 			'credit_link' 						=> true,
-			'top_navi_color'					=> '#cc77bb',
-			'navi_primary_color'				=> '#cc77bb',
-			'navi_secondary_color'				=> '#353535',
-			'content_primary_color'				=> '#cc77bb',
-			'content_secondary_color'			=> '#353535',
-			'slider_color'						=> '#cc77bb',
-			'footer_area_color'					=> '#353535',
-			'footer_navi_color'					=> '#cc77bb',
-			'text_font' 						=> 'Open Sans',
-			'title_font' 						=> 'Open Sans',
-			'navi_font' 						=> 'Open Sans',
-			'widget_title_font' 				=> 'Open Sans',
+			'top_navi_color'					=> '#333355',
+			'header_color'						=> '#111133',
+			'content_primary_color'				=> '#111133',
+			'content_secondary_color'			=> '#4477aa',
+			'footer_color'						=> '#111133',
+			'text_font' 						=> 'Roboto',
+			'title_font' 						=> 'Roboto Slab',
+			'navi_font' 						=> 'Roboto',
+			'widget_title_font' 				=> 'Roboto Slab',
 			'available_fonts'					=> 'favorites'
 		);
 		

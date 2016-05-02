@@ -27,48 +27,15 @@ class Gridbox_Pro_Footer_Line {
 		if ( ! current_theme_supports( 'gridbox-pro'  ) ) {
 			return;
 		}
-		
-		// Display footer navigation
-		add_action( 'gridbox_before_footer', array( __CLASS__, 'display_footer_navigation' ), 20 );
-		
 		// Remove default footer text function and replace it with new one
 		remove_action( 'gridbox_footer_text', 'gridbox_footer_text' );
 		add_action( 'gridbox_footer_text', array( __CLASS__, 'display_footer_text' ) );
 		
-		// Display social icons in footer
-		add_action( 'gridbox_footer_menu', array( __CLASS__, 'display_footer_social_menu' ) );
+		// Display footer navigation
+		add_action( 'gridbox_footer_menu', array( __CLASS__, 'display_footer_navigation' ) );
 		
 		// Add Footer Settings in Customizer
 		add_action( 'customize_register', array( __CLASS__, 'footer_settings' ) );
-		
-	}
-	
-	/**
-	 * Display footer navigation menu
-	 *
-	 * @return void
-	*/
-	static function display_footer_navigation() {
-		
-		// Check if there is a footer menu
-		if( has_nav_menu( 'footer' ) ) {
-			
-			echo '<nav id="footer-navigation" class="footer-navigation navigation clearfix" role="navigation">';
-			
-			echo '<span class="today">' . date( get_option( 'date_format' ) . ' / ' . get_option( 'time_format' ) ) . '</span>';
-			
-			wp_nav_menu( array(
-				'theme_location' => 'footer', 
-				'container' => false, 
-				'menu_class' => 'footer-navigation-menu', 
-				'echo' => true, 
-				'fallback_cb' => '',
-				'depth' => 1)
-			);
-
-			echo '</nav><!-- #footer-navigation -->';
-			
-		}
 		
 	}
 	
@@ -103,32 +70,28 @@ class Gridbox_Pro_Footer_Line {
 	}
 	
 	/**
-	 * Display social icons in footer
+	 * Display footer navigation menu
 	 *
 	 * @return void
 	*/
-	static function display_footer_social_menu() {
+	static function display_footer_navigation() {
 		
-		// Check if there is a social menu
-		if( has_nav_menu( 'footer-social' ) ) {
-
-			echo '<div id="footer-social-icons" class="footer-social-icons social-icons-navigation clearfix">';
-
-			// Display Social Icons Menu
+		// Check if there is a footer menu
+		if( has_nav_menu( 'footer' ) ) {
+			
+			echo '<nav id="footer-navigation" class="footer-navigation navigation clearfix" role="navigation">';
+					
 			wp_nav_menu( array(
-				'theme_location' => 'footer-social',
-				'container' => false,
-				'menu_class' => 'social-icons-menu',
-				'echo' => true,
+				'theme_location' => 'footer', 
+				'container' => false, 
+				'menu_class' => 'footer-navigation-menu', 
+				'echo' => true, 
 				'fallback_cb' => '',
-				'link_before' => '<span class="screen-reader-text">',
-				'link_after' => '</span>',
-				'depth' => 1
-				)
-			); 
+				'depth' => 1)
+			);
 
-			echo '</div>';
-		
+			echo '</nav><!-- #footer-navigation -->';
+			
 		}
 		
 	}
@@ -211,10 +174,7 @@ class Gridbox_Pro_Footer_Line {
 			return;
 		}
 		
-		register_nav_menus( array(
-			'footer' => esc_html__( 'Footer Navigation', 'gridbox-pro' ),
-			'footer-social' => esc_html__( 'Footer Social Icons', 'gridbox-pro' ),
-		) );
+		register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'gridbox-pro' ) );
 		
 	}
 

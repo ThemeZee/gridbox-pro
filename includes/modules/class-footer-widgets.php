@@ -28,7 +28,7 @@ class Gridbox_Pro_Footer_Widgets {
 		}
 		
 		// Display footer widgets
-		add_action( 'gridbox_before_footer', array( __CLASS__, 'display_widgets' ) );
+		add_action( 'gridbox_before_footer', array( __CLASS__, 'display_widgets' ), 30 );
 	
 	}
 	
@@ -40,33 +40,15 @@ class Gridbox_Pro_Footer_Widgets {
 	static function display_widgets() {
 		
 		// Check if there are footer widgets
-		if( is_active_sidebar( 'footer-left' ) 
-			or is_active_sidebar( 'footer-center-left' )
-			or is_active_sidebar( 'footer-center-right' )
-			or is_active_sidebar( 'footer-right' ) ) : ?>
+		if( is_active_sidebar( 'footer' ) ) : ?>
 				
-			<div id="footer-widgets-bg" class="footer-widgets-background">
+			<div id="footer-widgets-wrap" class="footer-widgets-wrap">
 			
-				<div id="footer-widgets-wrap" class="footer-widgets-wrap container">
+				<div id="footer-widgets" class="footer-widgets container">
 				
-					<div id="footer-widgets" class="footer-widgets clearfix"  role="complementary">			
+					<div id="footer-widgets-columns" class="footer-widgets-columns clearfix"  role="complementary">			
 
-						<div class="footer-widget-column widget-area">
-							<?php dynamic_sidebar('footer-left'); ?>
-						</div>
-						
-						<div class="footer-widget-column widget-area">
-							<?php dynamic_sidebar('footer-center-left'); ?>
-						</div>
-						
-
-						<div class="footer-widget-column widget-area">
-							<?php dynamic_sidebar('footer-center-right'); ?>
-						</div>
-						
-						<div class="footer-widget-column widget-area">
-							<?php dynamic_sidebar('footer-right'); ?>
-						</div>
+						<?php dynamic_sidebar( 'footer' ); ?>
 						
 					</div>
 					
@@ -92,48 +74,15 @@ class Gridbox_Pro_Footer_Widgets {
 		
 		// Register Footer Left widget area
 		register_sidebar( array(
-			'name' => __( 'Footer Left', 'gridbox-pro' ),
-			'id' => 'footer-left',
-			'description' => __( 'Appears on footer on the left hand side.', 'gridbox-pro' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-			'after_widget' => '</aside>',
+			'name' => __( 'Footer', 'gridbox-pro' ),
+			'id' => 'footer',
+			'description' => __( 'Appears on footer area.', 'gridbox-pro' ),
+			'before_widget' => '<div class="footer-widget-column"><aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget' => '</aside></div>',
 			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
 			'after_title' => '</h3></div>',
 		));
-		
-		// Register Footer Center Left widget area
-		register_sidebar( array(
-			'name' => __( 'Footer Center Left', 'gridbox-pro' ),
-			'id' => 'footer-center-left',
-			'description' => __( 'Appears on footer on center left position.', 'gridbox-pro' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-			'after_widget' => '</aside>',
-			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
-			'after_title' => '</h3></div>',
-		));
-		
-		// Register Footer Center Right widget area
-		register_sidebar( array(
-			'name' => __( 'Footer Center Right', 'gridbox-pro' ),
-			'id' => 'footer-center-right',
-			'description' => __( 'Appears on footer on center right position.', 'gridbox-pro' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-			'after_widget' => '</aside>',
-			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
-			'after_title' => '</h3></div>',
-		));
-		
-		// Register Footer Right widget area
-		register_sidebar( array(
-			'name' => __( 'Footer Right', 'gridbox-pro' ),
-			'id' => 'footer-right',
-			'description' => __( 'Appears on footer on the right hand side.', 'gridbox-pro' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-			'after_widget' => '</aside>',
-			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
-			'after_title' => '</h3></div>',
-		));
-		
+
 	}
 	
 }
