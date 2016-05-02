@@ -121,6 +121,7 @@ class Gridbox_Pro {
 		
 		// Include Magazine Widgets
 		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-boxed.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-columns.php';
 		
 		// Include Custom Stylesheet class
 		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
@@ -182,6 +183,7 @@ class Gridbox_Pro {
 		}
 		
 		register_widget( 'Gridbox_Pro_Magazine_Posts_Boxed_Widget' );
+		register_widget( 'Gridbox_Pro_Magazine_Posts_Columns_Widget' );
 		
 	}
 	

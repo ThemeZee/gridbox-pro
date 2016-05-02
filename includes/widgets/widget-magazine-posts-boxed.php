@@ -5,7 +5,7 @@
  * Display the latest posts from a selected category in a boxed layout. 
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
- * @package Gridbox
+ * @package Gridbox Pro
  */
 
 class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
@@ -43,7 +43,8 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 			'category'			=> 0,
 			'layout'			=> 'horizontal',
 			'meta_date'			=> true,
-			'meta_author'		=> false,
+			'meta_author'		=> true,
+			'meta_category'		=> true,
 		);
 		
 		return $defaults;
@@ -167,25 +168,24 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		// Check if there are posts
 		if( $posts_query->have_posts() ) :
 		
-			// Limit the number of words for the excerpt
-			add_filter( 'excerpt_length', 'gridbox_magazine_posts_excerpt_length' );
-			
 			// Display Posts
-			while( $posts_query->have_posts() ) :
+			while( $posts_query->have_posts() ) : $posts_query->the_post(); 
 				
-				$posts_query->the_post(); 
+				if( 0 == $i ) : 
 				
-				if( isset($i) and $i == 0 ) : ?>
+					// Limit the number of words for the excerpt
+					add_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );
+					?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'gridbox-thumbnail-large' ); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
 						
 						<div class="post-content">
 
 							<header class="entry-header">
 			
-								<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+								<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 							
 								<?php $this->entry_meta( $settings ); ?>
 						
@@ -200,37 +200,55 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 					</article>
 
-				<div class="medium-posts clearfix">
+				<div class="magazine-grid magazine-three-columns-grid clearfix">
 
-				<?php else: ?>
+					<?php 
+					// Remove excerpt filter
+					remove_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );	
+				
+				else:
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class( 'medium-post clearfix' ); ?>>
+					// Limit the number of words for the excerpt
+					add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
+					
+					?>
+					
+					<div class="magazine-grid-post clearfix">
+					
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-						<?php if ( has_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'gridbox-thumbnail-medium' ); ?></a>
-						<?php endif; ?>
-
-						<div class="medium-post-content">
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
 							
-							<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>						
+							<header class="entry-header">
+					
+								<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
 							
-							<?php $this->entry_meta( $settings ); ?>
+								<?php $this->entry_meta( $settings ); ?>
 						
-						</div>
+							</header><!-- .entry-header -->
 
-					</article>
+							<div class="entry-content entry-excerpt clearfix">
+								
+								<?php the_excerpt(); ?>
+								
+								<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'gridbox-pro' ); ?></a>
+							
+							</div><!-- .entry-content -->
+
+						</article>
+						
+					</div>
 
 				<?php
-				endif; $i++;
+					// Remove excerpt filter
+					remove_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );	
 				
-			endwhile; ?>
+				endif; $i++; endwhile; ?>
 			
-				</div><!-- end .medium-posts -->
+				</div><!-- end .magazine-three-columns -->
 				
 			<?php
-			// Remove excerpt filter
-			remove_filter( 'excerpt_length', 'gridbox_magazine_posts_excerpt_length' );
-			
+
 		endif;
 		
 		// Reset Postdata
@@ -259,24 +277,22 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 		// Check if there are posts
 		if( $posts_query->have_posts() ) :
-		
+			
 			// Limit the number of words for the excerpt
-			add_filter( 'excerpt_length', 'gridbox_magazine_posts_excerpt_length' );
+			add_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );
 			
 			// Display Posts
-			while( $posts_query->have_posts() ) :
+			while( $posts_query->have_posts() ) : $posts_query->the_post(); 
 				
-				$posts_query->the_post(); 
-				
-				if( isset($i) and $i == 0 ) : ?>
+				if( 0 == $i ) : ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
 
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
+						
 						<header class="entry-header">
-			
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'gridbox-thumbnail-large' ); ?></a>
-
-							<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+						
+							<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 						
 							<?php $this->entry_meta( $settings ); ?>
 					
@@ -295,15 +311,17 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'small-post clearfix' ); ?>>
 
-						<?php if ( has_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'gridbox-thumbnail-small' ); ?></a>
-						<?php endif; ?>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
 
 						<div class="small-post-content">
-							
-							<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>						
-							
-							<?php $this->entry_meta( $settings ); ?>
+						
+							<header class="entry-header">
+						
+								<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+								
+								<?php $this->entry_meta( $settings ); ?>
+								
+							</header><!-- .entry-header -->
 							
 						</div>
 
@@ -314,11 +332,11 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 				
 			endwhile; ?>
 			
-				</div><!-- end .medium-posts -->
+				</div><!-- end .small-posts -->
 				
 			<?php
 			// Remove excerpt filter
-			remove_filter( 'excerpt_length', 'gridbox_magazine_posts_excerpt_length' );
+			remove_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );	
 			
 		endif;
 		
@@ -347,6 +365,12 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 			
 		}
 		
+		if( true == $settings['meta_category'] ) {
+		
+			$postmeta .= gridbox_meta_category();
+			
+		}
+		
 		if( $postmeta ) {
 		
 			echo '<div class="entry-meta">' . $postmeta . '</div>';
@@ -357,6 +381,25 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	
 	
 	/**
+	 * Returns the excerpt length in number of words
+	 *
+	 * @return integer $this->excerpt_length Number of Words
+	 */
+	function excerpt_length_large_post( $length ) {
+		return 30;
+	}
+	
+	
+	/**
+	 * Returns the excerpt length in number of words
+	 *
+	 * @return integer $this->excerpt_length Number of Words
+	 */
+	function excerpt_length( $length ) {
+		return 10;
+	}
+	
+	/**
 	 * Displays Widget Title
 	 */
 	function widget_title( $args, $settings ) {
@@ -364,7 +407,7 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		// Add Widget Title Filter
 		$widget_title = apply_filters( 'widget_title', $settings['title'], $settings, $this->id_base );
 		
-		if( ! empty( $widget_title ) ) :
+		if( !empty( $widget_title ) ) :
 
 			// Link Category Title
 			if( $settings['category'] > 0 ) : 
@@ -375,7 +418,8 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 				
 				// Display Widget Title with link to category archive
 				echo '<div class="widget-header">';
-				echo '<h1 class="widget-title"><a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a></h1>';
+				echo '<h3 class="widget-title"><a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a></h3>';
+				echo '<div class="category-description">' . category_description( $settings['category'] ) . '</div>';
 				echo '</div>';
 			
 			else:
@@ -405,6 +449,7 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		$instance['layout'] = esc_attr($new_instance['layout']);
 		$instance['meta_date'] = !empty($new_instance['meta_date']);
 		$instance['meta_author'] = !empty($new_instance['meta_author']);
+		$instance['meta_category'] = !empty($new_instance['meta_category']);
 		
 		$this->delete_widget_cache();
 		
@@ -450,7 +495,7 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 				<option <?php selected( $settings['layout'], 'vertical' ); ?> value="vertical" ><?php esc_html_e( 'Vertical Arrangement', 'gridbox-pro' ); ?></option>
 			</select>
 		</p>
-		
+
 		<p>
 			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
@@ -462,6 +507,13 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'meta_author' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_author'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_author' ); ?>" name="<?php echo $this->get_field_name( 'meta_author' ); ?>" />
 				<?php esc_html_e( 'Display post author', 'gridbox-pro' ); ?>
+			</label>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id( 'meta_category' ); ?>">
+				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_category'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_category' ); ?>" name="<?php echo $this->get_field_name( 'meta_category' ); ?>" />
+				<?php esc_html_e( 'Display post categories', 'gridbox-pro' ); ?>
 			</label>
 		</p>
 		
