@@ -64,28 +64,14 @@ class Gridbox_Pro_Custom_Colors {
 				
 		}
 		
-		// Set Primary Navigation Color
-		if ( $theme_options['navi_primary_color'] != $default_options['navi_primary_color'] ) { 
+		// Set Header Color
+		if ( $theme_options['header_color'] != $default_options['header_color'] ) { 
 		
 			$color_css .= '
-				/* Primary Navigation Color Setting */
-				.main-navigation-menu ul,
-				.main-navigation-menu li.current-menu-item > a {
-					background: '. $theme_options['navi_primary_color'] .';
-				}
-				';
-				
-		}
-		
-		// Set Secondary Navigation Color
-		if ( $theme_options['navi_secondary_color'] != $default_options['navi_secondary_color'] ) { 
-		
-			$color_css .= '
-				
-				/* Secondary Navigation Color Setting */
-				.primary-navigation,
-				.main-navigation-toggle {
-					background: '. $theme_options['navi_secondary_color'] .';
+				/* Header Color Setting */
+				.site-header,
+				.main-navigation-menu ul {
+					background: '. $theme_options['header_color'] .';
 				}
 				';
 				
@@ -96,21 +82,18 @@ class Gridbox_Pro_Custom_Colors {
 		
 			$color_css .= '
 				/* Content Primary Color Setting */
-				a,
-				a:link,
-				a:visited,
-				.site-title,
-				.site-title a:link, 
-				.site-title a:visited {
+				.widget-title,
+				.widget-title a:link, 
+				.widget-title a:visited,
+				.archive-title,
+				.page-title,
+				.entry-title,
+				.entry-title a:link, 
+				.entry-title a:visited,
+				.comments-header .comments-title,
+				.comment-reply-title span,
+				.related-posts-title {
 					color: '. $theme_options['content_primary_color'] .';
-				}
-
-				a:hover,
-				a:focus,
-				a:active,
-				.site-title a:hover,
-				.site-title a:active {
-					color: #111133;
 				}
 				
 				button,
@@ -118,42 +101,20 @@ class Gridbox_Pro_Custom_Colors {
 				input[type="reset"],
 				input[type="submit"],
 				.more-link,
-				.entry-tags .meta-tags a,
-				.widget_tag_cloud .tagcloud a, 
+				.post-navigation .nav-links a,
+				.post-pagination a,
 				.post-pagination .current,
 				.infinite-scroll #infinite-handle span,
-				.tzwb-social-icons .social-icons-menu li a {
-					color: #fff;
+				.reply .comment-reply-link,
+				.tzwb-tabbed-content .tzwb-tabnavi li a {
 					background: '. $theme_options['content_primary_color'] .';
 				}
-				
-				button:hover,
-				input[type="button"]:hover,
-				input[type="reset"]:hover,
-				input[type="submit"]:hover,
-				button:focus,
-				input[type="button"]:focus,
-				input[type="reset"]:focus,
-				input[type="submit"]:focus,
-				button:active,
-				input[type="button"]:active,
-				input[type="reset"]:active,
-				input[type="submit"]:active,
-				.more-link:hover,
-				.more-link:focus,
-				.more-link:active,
-				.entry-tags .meta-tags a:hover, 
-				.entry-tags .meta-tags a:focus,
-				.entry-tags .meta-tags a:active,
-				.widget_tag_cloud .tagcloud a:hover, 
-				.widget_tag_cloud .tagcloud a:focus,
-				.widget_tag_cloud .tagcloud a:active,
-				.infinite-scroll #infinite-handle span:hover,
-				.infinite-scroll #infinite-handle span:active,
-				.tzwb-social-icons .social-icons-menu li a:hover,
-				.tzwb-social-icons .social-icons-menu li a:focus,
-				.tzwb-social-icons .social-icons-menu li a:active {
-					background: #111133;
+
+				.widget-header,
+				.comments-header,
+				.comment-reply-title,
+				.related-posts-header {
+					border-left: 6px solid '. $theme_options['content_primary_color'] .';
 				}
 				';
 				
@@ -164,32 +125,14 @@ class Gridbox_Pro_Custom_Colors {
 		
 			$color_css .= '
 				/* Content Secondary Color Setting */
-				a:hover,
-				a:focus,
-				a:active,
-				.site-title a:hover,
-				.site-title a:active,
-				.page-title,
-				.entry-title,
-				.entry-title a:link, 
-				.entry-title a:visited,
-				.widget-title,
-				.widget-title a:link, 
-				.widget-title a:visited,
-				.page-header .archive-title {
-					color: '. $theme_options['content_secondary_color'] .';
-				}
-				
-				.entry-title a:hover, 
-				.entry-title a:active,
+				a,
+				a:link,
+				a:visited,
 				.widget-title a:hover, 
-				.widget-title a:active {
-					color: #4477aa;
-				}
-				
-				.widget-header,
-				.page-header {
-					border-bottom: 4px solid '. $theme_options['content_secondary_color'] .';
+				.widget-title a:active,
+				.entry-title a:hover, 
+				.entry-title a:active {
+					color: '. $theme_options['content_secondary_color'] .';
 				}
 				
 				button:hover,
@@ -207,97 +150,71 @@ class Gridbox_Pro_Custom_Colors {
 				.more-link:hover,
 				.more-link:focus,
 				.more-link:active,
-				.entry-tags .meta-tags a:hover, 
-				.entry-tags .meta-tags a:focus,
-				.entry-tags .meta-tags a:active,
-				.widget_tag_cloud .tagcloud a:hover, 
-				.widget_tag_cloud .tagcloud a:focus,
-				.widget_tag_cloud .tagcloud a:active,
-				.post-pagination a:link,
-				.post-pagination a:visited,
-				.infinite-scroll #infinite-handle span:hover,
-				.infinite-scroll #infinite-handle span:active,
-				.tzwb-tabbed-content .tzwb-tabnavi li a, 
-				.tzwb-tabbed-content .tzwb-tabnavi li a:link,
-				.tzwb-tabbed-content .tzwb-tabnavi li a:visited,
-				.tzwb-social-icons .social-icons-menu li a:hover,
-				.tzwb-social-icons .social-icons-menu li a:focus,
-				.tzwb-social-icons .social-icons-menu li a:active {
-					background: '. $theme_options['content_secondary_color'] .';
-				}
-				
+				.widget_tag_cloud .tagcloud a,
+				.entry-tags .meta-tags a,
+				.post-navigation .nav-links a:hover, 
+				.post-navigation .nav-links a:active,
 				.post-pagination a:hover,
 				.post-pagination a:active,
-				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+				.post-pagination .current,
+				.infinite-scroll #infinite-handle span:hover,
+				.infinite-scroll #infinite-handle span:active,
+				.reply .comment-reply-link:hover, 
+				.reply .comment-reply-link:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:hover, 
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
-				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-					background: #4477aa;
+				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
+				.tzwb-social-icons .social-icons-menu li a {
+					background: '. $theme_options['content_secondary_color'] .';
 				}
 				';
 				
 		}
 		
-		// Set Primary Hover Content Color
+		// Set Primary Content Color
 		if ( $theme_options['content_primary_color'] != $default_options['content_primary_color'] ) { 
 		
 			$color_css .= '
-				/* Content Primary Hover Color Setting */
-				.entry-title a:hover, 
-				.entry-title a:active,
-				.widget-title a:hover, 
-				.widget-title a:active {
+				/* Content Primary Color Setting */
+				a:hover,
+				a:focus,
+				a:active {
 					color: '. $theme_options['content_primary_color'] .';
 				}
 				
-				.post-pagination a:hover,
-				.post-pagination a:active,
-				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
-				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
-				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
+				.widget_tag_cloud .tagcloud a:hover, 
+				.widget_tag_cloud .tagcloud a:active,
+				.entry-tags .meta-tags a:hover, 
+				.entry-tags .meta-tags a:active,
+				.tzwb-social-icons .social-icons-menu li a:hover,
+				.tzwb-social-icons .social-icons-menu li a:active {
 					background: '. $theme_options['content_primary_color'] .';
 				}
 				';
 				
 		}
 		
-		// Set Slider Color
-		if ( $theme_options['slider_color'] != $default_options['slider_color'] ) { 
-		
-			$color_css .= '
-				/* Slider Color Setting */
-				.post-slider-controls .zeeflex-direction-nav a {
-					background: '. $theme_options['slider_color'] .';
-				}
-				
-				.post-slider .zeeslide .slide-post {
-					border-color: '. $theme_options['slider_color'] .';
-				}
-				';
-				
-		}
-		
 		// Set Footer Widgets Color
-		if ( $theme_options['footer_area_color'] != $default_options['footer_area_color'] ) { 
+		if ( $theme_options['footer_widgets_color'] != $default_options['footer_widgets_color'] ) { 
 		
 			$color_css .= '
 				
-				/* Footer Area Color Setting */
-				.footer-wrap,
-				.footer-widgets-background {
-					background: '. $theme_options['footer_area_color'] .';
+				/* Footer Widget Color Setting */
+				.footer-widgets-wrap {
+					background: '. $theme_options['footer_widgets_color'] .';
 				}
 				';
 				
 		}
 		
-		// Set Footer Line Color
-		if ( $theme_options['footer_navi_color'] != $default_options['footer_navi_color'] ) { 
+		// Set Footer Color
+		if ( $theme_options['footer_color'] != $default_options['footer_color'] ) { 
 		
 			$color_css .= '
 				
-				/* Footer Navigation Color Setting */
-				.footer-navigation {
-					background: '. $theme_options['footer_navi_color'] .';
+				/* Footer Color Setting */
+				.footer-wrap {
+					background: '. $theme_options['footer_color'] .';
 				}
 				';
 				
@@ -346,40 +263,23 @@ class Gridbox_Pro_Custom_Colors {
 		);
 		
 		// Add Navigation Primary Color setting
-		$wp_customize->add_setting( 'gridbox_theme_options[navi_primary_color]', array(
-			'default'           => $default_options['navi_primary_color'],
+		$wp_customize->add_setting( 'gridbox_theme_options[header_color]', array(
+			'default'           => $default_options['header_color'],
 			'type'           	=> 'option',
-			'transport'         => 'refresh',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color'
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'gridbox_theme_options[navi_primary_color]', array(
-				'label'      => _x( 'Navigation (primary)', 'color setting', 'gridbox-pro' ),
+			$wp_customize, 'gridbox_theme_options[header_color]', array(
+				'label'      => _x( 'Header', 'color setting', 'gridbox-pro' ),
 				'section'    => 'gridbox_pro_section_colors',
-				'settings'   => 'gridbox_theme_options[navi_primary_color]',
+				'settings'   => 'gridbox_theme_options[header_color]',
 				'priority' => 2
 			) ) 
 		);
 		
-		// Add Navigation Secondary Color setting
-		$wp_customize->add_setting( 'gridbox_theme_options[navi_secondary_color]', array(
-			'default'           => $default_options['navi_secondary_color'],
-			'type'           	=> 'option',
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'sanitize_hex_color'
-			)
-		);
-		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'gridbox_theme_options[navi_secondary_color]', array(
-				'label'      => _x( 'Navigation (secondary)', 'color setting', 'gridbox-pro' ),
-				'section'    => 'gridbox_pro_section_colors',
-				'settings'   => 'gridbox_theme_options[navi_secondary_color]',
-				'priority' => 3
-			) ) 
-		);
-		
-		// Add Post Primary Color setting
+		// Add Content Primary Color setting
 		$wp_customize->add_setting( 'gridbox_theme_options[content_primary_color]', array(
 			'default'           => $default_options['content_primary_color'],
 			'type'           	=> 'option',
@@ -392,11 +292,11 @@ class Gridbox_Pro_Custom_Colors {
 				'label'      => _x( 'Content (primary)', 'color setting', 'gridbox-pro' ),
 				'section'    => 'gridbox_pro_section_colors',
 				'settings'   => 'gridbox_theme_options[content_primary_color]',
-				'priority' => 4
+				'priority' => 3
 			) ) 
 		);
 		
-		// Add Link and Button Color setting
+		// Add Content Secondary Color setting
 		$wp_customize->add_setting( 'gridbox_theme_options[content_secondary_color]', array(
 			'default'           => $default_options['content_secondary_color'],
 			'type'           	=> 'option',
@@ -409,58 +309,41 @@ class Gridbox_Pro_Custom_Colors {
 				'label'      => _x( 'Content (secondary)', 'color setting', 'gridbox-pro' ),
 				'section'    => 'gridbox_pro_section_colors',
 				'settings'   => 'gridbox_theme_options[content_secondary_color]',
+				'priority' => 4
+			) ) 
+		);
+		
+		// Add Footer Color setting
+		$wp_customize->add_setting( 'gridbox_theme_options[footer_widgets_color]', array(
+			'default'           => $default_options['footer_widgets_color'],
+			'type'           	=> 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control( new WP_Customize_Color_Control( 
+			$wp_customize, 'gridbox_theme_options[footer_widgets_color]', array(
+				'label'      => _x( 'Footer Widgets', 'color setting', 'gridbox-pro' ),
+				'section'    => 'gridbox_pro_section_colors',
+				'settings'   => 'gridbox_theme_options[footer_widgets_color]',
 				'priority' => 5
 			) ) 
 		);
 		
-		// Add Slider Color setting
-		$wp_customize->add_setting( 'gridbox_theme_options[slider_color]', array(
-			'default'           => $default_options['slider_color'],
+		// Add Footer Color setting
+		$wp_customize->add_setting( 'gridbox_theme_options[footer_color]', array(
+			'default'           => $default_options['footer_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color'
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'gridbox_theme_options[slider_color]', array(
-				'label'      => _x( 'Post Slider', 'color setting', 'gridbox-pro' ),
-				'section'    => 'gridbox_pro_section_colors',
-				'settings'   => 'gridbox_theme_options[slider_color]',
-				'priority' => 6
-			) ) 
-		);
-		
-		// Add Footer Widgets Color setting
-		$wp_customize->add_setting( 'gridbox_theme_options[footer_area_color]', array(
-			'default'           => $default_options['footer_area_color'],
-			'type'           	=> 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color'
-			)
-		);
-		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'gridbox_theme_options[footer_area_color]', array(
+			$wp_customize, 'gridbox_theme_options[footer_color]', array(
 				'label'      => _x( 'Footer', 'color setting', 'gridbox-pro' ),
 				'section'    => 'gridbox_pro_section_colors',
-				'settings'   => 'gridbox_theme_options[footer_area_color]',
-				'priority' => 7
-			) ) 
-		);
-		
-		// Add Footer Line Color setting
-		$wp_customize->add_setting( 'gridbox_theme_options[footer_navi_color]', array(
-			'default'           => $default_options['footer_navi_color'],
-			'type'           	=> 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color'
-			)
-		);
-		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'gridbox_theme_options[footer_navi_color]', array(
-				'label'      => _x( 'Footer Navigation', 'color setting', 'gridbox-pro' ),
-				'section'    => 'gridbox_pro_section_colors',
-				'settings'   => 'gridbox_theme_options[footer_navi_color]',
-				'priority' 	=> 8
+				'settings'   => 'gridbox_theme_options[footer_color]',
+				'priority' => 6
 			) ) 
 		);
 		

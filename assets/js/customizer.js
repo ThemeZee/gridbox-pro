@@ -16,28 +16,26 @@
 		} );
 	} );
 	
-	/* Slider Color Option */
-	wp.customize( 'gridbox_theme_options[slider_color]', function( value ) {
+	/* Header Color Option */
+	wp.customize( 'gridbox_theme_options[header_color]', function( value ) {
 		value.bind( function( newval ) {
-			$('.post-slider-controls .zeeflex-direction-nav a')
+			$('.site-header, .main-navigation-menu ul')
 				.css( 'background', newval );
-			$('.post-slider .zeeslide .slide-post')
-				.css( 'border-color', newval );
 		} );
 	} );
 
-	/* Footer Color Option */
-	wp.customize( 'gridbox_theme_options[footer_area_color]', function( value ) {
+	/* Footer Widgets Color Option */
+	wp.customize( 'gridbox_theme_options[footer_widgets_color]', function( value ) {
 		value.bind( function( newval ) {
-			$('.footer-wrap, .footer-widgets-background')
+			$('.footer-widgets-wrap')
 				.css('background', newval );
 		} );
 	} );
 	
-	/* Footer Navi Color Option */
-	wp.customize( 'gridbox_theme_options[footer_navi_color]', function( value ) {
+	/* Footer Color Option */
+	wp.customize( 'gridbox_theme_options[footer_color]', function( value ) {
 		value.bind( function( newval ) {
-			$('.footer-navigation')
+			$('.footer-wrap')
 				.css('background', newval );
 		} );
 	} );

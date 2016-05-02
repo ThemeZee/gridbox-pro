@@ -13,7 +13,7 @@
 # Header Bar
 --------------------------------------------------------------*/
 .header-bar-wrap {
-	background: #333355;
+	background: #4477aa;
 }
 
 .top-navigation-toggle {
@@ -83,7 +83,7 @@
 	padding: 0;
 	list-style-type: none;
 	list-style-position: outside;
-	background: #333355;
+	background: #4477aa;
 	border-top: 1px solid rgba(255,255,255,0.2);
 }
 
@@ -320,6 +320,18 @@
 .footer-widget-column .widget a:hover, 
 .footer-widget-column .widget a:active  {
 	color: rgba(255,255,255,0.75);
+}
+
+/* Custom Footer Widgets */
+#footer-widgets .tzwb-social-icons .social-icons-menu li a,
+#footer-widgets .widget_tag_cloud .tagcloud a {
+	background: rgba(255,255,255,0.1);
+}
+
+#footer-widgets .tzwb-social-icons .social-icons-menu li a:hover,
+#footer-widgets .widget_tag_cloud .tagcloud a:hover, 
+#footer-widgets .widget_tag_cloud .tagcloud a:active {
+	background: rgba(255,255,255,0.2);
 }
 
 /*--------------------------------------------------------------
