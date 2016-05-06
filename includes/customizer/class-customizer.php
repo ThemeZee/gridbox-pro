@@ -69,7 +69,7 @@ class Gridbox_Pro_Customizer {
 
 		$default_options = array(
 			'logo_spacing'						=> 10,
-			'header_spacing'					=> 10,
+			'navi_spacing'						=> 10,
 			'footer_text'						=> '',
 			'credit_link' 						=> true,
 			'top_navi_color'					=> '#4477aa',

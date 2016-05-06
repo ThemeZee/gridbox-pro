@@ -68,7 +68,7 @@ class Gridbox_Pro {
 		define( 'GRIDBOX_PRO_VERSION', '1.0' );
 		
 		// Define Plugin Name
-		define( 'GRIDBOX_PRO_PRODUCT_ID', 58393 );
+		define( 'GRIDBOX_PRO_PRODUCT_ID', 62420 );
 
 		// Define Update API URL
 		define( 'GRIDBOX_PRO_STORE_API_URL', 'https://themezee.com' ); 
