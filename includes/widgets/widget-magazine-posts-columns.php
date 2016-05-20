@@ -21,7 +21,8 @@ class Gridbox_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 			sprintf( esc_html__( 'Magazine Posts: 2 Columns (%s)', 'gridbox-pro' ), 'Gridbox Pro' ), // Name
 			array( 
 				'classname' => 'gridbox_magazine_posts_columns', 
-				'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'gridbox-pro' ) 
+				'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'gridbox-pro' ),
+				'customize_selective_refresh' => true, 
 			) // Args
 		);
 

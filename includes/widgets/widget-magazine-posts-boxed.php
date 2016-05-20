@@ -21,7 +21,8 @@ class Gridbox_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 			sprintf( esc_html__( 'Magazine Posts: Boxed (%s)', 'gridbox-pro' ), 'Gridbox Pro' ), // Name
 			array( 
 				'classname' => 'gridbox_magazine_posts_boxed', 
-				'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'gridbox-pro' ) 
+				'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'gridbox-pro' ),
+				'customize_selective_refresh' => true, 
 			) // Args
 		);
 
