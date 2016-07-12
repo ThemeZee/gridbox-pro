@@ -53,11 +53,11 @@ class Gridbox_Pro_Custom_Colors {
 		if ( $theme_options['top_navi_color'] != $default_options['top_navi_color'] ) {
 
 			$custom_css .= '
-                /* Top Navigation Color Setting */
-                .header-bar-wrap,
-                .top-navigation-menu ul {
+				/* Top Navigation Color Setting */
+				.header-bar-wrap,
+				.top-navigation-menu ul {
 					background: '. $theme_options['top_navi_color'] .';
-                }
+				}
 				';
 
 		}
@@ -66,11 +66,11 @@ class Gridbox_Pro_Custom_Colors {
 		if ( $theme_options['header_color'] != $default_options['header_color'] ) {
 
 			$custom_css .= '
-                /* Header Color Setting */
-                .site-header,
-                .main-navigation-menu ul {
+				/* Header Color Setting */
+				.site-header,
+				.main-navigation-menu ul {
 					background: '. $theme_options['header_color'] .';
-                }
+				}
 				';
 
 		}
@@ -79,41 +79,41 @@ class Gridbox_Pro_Custom_Colors {
 		if ( $theme_options['content_primary_color'] != $default_options['content_primary_color'] ) {
 
 			$custom_css .= '
-                /* Content Primary Color Setting */
-                .widget-title,
-                .widget-title a:link,
-                .widget-title a:visited,
-                .archive-title,
-                .page-title,
-                .entry-title,
-                .entry-title a:link,
-                .entry-title a:visited,
-                .comments-header .comments-title,
-                .comment-reply-title span,
-                .related-posts-title {
+				/* Content Primary Color Setting */
+				.widget-title,
+				.widget-title a:link,
+				.widget-title a:visited,
+				.archive-title,
+				.page-title,
+				.entry-title,
+				.entry-title a:link,
+				.entry-title a:visited,
+				.comments-header .comments-title,
+				.comment-reply-title span,
+				.related-posts-title {
 					color: '. $theme_options['content_primary_color'] .';
-                }
+				}
 
-                button,
-                input[type="button"],
-                input[type="reset"],
-                input[type="submit"],
-                .more-link,
-                .post-navigation .nav-links a,
-                .post-pagination a,
-                .post-pagination .current,
-                .infinite-scroll #infinite-handle span,
-                .reply .comment-reply-link,
-                .tzwb-tabbed-content .tzwb-tabnavi li a {
+				button,
+				input[type="button"],
+				input[type="reset"],
+				input[type="submit"],
+				.more-link,
+				.post-navigation .nav-links a,
+				.post-pagination a,
+				.post-pagination .current,
+				.infinite-scroll #infinite-handle span,
+				.reply .comment-reply-link,
+				.tzwb-tabbed-content .tzwb-tabnavi li a {
 					background: '. $theme_options['content_primary_color'] .';
-                }
+				}
 
-                .widget-header,
-                .comments-header,
-                .comment-reply-title,
-                .related-posts-header {
+				.widget-header,
+				.comments-header,
+				.comment-reply-title,
+				.related-posts-header {
 					border-left: 6px solid '. $theme_options['content_primary_color'] .';
-                }
+				}
 				';
 
 		}
@@ -122,49 +122,49 @@ class Gridbox_Pro_Custom_Colors {
 		if ( $theme_options['content_secondary_color'] != $default_options['content_secondary_color'] ) {
 
 			$custom_css .= '
-                /* Content Secondary Color Setting */
-                a,
-                a:link,
-                a:visited,
-                .widget-title a:hover,
-                .widget-title a:active,
-                .entry-title a:hover,
-                .entry-title a:active {
+				/* Content Secondary Color Setting */
+				a,
+				a:link,
+				a:visited,
+				.widget-title a:hover,
+				.widget-title a:active,
+				.entry-title a:hover,
+				.entry-title a:active {
 					color: '. $theme_options['content_secondary_color'] .';
-                }
+				}
 
-                button:hover,
-                input[type="button"]:hover,
-                input[type="reset"]:hover,
-                input[type="submit"]:hover,
-                button:focus,
-                input[type="button"]:focus,
-                input[type="reset"]:focus,
-                input[type="submit"]:focus,
-                button:active,
-                input[type="button"]:active,
-                input[type="reset"]:active,
-                input[type="submit"]:active,
-                .more-link:hover,
-                .more-link:focus,
-                .more-link:active,
-                .widget_tag_cloud .tagcloud a,
-                .entry-tags .meta-tags a,
-                .post-navigation .nav-links a:hover,
-                .post-navigation .nav-links a:active,
-                .post-pagination a:hover,
-                .post-pagination a:active,
-                .post-pagination .current,
-                .infinite-scroll #infinite-handle span:hover,
-                .infinite-scroll #infinite-handle span:active,
-                .reply .comment-reply-link:hover,
-                .reply .comment-reply-link:active,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:active,
-                .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
-                .tzwb-social-icons .social-icons-menu li a {
+				button:hover,
+				input[type="button"]:hover,
+				input[type="reset"]:hover,
+				input[type="submit"]:hover,
+				button:focus,
+				input[type="button"]:focus,
+				input[type="reset"]:focus,
+				input[type="submit"]:focus,
+				button:active,
+				input[type="button"]:active,
+				input[type="reset"]:active,
+				input[type="submit"]:active,
+				.more-link:hover,
+				.more-link:focus,
+				.more-link:active,
+				.widget_tag_cloud .tagcloud a,
+				.entry-tags .meta-tags a,
+				.post-navigation .nav-links a:hover,
+				.post-navigation .nav-links a:active,
+				.post-pagination a:hover,
+				.post-pagination a:active,
+				.post-pagination .current,
+				.infinite-scroll #infinite-handle span:hover,
+				.infinite-scroll #infinite-handle span:active,
+				.reply .comment-reply-link:hover,
+				.reply .comment-reply-link:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
+				.tzwb-social-icons .social-icons-menu li a {
 					background: '. $theme_options['content_secondary_color'] .';
-                }
+				}
 				';
 
 		}
@@ -173,21 +173,21 @@ class Gridbox_Pro_Custom_Colors {
 		if ( $theme_options['content_primary_color'] != $default_options['content_primary_color'] ) {
 
 			$custom_css .= '
-                /* Content Primary Color Setting */
-                a:hover,
-                a:focus,
-                a:active {
+				/* Content Primary Color Setting */
+				a:hover,
+				a:focus,
+				a:active {
 					color: '. $theme_options['content_primary_color'] .';
-                }
+				}
 
-                .widget_tag_cloud .tagcloud a:hover,
-                .widget_tag_cloud .tagcloud a:active,
-                .entry-tags .meta-tags a:hover,
-                .entry-tags .meta-tags a:active,
-                .tzwb-social-icons .social-icons-menu li a:hover,
-                .tzwb-social-icons .social-icons-menu li a:active {
+				.widget_tag_cloud .tagcloud a:hover,
+				.widget_tag_cloud .tagcloud a:active,
+				.entry-tags .meta-tags a:hover,
+				.entry-tags .meta-tags a:active,
+				.tzwb-social-icons .social-icons-menu li a:hover,
+				.tzwb-social-icons .social-icons-menu li a:active {
 					background: '. $theme_options['content_primary_color'] .';
-                }
+				}
 				';
 
 		}
@@ -197,10 +197,10 @@ class Gridbox_Pro_Custom_Colors {
 
 			$custom_css .= '
 
-                /* Footer Widget Color Setting */
-                .footer-widgets-wrap {
+				/* Footer Widget Color Setting */
+				.footer-widgets-wrap {
 					background: '. $theme_options['footer_widgets_color'] .';
-                }
+				}
 				';
 
 		}
@@ -210,10 +210,10 @@ class Gridbox_Pro_Custom_Colors {
 
 			$custom_css .= '
 
-                /* Footer Color Setting */
-                .footer-wrap {
+				/* Footer Color Setting */
+				.footer-wrap {
 					background: '. $theme_options['footer_color'] .';
-                }
+				}
 				';
 
 		}

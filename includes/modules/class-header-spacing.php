@@ -51,9 +51,9 @@ class Gridbox_Pro_Header_Spacing {
 			$margin = $theme_options['logo_spacing'] / 10;
 
 			$custom_css .= '
-                .site-branding {
+				.site-branding {
 					margin: '. $margin .'em 0;
-                }
+				}
 				';
 
 		}
@@ -64,9 +64,9 @@ class Gridbox_Pro_Header_Spacing {
 			$margin = $theme_options['navi_spacing'] / 10;
 
 			$custom_css .= '
-                .primary-navigation {
+				.primary-navigation {
 					margin: '. $margin .'em 0;
-                }
+				}
 				';
 
 		}

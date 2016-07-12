@@ -120,9 +120,6 @@ class Gridbox_Pro {
 		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-boxed.php';
 		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-columns.php';
 
-		// Include Custom Stylesheet class.
-		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
-
 	}
 
 	/**
@@ -161,6 +158,18 @@ class Gridbox_Pro {
 
 		// Enqueue Plugin Stylesheet.
 		wp_enqueue_style( 'gridbox-pro', GRIDBOX_PRO_PLUGIN_URL . 'assets/css/gridbox-pro.css', array(), GRIDBOX_PRO_VERSION );
+
+		// Get Custom CSS.
+		$custom_css = apply_filters( 'gridbox_pro_custom_css_stylesheet', '' );
+
+		// Sanitize Custom CSS.
+		$custom_css = wp_kses( $custom_css, array( '\'', '\"' ) );
+		$custom_css = str_replace( '&gt;', '>', $custom_css );
+		$custom_css = preg_replace( '/\n/', '', $custom_css );
+		$custom_css = preg_replace( '/\t/', '', $custom_css );
+
+		// Add Custom CSS.
+		wp_add_inline_style( 'gridbox-pro', $custom_css );
 
 	}
 
