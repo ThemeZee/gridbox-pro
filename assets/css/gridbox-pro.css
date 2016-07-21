@@ -43,9 +43,6 @@
 	font-size: 0.8125rem;
 	padding: 0.6em 2em 0.6em 0;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -62,9 +59,6 @@
 	content: '\f431';
 	color: #fff;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -99,14 +93,9 @@
 	min-width: 250px;
 	min-width: 16rem;
 	padding: 0.8em 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 	-webkit-transition: none;
-	-moz-transition: none;
-	-ms-transition: none;
-	-o-transition: none;
 	transition: none;
 }
 
@@ -182,8 +171,6 @@
 	float: left;
 	display: block;
 	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -204,8 +191,6 @@
 	width: 50%;
 	margin: 0;
 	padding-right: 1.25em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -213,8 +198,6 @@
 	float: right;
 	width: 50%;
 	padding-left: 1.25em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -224,8 +207,6 @@
 	width: 50%;
 	margin-bottom: 1em;
 	padding-right: 1.25em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -233,8 +214,6 @@
 	float: right;
 	width: 50%;
 	padding-left: 1.25em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -243,8 +222,6 @@
 	float: left;
 	width: 50%;
 	padding-right: 1.25em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -252,8 +229,6 @@
 	float: right;
 	width: 50%;
 	padding-left: 1.25em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -271,17 +246,20 @@
 }
 
 .footer-widgets-columns {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
 
 .footer-widget-column {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 33.33333333333%;
 	border-right: 1px solid rgba(255,255,255,0.1);
 	border-bottom: 1px solid rgba(255,255,255,0.1);
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
