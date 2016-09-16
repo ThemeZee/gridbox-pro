@@ -76,7 +76,7 @@ class Gridbox_Pro_Footer_Widgets {
 		register_sidebar( array(
 			'name' => __( 'Footer', 'gridbox-pro' ),
 			'id' => 'footer',
-			'description' => __( 'Appears on footer area.', 'gridbox-pro' ),
+			'description' => __( 'Appears on the footer area.', 'gridbox-pro' ),
 			'before_widget' => '<div class="footer-widget-column"><aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</aside></div>',
 			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
