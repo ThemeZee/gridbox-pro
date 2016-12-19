@@ -46,7 +46,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='gridbox-pro-custom-text-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#gridbox-pro-custom-text-font" ).length;
 
@@ -67,7 +67,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='gridbox-pro-custom-title-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#gridbox-pro-custom-title-font" ).length;
 
@@ -88,7 +88,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='gridbox-pro-custom-navi-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#gridbox-pro-custom-navi-font" ).length;
 
@@ -109,7 +109,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='gridbox-pro-custom-widget-title-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#gridbox-pro-custom-widget-title-font" ).length;
 
