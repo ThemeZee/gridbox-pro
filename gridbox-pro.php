@@ -222,7 +222,7 @@ class Gridbox_Pro {
 
 		if ( $options->get( 'license_key' ) <> '' ) :
 
-			$license_key = $options->get( 'license_key' );
+			$license_key = trim( $options->get( 'license_key' ) );
 
 			// Setup the updater.
 			$gridbox_pro_updater = new Gridbox_Pro_Plugin_Updater( GRIDBOX_PRO_STORE_API_URL, __FILE__, array(
