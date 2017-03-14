@@ -186,7 +186,7 @@
 }
 
 /* Magazine Posts Boxed Widget Horizontal Style */
-.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image {
+.widget-magazine-posts .magazine-horizontal-box .large-post .wp-post-image {
 	float: left;
 	box-sizing: border-box;
 	margin: 0;
@@ -194,7 +194,7 @@
 	width: 50%;
 }
 
-.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
+.widget-magazine-posts .magazine-horizontal-box .large-post .post-content {
 	float: right;
 	box-sizing: border-box;
 	padding-left: 1.25em;
@@ -202,7 +202,7 @@
 }
 
 /* Magazine Posts Boxed Widget Vertical Style */
-.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post {
+.widget-magazine-posts .magazine-vertical-box .large-post {
 	float: left;
 	box-sizing: border-box;
 	margin-bottom: 1em;
@@ -210,7 +210,7 @@
 	width: 50%;
 }
 
-.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts {
+.widget-magazine-posts .magazine-vertical-box .small-posts {
 	float: right;
 	box-sizing: border-box;
 	padding-left: 1.25em;
@@ -348,14 +348,14 @@
 --------------------------------------------------------------*/
 @media only screen and (max-width: 80em) {
 	/* Magazine Post Widgets */
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post,
+	.widget-magazine-posts .magazine-horizontal-box .large-post .wp-post-image,
+	.widget-magazine-posts .magazine-vertical-box .large-post,
 	.widget-magazine-posts-columns .magazine-posts-column-left {
 		padding-right: 1em;
 	}
 
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts,
+	.widget-magazine-posts .magazine-horizontal-box .large-post .post-content,
+	.widget-magazine-posts .magazine-vertical-box .small-posts,
 	.widget-magazine-posts-columns .magazine-posts-column-right {
 		padding-left: 1em;
 	}
@@ -635,7 +635,7 @@
 ## Tablet Large ( < 880px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 55em) {
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content {
 		display: none;
 	}
 
@@ -646,31 +646,31 @@
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
 	/* Magazine Posts Widgets */
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .wp-post-image,
+	.widget-magazine-posts .magazine-horizontal-box .large-post .post-content {
 		float: none;
 		padding: 0;
 		width: 100%;
 	}
 
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .wp-post-image {
 		margin: 0 0 0.5em;
 	}
 
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-title {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-title {
 		font-size: 28px;
 		font-size: 1.75rem;
 	}
 
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content .more-link {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content,
+	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content .more-link {
 		display: inline-block;
 	}
 
 }
 
 @media only screen and (max-width: 47em) {
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post .entry-content,
+	.widget-magazine-posts .magazine-vertical-box .large-post .entry-content,
 	.widget-magazine-posts .small-post .entry-meta {
 		display: none;
 	}
@@ -691,8 +691,8 @@
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
 	/* Magazine Post Widgets */
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts ,
+	.widget-magazine-posts .magazine-vertical-box .large-post,
+	.widget-magazine-posts .magazine-vertical-box .small-posts ,
 	.widget-magazine-posts-columns .magazine-posts-column-left,
 	.widget-magazine-posts-columns .magazine-posts-column-right {
 		float: none;
@@ -701,12 +701,12 @@
 	}
 
 	.widget-magazine-posts  .large-post .entry-title,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-title {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-title {
 		font-size: 24px;
 		font-size: 1.5rem;
 	}
 
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post {
+	.widget-magazine-posts .magazine-vertical-box .large-post {
 		margin: 0 0 2em;
 	}
 
@@ -715,12 +715,12 @@
 		font-size: 1.125rem;
 	}
 
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post .entry-content,
+	.widget-magazine-posts .magazine-vertical-box .large-post .entry-content,
 	.widget-magazine-posts .small-post .entry-meta {
 		display: block;
 	}
 
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post .entry-content .more-link {
+	.widget-magazine-posts .magazine-vertical-box .large-post .entry-content .more-link {
 		display: inline-block;
 	}
 
@@ -748,7 +748,7 @@
 --------------------------------------------------------------*/
 @media only screen and (max-width: 30em) {
 	/* Magazine Post Widgets */
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post {
+	.widget-magazine-posts .magazine-vertical-box .large-post {
 		margin-bottom: 1.5em;
 	}
 
