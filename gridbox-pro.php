@@ -117,7 +117,8 @@ class Gridbox_Pro {
 		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/modules/class-header-spacing.php';
 
 		// Include Magazine Widgets.
-		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-boxed.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-horizontal-box.php';
+		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-vertical-box.php';
 		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-columns.php';
 
 	}
@@ -189,8 +190,9 @@ class Gridbox_Pro {
 			return;
 		}
 
-		register_widget( 'Gridbox_Pro_Magazine_Posts_Boxed_Widget' );
-		register_widget( 'Gridbox_Pro_Magazine_Posts_Columns_Widget' );
+		register_widget( 'Gridbox_Pro_Magazine_Horizontal_Box_Widget' );
+		register_widget( 'Gridbox_Pro_Magazine_Vertical_Box_Widget' );
+		register_widget( 'Gridbox_Pro_Magazine_Columns_Widget' );
 
 	}
 
