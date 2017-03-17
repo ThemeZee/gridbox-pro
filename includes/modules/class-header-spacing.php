@@ -52,7 +52,7 @@ class Gridbox_Pro_Header_Spacing {
 
 			$custom_css .= '
 				.site-branding {
-					margin: '. $margin .'em 0;
+					margin: ' . $margin . 'em 0;
 				}
 				';
 
@@ -65,7 +65,7 @@ class Gridbox_Pro_Header_Spacing {
 
 			$custom_css .= '
 				.primary-navigation {
-					margin: '. $margin .'em 0;
+					margin: ' . $margin . 'em 0;
 				}
 				';
 

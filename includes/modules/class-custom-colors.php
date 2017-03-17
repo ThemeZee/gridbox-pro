@@ -56,7 +56,7 @@ class Gridbox_Pro_Custom_Colors {
 				/* Top Navigation Color Setting */
 				.header-bar-wrap,
 				.top-navigation-menu ul {
-					background: '. $theme_options['top_navi_color'] .';
+					background: ' . $theme_options['top_navi_color'] . ';
 				}
 				';
 
@@ -69,7 +69,7 @@ class Gridbox_Pro_Custom_Colors {
 				/* Header Color Setting */
 				.site-header,
 				.main-navigation-menu ul {
-					background: '. $theme_options['header_color'] .';
+					background: ' . $theme_options['header_color'] . ';
 				}
 				';
 
@@ -91,7 +91,7 @@ class Gridbox_Pro_Custom_Colors {
 				.comments-header .comments-title,
 				.comment-reply-title span,
 				.related-posts-title {
-					color: '. $theme_options['content_primary_color'] .';
+					color: ' . $theme_options['content_primary_color'] . ';
 				}
 
 				button,
@@ -105,14 +105,14 @@ class Gridbox_Pro_Custom_Colors {
 				.infinite-scroll #infinite-handle span,
 				.reply .comment-reply-link,
 				.tzwb-tabbed-content .tzwb-tabnavi li a {
-					background: '. $theme_options['content_primary_color'] .';
+					background: ' . $theme_options['content_primary_color'] . ';
 				}
 
 				.widget-header,
 				.comments-header,
 				.comment-reply-title,
 				.related-posts-header {
-					border-left: 6px solid '. $theme_options['content_primary_color'] .';
+					border-left: 6px solid ' . $theme_options['content_primary_color'] . ';
 				}
 				';
 
@@ -130,7 +130,7 @@ class Gridbox_Pro_Custom_Colors {
 				.widget-title a:active,
 				.entry-title a:hover,
 				.entry-title a:active {
-					color: '. $theme_options['content_secondary_color'] .';
+					color: ' . $theme_options['content_secondary_color'] . ';
 				}
 
 				button:hover,
@@ -163,7 +163,7 @@ class Gridbox_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
 				.tzwb-social-icons .social-icons-menu li a {
-					background: '. $theme_options['content_secondary_color'] .';
+					background: ' . $theme_options['content_secondary_color'] . ';
 				}
 				';
 
@@ -177,7 +177,7 @@ class Gridbox_Pro_Custom_Colors {
 				a:hover,
 				a:focus,
 				a:active {
-					color: '. $theme_options['content_primary_color'] .';
+					color: ' . $theme_options['content_primary_color'] . ';
 				}
 
 				.widget_tag_cloud .tagcloud a:hover,
@@ -186,7 +186,7 @@ class Gridbox_Pro_Custom_Colors {
 				.entry-tags .meta-tags a:active,
 				.tzwb-social-icons .social-icons-menu li a:hover,
 				.tzwb-social-icons .social-icons-menu li a:active {
-					background: '. $theme_options['content_primary_color'] .';
+					background: ' . $theme_options['content_primary_color'] . ';
 				}
 				';
 
@@ -199,7 +199,7 @@ class Gridbox_Pro_Custom_Colors {
 
 				/* Footer Widget Color Setting */
 				.footer-widgets-wrap {
-					background: '. $theme_options['footer_widgets_color'] .';
+					background: ' . $theme_options['footer_widgets_color'] . ';
 				}
 				';
 
@@ -212,7 +212,7 @@ class Gridbox_Pro_Custom_Colors {
 
 				/* Footer Color Setting */
 				.footer-wrap {
-					background: '. $theme_options['footer_color'] .';
+					background: ' . $theme_options['footer_color'] . ';
 				}
 				';
 
