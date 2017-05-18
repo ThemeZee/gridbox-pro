@@ -29,9 +29,6 @@ class Gridbox_Pro_Admin_Notices {
 		// Add Missing Theme Notice.
 		add_action( 'admin_notices', array( __CLASS__, 'expired_license' ) );
 
-		// Add Missing Theme Notice.
-		add_action( 'admin_notices', array( __CLASS__, 'missing_theme' ) );
-
 		// Dismiss Notices.
 		add_action( 'init', array( __CLASS__, 'dismiss_notices' ) );
 
@@ -48,7 +45,7 @@ class Gridbox_Pro_Admin_Notices {
 		// Get Settings.
 		$options = Gridbox_Pro_Settings::instance();
 
-		if ( '' === $options->get( 'license_key' ) && in_array( $pagenow, array( 'index.php', 'update-core.php', 'plugins.php', 'themes.php' ) ) && ! isset( $_GET['page'] ) && current_theme_supports( 'gridbox-pro' ) && ! get_transient( 'gridbox_pro_activate_license_dismissed' ) && current_user_can( 'edit_theme_options' ) ) : ?>
+		if ( 'valid' !== $options->get( 'license_status' ) && 'expired' !== $options->get( 'license_status' ) && in_array( $pagenow, array( 'index.php', 'update-core.php', 'plugins.php', 'themes.php' ) ) && ! isset( $_GET['page'] ) && current_theme_supports( 'gridbox-pro' ) && ! get_transient( 'gridbox_pro_activate_license_dismissed' ) && current_user_can( 'edit_theme_options' ) ) : ?>
 
 			<div class="notice notice-info">
 				<p>
@@ -88,32 +85,6 @@ class Gridbox_Pro_Admin_Notices {
 					?>
 					<a style="float: right" href="<?php echo wp_nonce_url( add_query_arg( array( 'gridbox_pro_action' => 'dismiss_notices', 'gridbox_pro_notice' => 'expired_license' ) ), 'gridbox_pro_dismiss_notice', 'gridbox_pro_dismiss_notice_nonce' ); ?>"><?php _e( 'Dismiss Notice', 'gridbox-pro' ); ?></a>
 				</p>
-			</div>
-
-		<?php
-		endif;
-
-	}
-
-	/**
-	 * Display missing theme notice
-	 *
-	 * @return void
-	 */
-	static function missing_theme() {
-		global $pagenow;
-
-		if ( ! current_theme_supports( 'gridbox-pro' ) && in_array( $pagenow, array( 'index.php', 'update-core.php', 'plugins.php', 'themes.php' ) ) && ! isset( $_GET['page'] ) && ! get_transient( 'gridbox_pro_missing_theme_dismissed' ) && current_user_can( 'edit_theme_options' ) ) : ?>
-
-			<div class="notice notice-warning">
-				<p>
-					<?php printf( __( 'The %1$s add-on needs the %2$s theme activated in order to work. You should deactivate %1$s if you have switched to another theme permanently.', 'gridbox-pro' ),
-						GRIDBOX_PRO_NAME,
-						'Gridbox'
-					); ?>
-					<a style="float: right" href="<?php echo wp_nonce_url( add_query_arg( array( 'gridbox_pro_action' => 'dismiss_notices', 'gridbox_pro_notice' => 'missing_theme' ) ), 'gridbox_pro_dismiss_notice', 'gridbox_pro_dismiss_notice_nonce' ); ?>"><?php _e( 'Dismiss Notice', 'gridbox-pro' ); ?></a>
-				</p>
-
 			</div>
 
 		<?php
