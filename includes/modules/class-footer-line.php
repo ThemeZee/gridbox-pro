@@ -125,7 +125,7 @@ class Gridbox_Pro_Footer_Line {
 			'section'  => 'gridbox_pro_section_footer',
 			'settings' => 'gridbox_theme_options[footer_text]',
 			'type'     => 'textarea',
-			'priority' => 1,
+			'priority' => 30,
 			)
 		);
 
@@ -142,7 +142,7 @@ class Gridbox_Pro_Footer_Line {
 			'section'  => 'gridbox_pro_section_footer',
 			'settings' => 'gridbox_theme_options[credit_link]',
 			'type'     => 'checkbox',
-			'priority' => 2,
+			'priority' => 40,
 			)
 		);
 

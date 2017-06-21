@@ -6,8 +6,13 @@
  * @package Gridbox Pro
  */
 
-#customize-control-gridbox_theme_options-header_spacing {
+#customize-control-gridbox_theme_options-header_spacing,
+#customize-control-gridbox_theme_options-footer_text {
 	margin-top: 16px;
+}
+
+#customize-control-gridbox_theme_options-scroll_top_title {
+	margin-bottom: 0;
 }
 
 #customize-control-gridbox_theme_options-footer_text textarea {
