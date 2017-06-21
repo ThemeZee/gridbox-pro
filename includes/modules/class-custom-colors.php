@@ -104,7 +104,10 @@ class Gridbox_Pro_Custom_Colors {
 				.pagination .current,
 				.infinite-scroll #infinite-handle span,
 				.reply .comment-reply-link,
-				.tzwb-tabbed-content .tzwb-tabnavi li a {
+				.tzwb-tabbed-content .tzwb-tabnavi li a,
+				.scroll-to-top-button,
+				.scroll-to-top-button:focus,
+				.scroll-to-top-button:active {
 					background: ' . $theme_options['content_primary_color'] . ';
 				}
 
@@ -162,7 +165,8 @@ class Gridbox_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
-				.tzwb-social-icons .social-icons-menu li a {
+				.tzwb-social-icons .social-icons-menu li a,
+				.scroll-to-top-button:hover {
 					background: ' . $theme_options['content_secondary_color'] . ';
 				}
 				';
