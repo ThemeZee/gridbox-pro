@@ -24,7 +24,7 @@ class Gridbox_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Vertical Box)', 'gridbox-pro' ), // Name.
 			array(
 				'classname' => 'gridbox-magazine-vertical-box-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a vertical box layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'gridbox-pro' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a vertical box layout.', 'gridbox-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,8 +36,8 @@ class Gridbox_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'				=> '',
-			'category'			=> 0,
+			'title'    => esc_html__( 'Magazine (Vertical Box)', 'gridbox-pro' ),
+			'category' => 0,
 		);
 
 		return $defaults;
