@@ -24,7 +24,7 @@ class Gridbox_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Horizontal Box)', 'gridbox-pro' ), // Name.
 			array(
 				'classname' => 'gridbox-magazine-horizontal-box-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a horizontal box layout.', 'gridbox-pro' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a horizontal box.', 'gridbox-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
