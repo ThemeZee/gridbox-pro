@@ -233,6 +233,46 @@
 }
 
 /*--------------------------------------------------------------
+# Author Bio
+--------------------------------------------------------------*/
+.entry-author {
+	margin: 0 0 2em;
+	padding: 2em 0 0;
+	border-top: 2px solid #eee;
+}
+
+.entry-author .author-avatar {
+	float: left;
+	margin: 0 1.5em 0.15em 0;
+	max-width: 25%;
+}
+
+.entry-author .author-avatar img {
+	vertical-align: top;
+}
+
+.entry-author .author-heading .author-title {
+	display: inline-block;
+	margin: 0 1em 0.25em 0;
+	padding: 0;
+	font-size: 18px;
+	font-size: 1.125rem;
+}
+
+.entry-author .author-heading .author-link {
+	display: inline-block;
+	margin: 0 0 0.5em;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.entry-author .author-bio {
+	margin: 0;
+	font-size: 17px;
+	font-size: 1.0625rem;
+}
+
+/*--------------------------------------------------------------
 # Footer Widgets
 --------------------------------------------------------------*/
 .footer-widgets-wrap {
@@ -425,7 +465,6 @@
 	.footer-widget-column .widget {
 		padding: 2em;
 	}
-
 }
 
 @media only screen and (max-width: 70em) {
@@ -438,16 +477,6 @@
 		font-size: 18px;
 		font-size: 1.125rem;
 	}
-
-}
-
-/*--------------------------------------------------------------
-## Desktop Medium ( < 1040px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 65em) {
-
-
-
 }
 
 /*--------------------------------------------------------------
@@ -669,7 +698,6 @@
 	.footer-navigation-menu li {
 		margin: 0 1.5em 0 0;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -679,7 +707,6 @@
 	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content {
 		display: none;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -770,22 +797,28 @@
 		width: 100%;
 		border-right: none;
 	}
-
-}
-
-/*--------------------------------------------------------------
-## Mobile Large ( < 560px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 35em) {
-
-
-
 }
 
 /*--------------------------------------------------------------
 ## Mobile Medium ( < 480px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 30em) {
+	/* Author Bio */
+	.entry-author .author-avatar {
+		float: none;
+		margin: 0 0 1em;
+		max-width: 100%;
+	}
+
+	.entry-author .author-heading .author-title {
+		display: block;
+		margin: 0 0 0.25em;
+	}
+
+	.entry-author .author-heading .author-link {
+		display: block;
+	}
+
 	/* Magazine Post Widgets */
 	.widget-magazine-posts .magazine-vertical-box .large-post {
 		margin-bottom: 1.5em;
