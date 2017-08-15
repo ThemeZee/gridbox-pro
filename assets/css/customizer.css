@@ -7,10 +7,12 @@
  */
 
 #customize-control-gridbox_theme_options-navi_spacing,
+#customize-control-gridbox_theme_options-header_search_title,
 #customize-control-gridbox_theme_options-footer_text {
 	margin-top: 16px;
 }
 
+#customize-control-gridbox_theme_options-header_search_title,
 #customize-control-gridbox_theme_options-scroll_top_title {
 	margin-bottom: 0;
 }
