@@ -88,7 +88,7 @@ class Gridbox_Pro_Author_Bio {
 		) );
 
 		$wp_customize->add_control( 'gridbox_theme_options[author_bio]', array(
-			'label'    => __( 'Display Author Bio', 'gridbox-pro' ),
+			'label'    => esc_html__( 'Display Author Bio', 'gridbox-pro' ),
 			'section'  => 'gridbox_section_post',
 			'settings' => 'gridbox_theme_options[author_bio]',
 			'type'     => 'checkbox',

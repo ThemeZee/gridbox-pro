@@ -51,8 +51,10 @@ class Gridbox_Pro_Header_Spacing {
 			$margin = $theme_options['logo_spacing'] / 10;
 
 			$custom_css .= '
-				.site-branding {
-					margin: ' . $margin . 'em 0;
+				@media only screen and (min-width: 60em) {
+					.site-branding {
+						margin: ' . $margin . 'em 0;
+					}
 				}
 				';
 
@@ -64,15 +66,16 @@ class Gridbox_Pro_Header_Spacing {
 			$margin = $theme_options['navi_spacing'] / 10;
 
 			$custom_css .= '
-				.primary-navigation {
-					margin: ' . $margin . 'em 0;
+				@media only screen and (min-width: 60em) {
+					.primary-navigation {
+						margin: ' . $margin . 'em 0;
+					}
 				}
 				';
 
 		}
 
 		return $custom_css;
-
 	}
 
 	/**
@@ -82,48 +85,44 @@ class Gridbox_Pro_Header_Spacing {
 	 */
 	static function header_spacing_settings( $wp_customize ) {
 
-		// Add Section for Header Spacing.
+		// Add Section for Header Settings.
 		$wp_customize->add_section( 'gridbox_pro_section_header', array(
-			'title'    => __( 'Header Spacing', 'gridbox-pro' ),
+			'title'    => esc_html__( 'Header Settings', 'gridbox-pro' ),
 			'priority' => 20,
-			'panel' => 'gridbox_options_panel',
-			)
-		);
+			'panel'    => 'gridbox_options_panel',
+		) );
 
 		// Add Logo Spacing setting.
 		$wp_customize->add_setting( 'gridbox_theme_options[logo_spacing]', array(
 			'default'           => 10,
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'absint',
-			)
-		);
+		) );
+
 		$wp_customize->add_control( 'gridbox_theme_options[logo_spacing]', array(
-			'label'    => __( 'Logo Spacing (default: 10)', 'gridbox-pro' ),
+			'label'    => esc_html__( 'Logo Spacing (default: 10)', 'gridbox-pro' ),
 			'section'  => 'gridbox_pro_section_header',
 			'settings' => 'gridbox_theme_options[logo_spacing]',
 			'type'     => 'text',
-			'priority' => 2,
-			)
-		);
+			'priority' => 10,
+		) );
 
 		// Add Navigation Spacing setting.
 		$wp_customize->add_setting( 'gridbox_theme_options[navi_spacing]', array(
 			'default'           => 10,
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'absint',
-			)
-		);
+		) );
+
 		$wp_customize->add_control( 'gridbox_theme_options[navi_spacing]', array(
-			'label'    => __( 'Navigation Spacing (default: 10)', 'gridbox-pro' ),
+			'label'    => esc_html__( 'Navigation Spacing (default: 10)', 'gridbox-pro' ),
 			'section'  => 'gridbox_pro_section_header',
 			'settings' => 'gridbox_theme_options[navi_spacing]',
 			'type'     => 'text',
-			'priority' => 3,
-			)
-		);
-
+			'priority' => 20,
+		) );
 	}
 }
 
