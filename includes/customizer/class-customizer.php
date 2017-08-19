@@ -61,6 +61,7 @@ class Gridbox_Pro_Customizer {
 		$default_options = array(
 			'logo_spacing'            => 10,
 			'navi_spacing'            => 10,
+			'header_search'           => false,
 			'author_bio'              => false,
 			'scroll_to_top'           => false,
 			'footer_text'             => '',
@@ -69,7 +70,6 @@ class Gridbox_Pro_Customizer {
 			'header_color'            => '#111133',
 			'content_primary_color'   => '#111133',
 			'content_secondary_color' => '#4477aa',
-			'footer_widgets_color'    => '#111133',
 			'footer_color'            => '#111133',
 			'text_font'               => 'Roboto',
 			'title_font'              => 'Roboto Slab',
