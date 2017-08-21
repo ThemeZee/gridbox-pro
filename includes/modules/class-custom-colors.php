@@ -187,6 +187,13 @@ class Gridbox_Pro_Custom_Colors {
 				.related-posts-header {
 					border-left: 6px solid ' . $theme_options['content_primary_color'] . ';
 				}
+
+				.widget-title a:hover,
+				.widget-title a:active,
+				.entry-title a:hover,
+				.entry-title a:active {
+					color: #4477aa;
+				}
 			';
 		}
 
@@ -237,6 +244,12 @@ class Gridbox_Pro_Custom_Colors {
 				.tzwb-social-icons .social-icons-menu li a,
 				.scroll-to-top-button:hover {
 					background: ' . $theme_options['content_secondary_color'] . ';
+				}
+
+				a:hover,
+				a:focus,
+				a:active {
+					color: #111133;
 				}
 			';
 		}
@@ -385,7 +398,7 @@ class Gridbox_Pro_Custom_Colors {
 		$wp_customize->add_setting( 'gridbox_theme_options[content_primary_color]', array(
 			'default'           => $default_options['content_primary_color'],
 			'type'              => 'option',
-			'transport'         => 'refresh',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
@@ -401,7 +414,7 @@ class Gridbox_Pro_Custom_Colors {
 		$wp_customize->add_setting( 'gridbox_theme_options[content_secondary_color]', array(
 			'default'           => $default_options['content_secondary_color'],
 			'type'              => 'option',
-			'transport'         => 'refresh',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
