@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridbox Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2017-07-04 11:39+0200\n"
-"PO-Revision-Date: 2017-07-04 11:40+0200\n"
+"POT-Creation-Date: 2017-08-31 11:11+0200\n"
+"PO-Revision-Date: 2017-08-31 11:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -13,10 +13,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: gridbox-pro.php:208
+#: gridbox-pro.php:210
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -179,36 +179,44 @@ msgstr "Standard"
 msgid "Update Fonts"
 msgstr "Schriftarten aktualisieren"
 
-#: includes/modules/class-custom-colors.php:238
+#: includes/modules/class-author-bio.php:60
+#, php-format
+msgid "About %s"
+msgstr "Über %s"
+
+#: includes/modules/class-author-bio.php:62
+msgid "View all posts"
+msgstr "Alle Beiträge ansehen"
+
+#: includes/modules/class-author-bio.php:91
+msgid "Display Author Bio"
+msgstr "Autor Bio anzeigen"
+
+#: includes/modules/class-custom-colors.php:357
 msgid "Theme Colors"
 msgstr "Theme Farben"
 
-#: includes/modules/class-custom-colors.php:257
+#: includes/modules/class-custom-colors.php:374
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-custom-colors.php:274
+#: includes/modules/class-custom-colors.php:390
 msgctxt "color setting"
 msgid "Header"
 msgstr "Header"
 
-#: includes/modules/class-custom-colors.php:291
+#: includes/modules/class-custom-colors.php:406
 msgctxt "color setting"
 msgid "Content (primary)"
 msgstr "Content Bereich (primär)"
 
-#: includes/modules/class-custom-colors.php:308
+#: includes/modules/class-custom-colors.php:422
 msgctxt "color setting"
 msgid "Content (secondary)"
 msgstr "Content Bereich (sekundär)"
 
-#: includes/modules/class-custom-colors.php:325
-msgctxt "color setting"
-msgid "Footer Widgets"
-msgstr "Footer Widgets"
-
-#: includes/modules/class-custom-colors.php:342
+#: includes/modules/class-custom-colors.php:439
 msgctxt "color setting"
 msgid "Footer"
 msgstr "Footer"
@@ -288,15 +296,28 @@ msgstr "Obere Navigation"
 msgid "Header Social Icons"
 msgstr "Header Social Icons"
 
-#: includes/modules/class-header-spacing.php:87
-msgid "Header Spacing"
-msgstr "Header Abstände"
+#: includes/modules/class-header-search.php:82
+msgctxt "gridbox-pro"
+msgid "Search"
+msgstr "Suche"
 
-#: includes/modules/class-header-spacing.php:102
+#: includes/modules/class-header-search.php:104
+msgid "Header Search"
+msgstr "Header Suche"
+
+#: includes/modules/class-header-search.php:120
+msgid "Enable search field in header"
+msgstr "Suchfeld im Header anzeigen"
+
+#: includes/modules/class-header-spacing.php:90
+msgid "Header Settings"
+msgstr "Header Einstellungen"
+
+#: includes/modules/class-header-spacing.php:104
 msgid "Logo Spacing (default: 10)"
 msgstr "Logo Abstand (Standard: 10)"
 
-#: includes/modules/class-header-spacing.php:119
+#: includes/modules/class-header-spacing.php:120
 msgid "Navigation Spacing (default: 10)"
 msgstr "Navigationsmenü Abstand (Standard: 10)"
 
@@ -383,3 +404,7 @@ msgstr "Magazin (Vertikale Box)"
 #: includes/widgets/widget-magazine-posts-vertical-box.php:27
 msgid "Displays your posts from a selected category in a vertical box."
 msgstr "Zeigt die Beiträge einer gewählten Kategorie in einer vertikalen Box."
+
+#~ msgctxt "color setting"
+#~ msgid "Footer Widgets"
+#~ msgstr "Footer Widgets"
