@@ -75,7 +75,6 @@ class Gridbox_Pro_Customizer {
 			'title_font'              => 'Roboto Slab',
 			'navi_font'               => 'Roboto',
 			'widget_title_font'       => 'Roboto Slab',
-			'available_fonts'         => 'favorites',
 		);
 
 		return $default_options;
