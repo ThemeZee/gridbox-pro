@@ -5,11 +5,11 @@ Plugin URI: http://themezee.com/addons/gridbox-pro/
 Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Gridbox theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.5
+Version: 1.6
 Text Domain: gridbox-pro
 Domain Path: /languages/
-License: GPL v3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Gridbox Pro
 Copyright(C) 2017, ThemeZee.com - support@themezee.com
@@ -17,7 +17,9 @@ Copyright(C) 2017, ThemeZee.com - support@themezee.com
 */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 
 /**
@@ -48,7 +50,6 @@ class Gridbox_Pro {
 
 		// Setup Action Hooks.
 		self::setup_actions();
-
 	}
 
 	/**
@@ -62,7 +63,7 @@ class Gridbox_Pro {
 		define( 'GRIDBOX_PRO_NAME', 'Gridbox Pro' );
 
 		// Define Version Number.
-		define( 'GRIDBOX_PRO_VERSION', '1.5' );
+		define( 'GRIDBOX_PRO_VERSION', '1.6' );
 
 		// Define Plugin Name.
 		define( 'GRIDBOX_PRO_PRODUCT_ID', 62420 );
@@ -78,7 +79,6 @@ class Gridbox_Pro {
 
 		// Plugin Root File.
 		define( 'GRIDBOX_PRO_PLUGIN_FILE', __FILE__ );
-
 	}
 
 	/**
@@ -123,7 +123,6 @@ class Gridbox_Pro {
 		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-horizontal-box.php';
 		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-vertical-box.php';
 		require_once GRIDBOX_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-columns.php';
-
 	}
 
 	/**
@@ -145,7 +144,6 @@ class Gridbox_Pro {
 
 		// Add automatic plugin updater from ThemeZee Store API.
 		add_action( 'admin_init', array( __CLASS__, 'plugin_updater' ), 0 );
-
 	}
 
 	/**
@@ -178,7 +176,6 @@ class Gridbox_Pro {
 
 		// Add Custom CSS.
 		wp_add_inline_style( 'gridbox-pro', $custom_css );
-
 	}
 
 	/**
@@ -196,7 +193,6 @@ class Gridbox_Pro {
 		register_widget( 'Gridbox_Pro_Magazine_Horizontal_Box_Widget' );
 		register_widget( 'Gridbox_Pro_Magazine_Vertical_Box_Widget' );
 		register_widget( 'Gridbox_Pro_Magazine_Columns_Widget' );
-
 	}
 
 	/**
@@ -231,16 +227,14 @@ class Gridbox_Pro {
 
 			// Setup the updater.
 			$gridbox_pro_updater = new Gridbox_Pro_Plugin_Updater( GRIDBOX_PRO_STORE_API_URL, __FILE__, array(
-					'version' 	=> GRIDBOX_PRO_VERSION,
-					'license' 	=> $license_key,
-					'item_name' => GRIDBOX_PRO_NAME,
-					'item_id'   => GRIDBOX_PRO_PRODUCT_ID,
-					'author' 	=> 'ThemeZee',
-				)
-			);
+				'version'   => GRIDBOX_PRO_VERSION,
+				'license'   => $license_key,
+				'item_name' => GRIDBOX_PRO_NAME,
+				'item_id'   => GRIDBOX_PRO_PRODUCT_ID,
+				'author'    => 'ThemeZee',
+			) );
 
 		endif;
-
 	}
 }
 

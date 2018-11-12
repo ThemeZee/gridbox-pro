@@ -97,6 +97,9 @@
 			custom_css += '.widget_tag_cloud .tagcloud a:hover, .widget_tag_cloud .tagcloud a:active, .entry-tags .meta-tags a:hover, .entry-tags .meta-tags a:active, .tzwb-social-icons .social-icons-menu li a:hover, .tzwb-social-icons .social-icons-menu li a:active { background: ' + newval + '; }';
 
 			addColorStyles( custom_css, 5 );
+
+			$( '.has-primary-color' ).css( 'color', newval );
+			$( '.has-primary-background-color' ).css( 'background-color', newval );
 		} );
 	} );
 
@@ -110,6 +113,9 @@
 			custom_css += 'a:hover, a:focus, a:active { color: #111133; }';
 
 			addColorStyles( custom_css, 4 );
+
+			$( '.has-secondary-color' ).css( 'color', newval );
+			$( '.has-secondary-background-color' ).css( 'background-color', newval );
 		} );
 	} );
 

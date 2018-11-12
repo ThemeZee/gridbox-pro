@@ -8,7 +8,9 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Custom Colors Class
@@ -30,9 +32,11 @@ class Gridbox_Pro_Custom_Colors {
 		// Add Custom Color CSS code to custom stylesheet output.
 		add_filter( 'gridbox_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) );
 
+		// Add Custom Color CSS code to the Gutenberg editor.
+		add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'custom_editor_colors_css' ) );
+
 		// Add Custom Color Settings.
 		add_action( 'customize_register', array( __CLASS__, 'color_settings' ) );
-
 	}
 
 	/**
@@ -160,7 +164,8 @@ class Gridbox_Pro_Custom_Colors {
 				.entry-title a:visited,
 				.comments-header .comments-title,
 				.comment-reply-title span,
-				.related-posts-title {
+				.related-posts-title,
+				.has-primary-color {
 					color: ' . $theme_options['content_primary_color'] . ';
 				}
 
@@ -177,8 +182,9 @@ class Gridbox_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a,
 				.scroll-to-top-button,
 				.scroll-to-top-button:focus,
-				.scroll-to-top-button:active {
-					background: ' . $theme_options['content_primary_color'] . ';
+				.scroll-to-top-button:active,
+				.has-primary-background-color {
+					background-color: ' . $theme_options['content_primary_color'] . ';
 				}
 
 				.widget-header,
@@ -208,7 +214,8 @@ class Gridbox_Pro_Custom_Colors {
 				.widget-title a:hover,
 				.widget-title a:active,
 				.entry-title a:hover,
-				.entry-title a:active {
+				.entry-title a:active,
+				.has-secondary-color {
 					color: ' . $theme_options['content_secondary_color'] . ';
 				}
 
@@ -242,8 +249,9 @@ class Gridbox_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
 				.tzwb-social-icons .social-icons-menu li a,
-				.scroll-to-top-button:hover {
-					background: ' . $theme_options['content_secondary_color'] . ';
+				.scroll-to-top-button:hover,
+				.has-secondary-background-color {
+					background-color: ' . $theme_options['content_secondary_color'] . ';
 				}
 
 				a:hover,
@@ -343,6 +351,94 @@ class Gridbox_Pro_Custom_Colors {
 		}
 
 		return $custom_css;
+	}
+
+	/**
+	 * Adds Color CSS styles in the Gutenberg Editor to override default colors
+	 *
+	 * @return void
+	 */
+	static function custom_editor_colors_css() {
+		$custom_css = '';
+
+		// Get Theme Options from Database.
+		$theme_options = Gridbox_Pro_Customizer::get_theme_options();
+
+		// Get Default Fonts from settings.
+		$default_options = Gridbox_Pro_Customizer::get_default_options();
+
+		// Set Primary Color.
+		if ( $theme_options['content_primary_color'] !== $default_options['content_primary_color'] ) {
+
+			$custom_css .= '
+				.has-primary-color,
+				.edit-post-visual-editor .editor-post-title__block .editor-post-title__input {
+					color: ' . $theme_options['content_primary_color'] . ';
+				}
+				.has-primary-background-color {
+					background-color: ' . $theme_options['content_primary_color'] . ';
+				}
+			';
+		}
+
+		// Set Secondary Color.
+		if ( $theme_options['content_secondary_color'] !== $default_options['content_secondary_color'] ) {
+
+			$custom_css .= '
+				.has-secondary-color,
+				.edit-post-visual-editor .editor-block-list__block a {
+					color: ' . $theme_options['content_secondary_color'] . ';
+				}
+				.has-secondary-background-color {
+					background-color: ' . $theme_options['content_secondary_color'] . ';
+				}
+			';
+		}
+
+		// Add Custom CSS.
+		if ( '' !== $custom_css ) {
+			wp_add_inline_style( 'gridbox-editor-styles', $custom_css );
+		}
+	}
+
+	/**
+	 * Change primary color in Gutenberg Editor.
+	 *
+	 * @return array $editor_settings
+	 */
+	static function change_primary_color( $color ) {
+		// Get Theme Options from Database.
+		$theme_options = Gridbox_Pro_Customizer::get_theme_options();
+
+		// Get Default Fonts from settings.
+		$default_options = Gridbox_Pro_Customizer::get_default_options();
+
+		// Set Primary Color.
+		if ( $theme_options['content_primary_color'] !== $default_options['content_primary_color'] ) {
+			$color = $theme_options['content_primary_color'];
+		}
+
+		return $color;
+	}
+
+	/**
+	 * Change secondary color in Gutenberg Editor.
+	 *
+	 * @return array $editor_settings
+	 */
+	static function change_secondary_color( $color ) {
+		// Get Theme Options from Database.
+		$theme_options = Gridbox_Pro_Customizer::get_theme_options();
+
+		// Get Default Fonts from settings.
+		$default_options = Gridbox_Pro_Customizer::get_default_options();
+
+		// Set Primary Color.
+		if ( $theme_options['content_secondary_color'] !== $default_options['content_secondary_color'] ) {
+			$color = $theme_options['content_secondary_color'];
+		}
+
+		return $color;
 	}
 
 	/**
@@ -483,3 +579,5 @@ class Gridbox_Pro_Custom_Colors {
 
 // Run Class.
 add_action( 'init', array( 'Gridbox_Pro_Custom_Colors', 'setup' ) );
+add_filter( 'gridbox_primary_color', array( 'Gridbox_Pro_Custom_Colors', 'change_primary_color' ) );
+add_filter( 'gridbox_secondary_color', array( 'Gridbox_Pro_Custom_Colors', 'change_secondary_color' ) );
