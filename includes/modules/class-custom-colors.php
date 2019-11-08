@@ -126,6 +126,7 @@ class Gridbox_Pro_Custom_Colors {
 					.site-title,
 					.site-title a:link,
 					.site-title a:visited,
+					.site-description,
 					.main-navigation-menu a,
 					.main-navigation-menu a:link,
 					.main-navigation-menu a:visited,
