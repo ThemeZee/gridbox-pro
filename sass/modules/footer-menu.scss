@@ -1,0 +1,30 @@
+.site-footer .site-info {
+	float: left;
+	width: 50%;
+}
+
+.footer-navigation {
+	float: right;
+	padding: 1.5em 0;
+	width: 50%;
+}
+
+.footer-navigation-menu {
+	position: relative;
+	display: inline;
+	float: right;
+	margin: 0;
+	padding: 0;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+.footer-navigation-menu li {
+	display: inline-block;
+	margin-left: 1.5em;
+}
+
+.footer-navigation-menu li a {
+	display: inline-block;
+	padding: 0.5em 0;
+}

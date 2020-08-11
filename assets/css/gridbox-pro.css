@@ -1,13 +1,16 @@
 /*
  * Gridbox Pro CSS
  *
- * Copyright(C) 2015, ThemeZee.com - support@themezee.com
- * License: GPL v3
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * Copyright(C) 2019, ThemeZee.com - support@themezee.com
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @package Gridbox Pro
  */
 
+/*--------------------------------------------------------------
+# - CSS Variables
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Header Bar
@@ -69,7 +72,7 @@
 
 .top-navigation-menu a:hover,
 .top-navigation-menu a:active {
-	color: rgba(255,255,255,0.6);
+	color: rgba(255, 255, 255, 0.6);
 }
 
 .top-navigation-menu ul {
@@ -83,7 +86,7 @@
 	list-style-type: none;
 }
 
-.top-navigation-menu ul li{
+.top-navigation-menu ul li {
 	position: relative;
 	float: none;
 }
@@ -93,7 +96,7 @@
 	padding: 0.8em 1em;
 	min-width: 250px;
 	min-width: 16rem;
-	border-top: 1px solid rgba(255,255,255,0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
 	-webkit-transition: none;
 	transition: none;
 }
@@ -121,7 +124,7 @@
 .top-navigation-menu li ul ul {
 	top: 0;
 	left: 100%;
-	border-left: 1px solid rgba(255,255,255,0.1);
+	border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .top-navigation-menu li.menu-item-has-children:hover > ul,
@@ -151,7 +154,7 @@
 
 .header-bar .social-icons-menu li a:hover,
 .header-bar .social-icons-menu li a:active {
-	color: rgba(255,255,255,0.6);
+	color: rgba(255, 255, 255, 0.6);
 	text-decoration: none;
 }
 
@@ -206,17 +209,17 @@
 --------------------------------------------------------------*/
 
 /* Magazine: Large Post Styling */
-.widget-magazine-posts  .large-post .entry-title {
+.widget-magazine-posts .large-post .entry-title {
 	font-size: 32px;
 	font-size: 2rem;
 }
 
-.widget-magazine-posts  .large-post .entry-meta {
+.widget-magazine-posts .large-post .entry-meta {
 	font-size: 16px;
 	font-size: 1rem;
 }
 
-.widget-magazine-posts  .large-post .entry-content {
+.widget-magazine-posts .large-post .entry-content {
 	font-size: 17px;
 	font-size: 1.0625rem;
 }
@@ -352,8 +355,8 @@
 	display: flex;
 	box-sizing: border-box;
 	width: 33.33333333333%;
-	border-right: 1px solid rgba(255,255,255,0.1);
-	border-bottom: 1px solid rgba(255,255,255,0.1);
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-widget-column:nth-child(3n) {
@@ -365,11 +368,11 @@
 	padding: 2.5em;
 	border: none;
 	background: none;
-	color: rgba(255,255,255,0.6)
+	color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-widget-column .widget-header {
-	border-color: rgba(255,255,255,0.1);
+	border-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer-widget-column .widget-title {
@@ -377,20 +380,20 @@
 }
 
 .footer-widget-column .widget a:link,
-.footer-widget-column .widget a:visited  {
+.footer-widget-column .widget a:visited {
 	color: #fff;
 }
 
 .footer-widget-column .widget a:hover,
-.footer-widget-column .widget a:active  {
-	color: rgba(255,255,255,0.6)
+.footer-widget-column .widget a:active {
+	color: rgba(255, 255, 255, 0.6);
 }
 
 /* Custom Footer Widgets */
 #footer-widgets .tzwb-social-icons .social-icons-menu li a,
 #footer-widgets .widget_tag_cloud .tagcloud a,
 #footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a {
-	background: rgba(255,255,255,0.1);
+	background: rgba(255, 255, 255, 0.1);
 }
 
 #footer-widgets .tzwb-social-icons .social-icons-menu li a:hover,
@@ -399,11 +402,11 @@
 #footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 #footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active,
 #footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-	background: rgba(255,255,255,0.2);
+	background: rgba(255, 255, 255, 0.2);
 }
 
 /*--------------------------------------------------------------
-# Footer Navigation
+# Footer Menu
 --------------------------------------------------------------*/
 .site-footer .site-info {
 	float: left;
@@ -498,17 +501,17 @@
 		padding-left: 1em;
 	}
 
-	.widget-magazine-posts  .large-post .entry-title {
+	.widget-magazine-posts .large-post .entry-title {
 		font-size: 28px;
 		font-size: 1.75rem;
 	}
 
-	.widget-magazine-posts  .large-post .entry-meta {
+	.widget-magazine-posts .large-post .entry-meta {
 		font-size: 15px;
 		font-size: 0.9375rem;
 	}
 
-	.widget-magazine-posts  .large-post .entry-content {
+	.widget-magazine-posts .large-post .entry-content {
 		font-size: 16px;
 		font-size: 1rem;
 	}
@@ -525,7 +528,7 @@
 }
 
 @media only screen and (max-width: 70em) {
-	.widget-magazine-posts  .large-post .entry-title {
+	.widget-magazine-posts .large-post .entry-title {
 		font-size: 24px;
 		font-size: 1.5rem;
 	}
@@ -549,7 +552,7 @@
 		padding: 1.5em 0 0;
 		background: none;
 		box-shadow: none;
-		border-top: 1px solid rgba(255,255,255,0.1);
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.header-search .header-search-form .search-form {
@@ -561,7 +564,7 @@
 	}
 
 	/* Magazine Post Widgets */
-	.widget-magazine-posts  .large-post .entry-title {
+	.widget-magazine-posts .large-post .entry-title {
 		font-size: 22px;
 		font-size: 1.375rem;
 	}
@@ -575,12 +578,11 @@
 		font-size: 1rem;
 	}
 
-	.widget-magazine-posts-boxed  .large-post .entry-content .more-link {
+	.widget-magazine-posts-boxed .large-post .entry-content .more-link {
 		display: none;
 	}
 
 	/*** Mobile Top Navigation ***/
-
 	/* Reset */
 	.top-navigation-menu {
 		margin: 0;
@@ -635,7 +637,7 @@
 
 	.top-navigation-toggle:hover,
 	.top-navigation-toggle:active {
-		color: rgba(255,255,255,0.6);
+		color: rgba(255, 255, 255, 0.6);
 		background: none;
 		cursor: pointer;
 	}
@@ -660,14 +662,14 @@
 		float: left;
 		margin-bottom: 1.5em;
 		width: 100%;
-		border-bottom: 1px solid rgba(255,255,255,0.1);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.top-navigation-menu a {
 		display: block;
 		clear: left;
 		padding: 1em 1.25em;
-		border-top: 1px solid rgba(255,255,255,0.1);
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.top-navigation-menu ul {
@@ -710,7 +712,7 @@
 	}
 
 	.top-navigation-menu .submenu-dropdown-toggle:hover {
-		color: rgba(255,255,255,0.6);
+		color: rgba(255, 255, 255, 0.6);
 		cursor: pointer;
 	}
 
@@ -739,7 +741,7 @@
 	}
 
 	.footer-widget-column:nth-child(3n) {
-		border-right: 1px solid rgba(255,255,255,0.1);
+		border-right: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.footer-widget-column:nth-child(2n) {
@@ -816,7 +818,7 @@
 @media only screen and (max-width: 40em) {
 	/* Magazine Post Widgets */
 	.widget-magazine-posts .magazine-vertical-box .large-post,
-	.widget-magazine-posts .magazine-vertical-box .small-posts ,
+	.widget-magazine-posts .magazine-vertical-box .small-posts,
 	.widget-magazine-posts-columns .magazine-posts-column-left,
 	.widget-magazine-posts-columns .magazine-posts-column-right {
 		float: none;
@@ -824,7 +826,7 @@
 		width: 100%;
 	}
 
-	.widget-magazine-posts  .large-post .entry-title,
+	.widget-magazine-posts .large-post .entry-title,
 	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-title {
 		font-size: 24px;
 		font-size: 1.5rem;
@@ -886,7 +888,6 @@
 		font-size: 16px;
 		font-size: 1rem;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -896,7 +897,6 @@
 	.widget-magazine-posts .small-post .entry-meta {
 		display: none;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -912,7 +912,6 @@
 		font-size: 15px;
 		font-size: 0.9375rem;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -924,5 +923,4 @@
 	.top-navigation-menu {
 		display: block !important;
 	}
-
 }
