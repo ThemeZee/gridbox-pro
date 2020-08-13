@@ -117,7 +117,7 @@ class Gridbox_Pro_Header_Search {
 		) );
 
 		$wp_customize->add_control( 'gridbox_theme_options[header_search]', array(
-			'label'    => esc_html__( 'Enable search field in header', 'gridbox-pro' ),
+			'label'    => esc_html__( 'Enable search field in main navigation', 'gridbox-pro' ),
 			'section'  => 'gridbox_pro_section_header',
 			'settings' => 'gridbox_theme_options[header_search]',
 			'type'     => 'checkbox',
@@ -138,7 +138,7 @@ class Gridbox_Pro_Header_Search {
 
 		// Hide Header Search?
 		if ( false === $theme_options['header_search'] ) {
-			$elements[] = '.primary-navigation .main-navigation-menu li.header-search';
+			$elements[] = '.primary-navigation .main-navigation li.header-search';
 		}
 
 		return $elements;

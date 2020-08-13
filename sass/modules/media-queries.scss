@@ -57,26 +57,6 @@
 ## Desktop Small ( < 960px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
-	/* Header Search */
-	.header-search .header-search-form {
-		position: static;
-		display: block !important;
-		visibility: visible;
-		margin: 0 0 1.5em;
-		padding: 1.5em 0 0;
-		background: none;
-		box-shadow: none;
-		border-top: 1px solid rgba(255,255,255,0.1);
-	}
-
-	.header-search .header-search-form .search-form {
-		min-width: auto;
-	}
-
-	.header-search .header-search-icon {
-		display: none;
-	}
-
 	/* Magazine Post Widgets */
 	.widget-magazine-posts  .large-post .entry-title {
 		font-size: 22px;
