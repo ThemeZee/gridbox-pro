@@ -35,7 +35,7 @@
 		value.bind( function( newval ) {
 			var custom_css, text_color, hover_color, border_color;
 
-			custom_css = '.header-bar-wrap, .top-navigation-menu ul { background: ' + newval + '; }';
+			custom_css = '.header-bar-wrap, .top-navigation ul ul { background: ' + newval + '; }';
 
 			if( isColorLight( newval ) ) {
 				text_color = '#222222';
@@ -47,9 +47,11 @@
 				border_color = 'rgba(255,255,255,0.1)';
 			}
 
-			custom_css += '.top-navigation-menu, .top-navigation-menu a, .top-navigation-menu ul a, .top-navigation-menu li ul ul { border-color: ' + border_color + '; }';
-			custom_css += '.header-bar-wrap, .top-navigation-menu a, .top-navigation-menu a:link, .top-navigation-menu a:visited, .top-navigation-toggle, .top-navigation-toggle:focus, .top-navigation-menu .submenu-dropdown-toggle, .header-bar .social-icons-menu li a, .header-bar .social-icons-menu li a:link, .header-bar .social-icons-menu li a:visited { color: ' + text_color + '; }';
-			custom_css += '.top-navigation-menu a:hover, .top-navigation-menu a:active, .top-navigation-toggle:hover, .top-navigation-toggle:active, .top-navigation-menu .submenu-dropdown-toggle:hover, .top-navigation-menu .submenu-dropdown-toggle:active, .header-bar .social-icons-menu li a:hover, .header-bar .social-icons-menu li a:active { color: ' + hover_color + '; }';
+			custom_css += '.top-navigation ul, .top-navigation ul a, .top-navigation ul ul a, .top-navigation ul li ul ul { border-color: ' + border_color + '; }';
+			custom_css += '.header-bar-wrap, .top-navigation ul a, .top-navigation ul a:link, .top-navigation ul a:visited, .secondary-menu-toggle, .secondary-menu-toggle:focus, .header-bar .social-icons-menu li a, .header-bar .social-icons-menu li a:link, .header-bar .social-icons-menu li a:visited { color: ' + text_color + '; }';
+			custom_css += '.top-navigation ul a:hover, .top-navigation ul a:active, .secondary-menu-toggle:hover, .secondary-menu-toggle:active, .header-bar .social-icons-menu li a:hover, .header-bar .social-icons-menu li a:active { color: ' + hover_color + '; }';
+			custom_css += '.secondary-menu-toggle .icon, .top-navigation .dropdown-toggle .icon, .top-navigation ul .menu-item-has-children > a > .icon { fill: ' + text_color + '; }';
+			custom_css += '.secondary-menu-toggle:hover .icon, .secondary-menu-toggle:active .icon, .top-navigation .dropdown-toggle:hover .icon, .top-navigation .dropdown-toggle:active .icon, .top-navigation ul .menu-item-has-children > a:hover > .icon, .top-navigation ul .menu-item-has-children > a:active > .icon { fill: ' + hover_color + '; }';
 
 			addColorStyles( custom_css, 1 );
 		} );
@@ -60,7 +62,7 @@
 		value.bind( function( newval ) {
 			var custom_css, text_color, hover_color, border_color;
 
-			custom_css = '.site-header, .main-navigation-menu ul { background: ' + newval + '; }';
+			custom_css = '.site-header, .main-navigation ul ul { background: ' + newval + '; }';
 
 			if( isColorLight( newval ) ) {
 				text_color = '#222222';
@@ -72,9 +74,11 @@
 				border_color = 'rgba(255,255,255,0.1)';
 			}
 
-			custom_css += '.main-navigation-menu, .main-navigation-menu a, .main-navigation-menu ul a, .main-navigation-menu li ul ul, .header-search .header-search-form { border-color: ' + border_color + '; }';
-			custom_css += '.site-title, .site-title a:link, .site-title a:visited, .main-navigation-menu a, .main-navigation-menu a:link, .main-navigation-menu a:visited, .main-navigation-toggle, .main-navigation-toggle:focus, .main-navigation-menu .submenu-dropdown-toggle { color: ' + text_color + '; }';
-			custom_css += '.site-title a:hover, .site-title a:active, .main-navigation-menu a:hover, .main-navigation-menu a:active, .main-navigation-toggle:hover, .main-navigation-toggle:active, .main-navigation-menu .submenu-dropdown-toggle:hover, .main-navigation-menu .submenu-dropdown-toggle:active { color: ' + hover_color + '; }';
+			custom_css += '.main-navigation ul, .main-navigation ul a, .main-navigation ul ul a, .main-navigation ul li ul ul, .header-search .header-search-form { border-color: ' + border_color + '; }';
+			custom_css += '.site-title, .site-title a:link, .site-title a:visited, .site-description, .main-navigation ul a, .main-navigation ul a:link, .main-navigation ul a:visited, .primary-menu-toggle, .primary-menu-toggle:focus, .header-search .header-search-icon { color: ' + text_color + '; }';
+			custom_css += '.site-title a:hover, .site-title a:active, .main-navigation ul a:hover, .main-navigation ul a:active, .primary-menu-toggle:hover, .primary-menu-toggle:active, .header-search .header-search-icon:hover { color: ' + hover_color + '; }';
+			custom_css += '.primary-menu-toggle .icon, .main-navigation .dropdown-toggle .icon, .main-navigation ul .menu-item-has-children > a > .icon { fill: ' + text_color + '; }';
+			custom_css += '.primary-menu-toggle:hover .icon, .primary-menu-toggle:active .icon, .main-navigation .dropdown-toggle:hover .icon, .main-navigation .dropdown-toggle:active .icon, .main-navigation ul .menu-item-has-children > a:hover > .icon, .main-navigation ul .menu-item-has-children > a:active > .icon { fill: ' + hover_color + '; }';
 
 			addColorStyles( custom_css, 2 );
 		} );
