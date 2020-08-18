@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridbox Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2018-04-13 09:58+0200\n"
+"POT-Creation-Date: 2020-08-18 14:16+0200\n"
 "PO-Revision-Date: 2016-05-06 15:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: gridbox-pro.php:210
+#: gridbox-pro.php:206
 msgid "Settings"
 msgstr ""
 
@@ -183,54 +183,54 @@ msgstr ""
 msgid "Display Author Bio"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:357
+#: includes/modules/class-custom-colors.php:480
 msgid "Theme Colors"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:374
+#: includes/modules/class-custom-colors.php:497
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:390
+#: includes/modules/class-custom-colors.php:513
 msgctxt "color setting"
 msgid "Header"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:406
+#: includes/modules/class-custom-colors.php:529
 msgctxt "color setting"
 msgid "Content (primary)"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:422
+#: includes/modules/class-custom-colors.php:545
 msgctxt "color setting"
 msgid "Content (secondary)"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:439
+#: includes/modules/class-custom-colors.php:562
 msgctxt "color setting"
 msgid "Footer"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:209
+#: includes/modules/class-custom-fonts.php:252
 msgid "Theme Fonts"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:228
+#: includes/modules/class-custom-fonts.php:269
 msgid "Base Font"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:244
+#: includes/modules/class-custom-fonts.php:284
 msgctxt "font setting"
 msgid "Headings"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:260
+#: includes/modules/class-custom-fonts.php:299
 msgctxt "font setting"
 msgid "Navigation"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:276
+#: includes/modules/class-custom-fonts.php:314
 msgctxt "font setting"
 msgid "Widget Titles"
 msgstr ""
@@ -259,11 +259,19 @@ msgstr ""
 msgid "Appears on the footer area."
 msgstr ""
 
-#: includes/modules/class-header-bar.php:108
+#: includes/modules/class-header-bar.php:79
+msgid "Menu"
+msgstr ""
+
+#: includes/modules/class-header-bar.php:84
+msgid "Secondary Menu"
+msgstr ""
+
+#: includes/modules/class-header-bar.php:132
 msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-header-bar.php:109
+#: includes/modules/class-header-bar.php:133
 msgid "Header Social Icons"
 msgstr ""
 
@@ -277,7 +285,7 @@ msgid "Header Search"
 msgstr ""
 
 #: includes/modules/class-header-search.php:120
-msgid "Enable search field in header"
+msgid "Enable search field in main navigation"
 msgstr ""
 
 #: includes/modules/class-header-spacing.php:90
