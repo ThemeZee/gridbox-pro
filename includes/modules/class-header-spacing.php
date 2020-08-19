@@ -53,11 +53,11 @@ class Gridbox_Pro_Header_Spacing {
 			$custom_css .= '
 				@media only screen and (min-width: 60em) {
 					.site-branding {
-						margin: ' . $margin . 'em 0;
+						margin-top: ' . $margin . 'em;
+						margin-bottom: ' . $margin . 'em;
 					}
 				}
 				';
-
 		}
 
 		// Set Navigation Spacing.
@@ -68,11 +68,24 @@ class Gridbox_Pro_Header_Spacing {
 			$custom_css .= '
 				@media only screen and (min-width: 60em) {
 					.primary-navigation {
-						margin: ' . $margin . 'em 0;
+						margin-top: ' . $margin . 'em;
+						margin-bottom: ' . $margin . 'em;
 					}
 				}
 				';
+		}
 
+		// Set Header alignment.
+		if ( 10 !== $theme_options['logo_spacing'] || 10 !== $theme_options['navi_spacing'] ) {
+
+			$custom_css .= '
+				@media only screen and (min-width: 60em) {
+					.header-main,
+					.primary-navigation {
+						align-items: initial;
+					}
+				}
+				';
 		}
 
 		return $custom_css;
