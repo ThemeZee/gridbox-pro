@@ -330,6 +330,10 @@
 	z-index: 99;
 }
 
+.header-search .header-search-form.toggled-on {
+	display: block;
+}
+
 .header-search .header-search-form .search-form {
 	min-width: 300px;
 }
