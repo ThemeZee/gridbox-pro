@@ -8,7 +8,9 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Customizer Class
@@ -43,11 +45,7 @@ class Gridbox_Pro_Customizer {
 	static function get_theme_options() {
 
 		// Merge Theme Options Array from Database with Default Options Array.
-		$theme_options = wp_parse_args( get_option( 'gridbox_theme_options', array() ), self::get_default_options() );
-
-		// Return theme options.
-		return $theme_options;
-
+		return wp_parse_args( get_option( 'gridbox_theme_options', array() ), self::get_default_options() );
 	}
 
 
@@ -59,26 +57,31 @@ class Gridbox_Pro_Customizer {
 	static function get_default_options() {
 
 		$default_options = array(
-			'logo_spacing'            => 10,
-			'navi_spacing'            => 10,
-			'header_search'           => false,
-			'author_bio'              => false,
-			'scroll_to_top'           => false,
-			'footer_text'             => '',
-			'credit_link'             => true,
-			'top_navi_color'          => '#4477aa',
-			'header_color'            => '#111133',
-			'content_primary_color'   => '#111133',
-			'content_secondary_color' => '#4477aa',
-			'footer_color'            => '#111133',
-			'text_font'               => 'Roboto',
-			'title_font'              => 'Roboto Slab',
-			'navi_font'               => 'Roboto',
-			'widget_title_font'       => 'Roboto Slab',
+			'logo_spacing'              => 10,
+			'navi_spacing'              => 10,
+			'header_search'             => false,
+			'author_bio'                => false,
+			'scroll_to_top'             => false,
+			'footer_text'               => '',
+			'credit_link'               => true,
+			'top_navi_color'            => '#4477aa',
+			'header_color'              => '#111133',
+			'content_primary_color'     => '#111133',
+			'content_secondary_color'   => '#4477aa',
+			'footer_color'              => '#111133',
+			'text_font'                 => 'Roboto',
+			'title_font'                => 'Roboto Slab',
+			'title_is_bold'             => true,
+			'title_is_uppercase'        => false,
+			'navi_font'                 => 'Roboto',
+			'navi_is_bold'              => false,
+			'navi_is_uppercase'         => false,
+			'widget_title_font'         => 'Roboto Slab',
+			'widget_title_is_bold'      => true,
+			'widget_title_is_uppercase' => true,
 		);
 
 		return $default_options;
-
 	}
 
 	/**
@@ -87,9 +90,7 @@ class Gridbox_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-
-		wp_enqueue_script( 'gridbox-pro-customizer-js', GRIDBOX_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), GRIDBOX_PRO_VERSION, true );
-
+		wp_enqueue_script( 'gridbox-pro-customizer-js', GRIDBOX_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), '20201119', true );
 	}
 
 	/**
@@ -98,9 +99,7 @@ class Gridbox_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_css() {
-
-		wp_enqueue_style( 'gridbox-pro-customizer-css', GRIDBOX_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), GRIDBOX_PRO_VERSION );
-
+		wp_enqueue_style( 'gridbox-pro-customizer-css', GRIDBOX_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), '20201119' );
 	}
 }
 
