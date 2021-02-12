@@ -80,3 +80,168 @@
 	padding-left: 1.25em;
 	width: 50%;
 }
+
+@media only screen and (max-width: 80em) {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .wp-post-image,
+	.widget-magazine-posts .magazine-vertical-box .large-post,
+	.widget-magazine-posts-columns .magazine-posts-column-left {
+		padding-right: 1em;
+	}
+
+	.widget-magazine-posts .magazine-horizontal-box .large-post .post-content,
+	.widget-magazine-posts .magazine-vertical-box .small-posts,
+	.widget-magazine-posts-columns .magazine-posts-column-right {
+		padding-left: 1em;
+	}
+
+	.widget-magazine-posts  .large-post .entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
+
+	.widget-magazine-posts  .large-post .entry-meta {
+		font-size: 15px;
+		font-size: 0.9375rem;
+	}
+
+	.widget-magazine-posts  .large-post .entry-content {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+}
+
+@media only screen and (max-width: 70em) {
+	.widget-magazine-posts  .large-post .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+}
+
+@media only screen and (max-width: 60em) {
+	.widget-magazine-posts  .large-post .entry-title {
+		font-size: 22px;
+		font-size: 1.375rem;
+	}
+
+	.widget-magazine-posts .small-post .wp-post-image {
+		margin: 0 1.5em 0 0;
+	}
+
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+
+	.widget-magazine-posts-boxed  .large-post .entry-content .more-link {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 55em) {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 50em) {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .wp-post-image,
+	.widget-magazine-posts .magazine-horizontal-box .large-post .post-content {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	.widget-magazine-posts .magazine-horizontal-box .large-post .wp-post-image {
+		margin: 0 0 0.5em;
+	}
+
+	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
+
+	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content,
+	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content .more-link {
+		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: 47em) {
+	.widget-magazine-posts .magazine-vertical-box .large-post .entry-content,
+	.widget-magazine-posts .small-post .entry-meta {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 40em) {
+	.widget-magazine-posts .magazine-vertical-box .large-post,
+	.widget-magazine-posts .magazine-vertical-box .small-posts ,
+	.widget-magazine-posts-columns .magazine-posts-column-left,
+	.widget-magazine-posts-columns .magazine-posts-column-right {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	.widget-magazine-posts  .large-post .entry-title,
+	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.widget-magazine-posts .magazine-vertical-box .large-post {
+		margin: 0 0 2em;
+	}
+
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+
+	.widget-magazine-posts .magazine-vertical-box .large-post .entry-content,
+	.widget-magazine-posts .small-post .entry-meta {
+		display: block;
+	}
+
+	.widget-magazine-posts .magazine-vertical-box .large-post .entry-content .more-link {
+		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: 30em) {
+	.widget-magazine-posts .magazine-vertical-box .large-post {
+		margin-bottom: 1.5em;
+	}
+
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+}
+
+@media only screen and (max-width: 25em) {
+	.widget-magazine-posts .small-post .entry-meta {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 20em) {
+	.widget-magazine-posts .small-post .wp-post-image {
+		margin: 0 1em 0 0;
+	}
+
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 15px;
+		font-size: 0.9375rem;
+	}
+}

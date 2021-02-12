@@ -69,3 +69,32 @@
 #footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
 	background: rgba(255,255,255,0.2);
 }
+
+@media only screen and (max-width: 80em) {
+	.footer-widget-column .widget {
+		padding: 2em;
+	}
+}
+
+@media only screen and (max-width: 60em) {
+	.footer-widget-column {
+		width: 50%;
+	}
+
+	.footer-widget-column:nth-child(3n) {
+		border-right: 1px solid rgba(255,255,255,0.1);
+	}
+
+	.footer-widget-column:nth-child(2n) {
+		border-right: none;
+	}
+}
+
+@media only screen and (max-width: 40em) {
+	.footer-widget-column {
+		display: block;
+		float: none;
+		width: 100%;
+		border-right: none;
+	}
+}

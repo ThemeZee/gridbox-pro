@@ -28,3 +28,24 @@
 	display: inline-block;
 	padding: 0.5em 0;
 }
+
+@media only screen and (max-width: 60em) {
+	.site-footer .site-info,
+	.footer-navigation {
+		float: none;
+		width: 100%;
+	}
+
+	.footer-navigation {
+		margin-top: -1em;
+		padding: 0 0 2em;
+	}
+
+	.footer-navigation-menu {
+		float: none;
+	}
+
+	.footer-navigation-menu li {
+		margin: 0 1.5em 0 0;
+	}
+}
