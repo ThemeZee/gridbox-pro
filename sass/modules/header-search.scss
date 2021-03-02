@@ -4,7 +4,7 @@
 	display: none;
 	margin: 0.5em 0 0;
 	padding: 1em;
-	background: #fff;
+	@include background(--page-background-color);
 	box-shadow: 0 0 2px #bbb;
 	z-index: 99;
 }
@@ -18,12 +18,12 @@
 }
 
 .header-search .header-search-icon {
-	color: #fff;
+	@include color(--navi-color);
 	padding: 0.65em 0.75em;
 }
 
 .header-search .header-search-icon:hover {
-	color: rgba(255, 255, 255, 0.6);
+	@include color(--navi-hover-color);
 	cursor: pointer;
 }
 
@@ -56,7 +56,6 @@
 		padding: 1.5em 0 0;
 		background: none;
 		box-shadow: none;
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.header-search .header-search-form .search-form {

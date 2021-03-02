@@ -1,5 +1,5 @@
 .footer-widgets-wrap {
-	background: #111133;
+	@include background(--footer-background-color);
 }
 
 .footer-widgets {
@@ -20,8 +20,9 @@
 	display: flex;
 	box-sizing: border-box;
 	width: 33.33333333333%;
-	border-right: 1px solid rgba(255,255,255,0.1);
-	border-bottom: 1px solid rgba(255,255,255,0.1);
+	border-right: 1px solid;
+	border-bottom: 1px solid;
+	@include border-color(--footer-border-color);
 }
 
 .footer-widget-column:nth-child(3n) {
@@ -33,32 +34,32 @@
 	padding: 2.5em;
 	border: none;
 	background: none;
-	color: rgba(255,255,255,0.6)
+	@include color(--footer-text-color);
 }
 
 .footer-widget-column .widget-header {
-	border-color: rgba(255,255,255,0.1);
+	@include border-color(--footer-border-color);
 }
 
 .footer-widget-column .widget-title {
-	color: #fff;
+	@include color(--footer-link-color);
 }
 
 .footer-widget-column .widget a:link,
-.footer-widget-column .widget a:visited  {
-	color: #fff;
+.footer-widget-column .widget a:visited {
+	@include color(--footer-link-color);
 }
 
 .footer-widget-column .widget a:hover,
-.footer-widget-column .widget a:active  {
-	color: rgba(255,255,255,0.6)
+.footer-widget-column .widget a:active {
+	@include color(--footer-link-hover-color);
 }
 
 /* Custom Footer Widgets */
 #footer-widgets .tzwb-social-icons .social-icons-menu li a,
 #footer-widgets .widget_tag_cloud .tagcloud a,
 #footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a {
-	background: rgba(255,255,255,0.1);
+	@include background(--footer-border-color);
 }
 
 #footer-widgets .tzwb-social-icons .social-icons-menu li a:hover,
@@ -67,7 +68,7 @@
 #footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 #footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active,
 #footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-	background: rgba(255,255,255,0.2);
+	@include color(--footer-link-hover-color);
 }
 
 @media only screen and (max-width: 80em) {
@@ -82,7 +83,8 @@
 	}
 
 	.footer-widget-column:nth-child(3n) {
-		border-right: 1px solid rgba(255,255,255,0.1);
+		border-right: 1px solid;
+		@include border-color(--footer-border-color);
 	}
 
 	.footer-widget-column:nth-child(2n) {
