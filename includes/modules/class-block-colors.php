@@ -134,7 +134,7 @@ class Gridbox_Pro_Block_Colors {
 		// Add Section for Block Colors.
 		$wp_customize->add_section( 'gridbox_pro_section_block_colors', array(
 			'title'    => esc_html__( 'Block Colors', 'gridbox-pro' ),
-			'priority' => 55,
+			'priority' => 60,
 			'panel'    => 'gridbox_options_panel',
 		) );
 

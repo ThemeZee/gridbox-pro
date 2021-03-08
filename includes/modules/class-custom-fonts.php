@@ -212,7 +212,7 @@ class Gridbox_Pro_Custom_Fonts {
 		// Add Section for Theme Fonts.
 		$wp_customize->add_section( 'gridbox_pro_section_typography', array(
 			'title'    => __( 'Typography', 'gridbox-pro' ),
-			'priority' => 70,
+			'priority' => 80,
 			'panel'    => 'gridbox_options_panel',
 		) );
 
