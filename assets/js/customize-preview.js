@@ -132,8 +132,22 @@
 		} );
 	} );
 
-	/* Content Primary Color Option */
-	wp.customize( 'gridbox_theme_options[content_primary_color]', function( value ) {
+	/* Link Color Option */
+	wp.customize( 'gridbox_theme_options[link_color]', function( value ) {
+		value.bind( function( newval ) {
+			document.documentElement.style.setProperty( '--link-color', newval );
+		} );
+	} );
+
+	/* Link Color Hover Option */
+	wp.customize( 'gridbox_theme_options[link_hover_color]', function( value ) {
+		value.bind( function( newval ) {
+			document.documentElement.style.setProperty( '--link-hover-color', newval );
+		} );
+	} );
+
+	/* Button Color Option */
+	wp.customize( 'gridbox_theme_options[button_color]', function( value ) {
 		value.bind( function( newval ) {
 			var text_color;
 
@@ -143,17 +157,13 @@
 				text_color = '#fff';
 			}
 
-			document.documentElement.style.setProperty( '--link-hover-color', newval );
 			document.documentElement.style.setProperty( '--button-color', newval );
-			document.documentElement.style.setProperty( '--title-color', newval );
-			document.documentElement.style.setProperty( '--widget-title-color', newval );
-			document.documentElement.style.setProperty( '--widget-title-border-color', newval );
 			document.documentElement.style.setProperty( '--button-text-color', text_color );
 		} );
 	} );
 
-	/* Content Secondary Color Option */
-	wp.customize( 'gridbox_theme_options[content_secondary_color]', function( value ) {
+	/* Button Color Hover Option */
+	wp.customize( 'gridbox_theme_options[button_hover_color]', function( value ) {
 		value.bind( function( newval ) {
 			var text_color;
 
@@ -163,11 +173,25 @@
 				text_color = '#fff';
 			}
 
-			document.documentElement.style.setProperty( '--link-color', newval );
 			document.documentElement.style.setProperty( '--button-hover-color', newval );
+			document.documentElement.style.setProperty( '--button-hover-text-color', text_color );
+		} );
+	} );
+
+	/* Title Color Option */
+	wp.customize( 'gridbox_theme_options[title_color]', function( value ) {
+		value.bind( function( newval ) {
+			document.documentElement.style.setProperty( '--title-color', newval );
+			document.documentElement.style.setProperty( '--widget-title-color', newval );
+			document.documentElement.style.setProperty( '--widget-title-border-color', newval );
+		} );
+	} );
+
+	/* Title Hover Color Option */
+	wp.customize( 'gridbox_theme_options[title_hover_color]', function( value ) {
+		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--title-hover-color', newval );
 			document.documentElement.style.setProperty( '--widget-title-hover-color', newval );
-			document.documentElement.style.setProperty( '--button-hover-text-color', text_color );
 		} );
 	} );
 

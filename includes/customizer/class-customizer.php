@@ -74,8 +74,12 @@ class Gridbox_Pro_Customizer {
 			'dark_gray_color'           => '#222222',
 			'top_navi_color'            => '#4477aa',
 			'header_color'              => '#111133',
-			'content_primary_color'     => '#111133',
-			'content_secondary_color'   => '#4477aa',
+			'link_color'                => '#4477aa',
+			'link_hover_color'          => '#111133',
+			'button_color'              => '#111133',
+			'button_hover_color'        => '#4477aa',
+			'title_color'               => '#111133',
+			'title_hover_color'         => '#4477aa',
 			'footer_color'              => '#111133',
 			'text_font'                 => 'Roboto',
 			'title_font'                => 'Roboto Slab',
@@ -98,7 +102,7 @@ class Gridbox_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-		wp_enqueue_script( 'gridbox-pro-customizer-js', GRIDBOX_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20210215', true );
+		wp_enqueue_script( 'gridbox-pro-customizer-js', GRIDBOX_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20210308', true );
 	}
 
 	/**

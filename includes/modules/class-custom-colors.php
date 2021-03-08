@@ -79,31 +79,47 @@ class Gridbox_Pro_Custom_Colors {
 			}
 		}
 
-		// Set Primary Content Color.
-		if ( $theme_options['content_primary_color'] !== $default_options['content_primary_color'] ) {
-			$color_variables .= '--link-hover-color: ' . $theme_options['content_primary_color'] . ';';
-			$color_variables .= '--button-color: ' . $theme_options['content_primary_color'] . ';';
-			$color_variables .= '--title-color: ' . $theme_options['content_primary_color'] . ';';
-			$color_variables .= '--widget-title-color: ' . $theme_options['content_primary_color'] . ';';
-			$color_variables .= '--widget-title-border-color: ' . $theme_options['content_primary_color'] . ';';
+		// Set Link Color.
+		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
+			$color_variables .= '--link-color: ' . $theme_options['link_color'] . ';';
+		}
+
+		// Set Link Hover Color.
+		if ( $theme_options['link_hover_color'] !== $default_options['link_hover_color'] ) {
+			$color_variables .= '--link-hover-color: ' . $theme_options['link_hover_color'] . ';';
+		}
+
+		// Set Button Color.
+		if ( $theme_options['button_color'] !== $default_options['button_color'] ) {
+			$color_variables .= '--button-color: ' . $theme_options['button_color'] . ';';
 
 			// Check if a light background color was chosen.
-			if ( self::is_color_light( $theme_options['content_primary_color'] ) ) {
+			if ( self::is_color_light( $theme_options['button_color'] ) ) {
 				$color_variables .= '--button-text-color: #101010;';
 			}
 		}
 
-		// Set Secondary Content Color.
-		if ( $theme_options['content_secondary_color'] !== $default_options['content_secondary_color'] ) {
-			$color_variables .= '--link-color: ' . $theme_options['content_secondary_color'] . ';';
-			$color_variables .= '--button-hover-color: ' . $theme_options['content_secondary_color'] . ';';
-			$color_variables .= '--title-hover-color: ' . $theme_options['content_secondary_color'] . ';';
-			$color_variables .= '--widget-title-hover-color: ' . $theme_options['content_secondary_color'] . ';';
+		// Set Button Hover Color.
+		if ( $theme_options['button_hover_color'] !== $default_options['button_hover_color'] ) {
+			$color_variables .= '--button-hover-color: ' . $theme_options['button_hover_color'] . ';';
 
 			// Check if a light background color was chosen.
-			if ( self::is_color_light( $theme_options['content_secondary_color'] ) ) {
+			if ( self::is_color_light( $theme_options['button_hover_color'] ) ) {
 				$color_variables .= '--button-hover-text-color: #101010;';
 			}
+		}
+
+		// Set Title Color.
+		if ( $theme_options['title_color'] !== $default_options['title_color'] ) {
+			$color_variables .= '--title-color: ' . $theme_options['title_color'] . ';';
+			$color_variables .= '--widget-title-color: ' . $theme_options['title_color'] . ';';
+			$color_variables .= '--widget-title-border-color: ' . $theme_options['title_color'] . ';';
+		}
+
+		// Set Title Hover Color.
+		if ( $theme_options['title_hover_color'] !== $default_options['title_hover_color'] ) {
+			$color_variables .= '--title-hover-color: ' . $theme_options['title_hover_color'] . ';';
+			$color_variables .= '--widget-title-hover-color: ' . $theme_options['title_hover_color'] . ';';
 		}
 
 		// Set Footer Color.
@@ -153,7 +169,7 @@ class Gridbox_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'gridbox_theme_options[top_navi_color]', array(
-				'label'    => esc_html_x( 'Top Navigation', 'color setting', 'gridbox-pro' ),
+				'label'    => esc_html_x( 'Top Navigation', 'Color Option', 'gridbox-pro' ),
 				'section'  => 'gridbox_pro_section_colors',
 				'settings' => 'gridbox_theme_options[top_navi_color]',
 				'priority' => 10,
@@ -169,42 +185,106 @@ class Gridbox_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'gridbox_theme_options[header_color]', array(
-				'label'    => esc_html_x( 'Header', 'color setting', 'gridbox-pro' ),
+				'label'    => esc_html_x( 'Header', 'Color Option', 'gridbox-pro' ),
 				'section'  => 'gridbox_pro_section_colors',
 				'settings' => 'gridbox_theme_options[header_color]',
 				'priority' => 20,
 			)
 		) );
 
-		// Add Content Primary Color setting.
-		$wp_customize->add_setting( 'gridbox_theme_options[content_primary_color]', array(
-			'default'           => $default_options['content_primary_color'],
+		// Add Link Color setting.
+		$wp_customize->add_setting( 'gridbox_theme_options[link_color]', array(
+			'default'           => $default_options['link_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'gridbox_theme_options[content_primary_color]', array(
-				'label'    => esc_html_x( 'Content (primary)', 'color setting', 'gridbox-pro' ),
+			$wp_customize, 'gridbox_theme_options[link_color]', array(
+				'label'    => esc_html_x( 'Links', 'Color Option', 'gridbox-pro' ),
 				'section'  => 'gridbox_pro_section_colors',
-				'settings' => 'gridbox_theme_options[content_primary_color]',
+				'settings' => 'gridbox_theme_options[link_color]',
 				'priority' => 30,
 			)
 		) );
 
-		// Add Content Secondary Color setting.
-		$wp_customize->add_setting( 'gridbox_theme_options[content_secondary_color]', array(
-			'default'           => $default_options['content_secondary_color'],
+		// Add Link Hover Color setting.
+		$wp_customize->add_setting( 'gridbox_theme_options[link_hover_color]', array(
+			'default'           => $default_options['link_hover_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'gridbox_theme_options[content_secondary_color]', array(
-				'label'    => esc_html_x( 'Content (secondary)', 'color setting', 'gridbox-pro' ),
+			$wp_customize, 'gridbox_theme_options[link_hover_color]', array(
+				'label'    => esc_html_x( 'Link Hover', 'Color Option', 'gridbox-pro' ),
 				'section'  => 'gridbox_pro_section_colors',
-				'settings' => 'gridbox_theme_options[content_secondary_color]',
+				'settings' => 'gridbox_theme_options[link_hover_color]',
 				'priority' => 40,
+			)
+		) );
+
+		// Add Button Color setting.
+		$wp_customize->add_setting( 'gridbox_theme_options[button_color]', array(
+			'default'           => $default_options['button_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'gridbox_theme_options[button_color]', array(
+				'label'    => esc_html_x( 'Buttons', 'Color Option', 'gridbox-pro' ),
+				'section'  => 'gridbox_pro_section_colors',
+				'settings' => 'gridbox_theme_options[button_color]',
+				'priority' => 50,
+			)
+		) );
+
+		// Add Button Hover Color setting.
+		$wp_customize->add_setting( 'gridbox_theme_options[button_hover_color]', array(
+			'default'           => $default_options['button_hover_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'gridbox_theme_options[button_hover_color]', array(
+				'label'    => esc_html_x( 'Button Hover', 'Color Option', 'gridbox-pro' ),
+				'section'  => 'gridbox_pro_section_colors',
+				'settings' => 'gridbox_theme_options[button_hover_color]',
+				'priority' => 60,
+			)
+		) );
+
+		// Add Titles Color setting.
+		$wp_customize->add_setting( 'gridbox_theme_options[title_color]', array(
+			'default'           => $default_options['title_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'gridbox_theme_options[title_color]', array(
+				'label'    => esc_html_x( 'Titles', 'Color Option', 'gridbox-pro' ),
+				'section'  => 'gridbox_pro_section_colors',
+				'settings' => 'gridbox_theme_options[title_color]',
+				'priority' => 70,
+			)
+		) );
+
+		// Add Title Hover Color setting.
+		$wp_customize->add_setting( 'gridbox_theme_options[title_hover_color]', array(
+			'default'           => $default_options['title_hover_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'gridbox_theme_options[title_hover_color]', array(
+				'label'    => esc_html_x( 'Title Hover', 'Color Option', 'gridbox-pro' ),
+				'section'  => 'gridbox_pro_section_colors',
+				'settings' => 'gridbox_theme_options[title_hover_color]',
+				'priority' => 80,
 			)
 		) );
 
@@ -218,10 +298,10 @@ class Gridbox_Pro_Custom_Colors {
 
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'gridbox_theme_options[footer_color]', array(
-				'label'    => esc_html_x( 'Footer', 'color setting', 'gridbox-pro' ),
+				'label'    => esc_html_x( 'Footer', 'Color Option', 'gridbox-pro' ),
 				'section'  => 'gridbox_pro_section_colors',
 				'settings' => 'gridbox_theme_options[footer_color]',
-				'priority' => 50,
+				'priority' => 90,
 			)
 		) );
 	}
