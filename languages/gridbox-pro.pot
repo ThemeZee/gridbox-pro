@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridbox Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2021-02-11 16:19+0100\n"
+"POT-Creation-Date: 2021-03-09 14:43+0100\n"
 "PO-Revision-Date: 2016-05-06 15:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: gridbox-pro.php:206
+#: gridbox-pro.php:236
 msgid "Settings"
 msgstr ""
 
@@ -175,32 +175,96 @@ msgstr ""
 msgid "Display Author Bio"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:480
+#: includes/modules/class-block-colors.php:136
+msgid "Block Colors"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:153
+msgctxt "Color Option"
+msgid "Primary"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:169
+msgctxt "Color Option"
+msgid "Secondary"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:185
+msgctxt "Color Option"
+msgid "Tertiary"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:201
+msgctxt "Color Option"
+msgid "Accent"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:217
+msgctxt "Color Option"
+msgid "Highlight"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:233
+msgctxt "Color Option"
+msgid "Light Gray"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:249
+msgctxt "Color Option"
+msgid "Gray"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:265
+msgctxt "Color Option"
+msgid "Dark Gray"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:155
 msgid "Theme Colors"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:497
-msgctxt "color setting"
+#: includes/modules/class-custom-colors.php:172
+msgctxt "Color Option"
 msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:513
-msgctxt "color setting"
+#: includes/modules/class-custom-colors.php:188
+msgctxt "Color Option"
 msgid "Header"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:529
-msgctxt "color setting"
-msgid "Content (primary)"
+#: includes/modules/class-custom-colors.php:204
+msgctxt "Color Option"
+msgid "Links"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:545
-msgctxt "color setting"
-msgid "Content (secondary)"
+#: includes/modules/class-custom-colors.php:220
+msgctxt "Color Option"
+msgid "Link Hover"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:562
-msgctxt "color setting"
+#: includes/modules/class-custom-colors.php:236
+msgctxt "Color Option"
+msgid "Buttons"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:252
+msgctxt "Color Option"
+msgid "Button Hover"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:268
+msgctxt "Color Option"
+msgid "Titles"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:284
+msgctxt "Color Option"
+msgid "Title Hover"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:301
+msgctxt "Color Option"
 msgid "Footer"
 msgstr ""
 
