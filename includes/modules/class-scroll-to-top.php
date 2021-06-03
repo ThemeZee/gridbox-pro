@@ -49,9 +49,23 @@ class Gridbox_Pro_Scroll_To_Top {
 		// Call Credit Link function of theme if credit link is activated.
 		if ( true === $theme_options['scroll_to_top'] && ! self::is_amp() ) :
 
-			wp_enqueue_script( 'gridbox-pro-scroll-to-top', GRIDBOX_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.min.js', array( 'jquery' ), '20210212', true );
+			wp_enqueue_script( 'gridbox-pro-scroll-to-top', GRIDBOX_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.min.js', array( 'jquery' ), '20210603', true );
+
+			// Passing Parameters to navigation.js.
+			wp_localize_script( 'gridbox-pro-scroll-to-top', 'gridboxProScrollToTop', array( 'icon' => self::get_svg( 'collapse' ) ) );
 
 		endif;
+	}
+
+	/**
+	 * Get SVG icon.
+	 *
+	 * @return void
+	 */
+	static function get_svg( $icon ) {
+		if ( function_exists( 'gridbox_get_svg' ) ) {
+			return gridbox_get_svg( $icon );
+		}
 	}
 
 	/**
