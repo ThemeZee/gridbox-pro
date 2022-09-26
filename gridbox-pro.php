@@ -5,14 +5,14 @@ Plugin URI: http://themezee.com/addons/gridbox-pro/
 Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Gridbox theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 2.2.1
+Version: 2.2.2
 Text Domain: gridbox-pro
 Domain Path: /languages/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Gridbox Pro
-Copyright(C) 2020, ThemeZee.com - support@themezee.com
+Copyright(C) 2022, ThemeZee.com - support@themezee.com
 
 */
 
@@ -63,7 +63,7 @@ class Gridbox_Pro {
 		define( 'GRIDBOX_PRO_NAME', 'Gridbox Pro' );
 
 		// Define Version Number.
-		define( 'GRIDBOX_PRO_VERSION', '2.2.1' );
+		define( 'GRIDBOX_PRO_VERSION', '2.2.2' );
 
 		// Define Plugin Name.
 		define( 'GRIDBOX_PRO_PRODUCT_ID', 62420 );
