@@ -1,6 +1,6 @@
 <?php
 /**
- * Scroll to Top
+ * Scroll to top
  *
  * Displays scroll to top button based on theme options
  *
@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Scroll to Top Class
+ * Scroll to top Class
  */
 class Gridbox_Pro_Scroll_To_Top {
 
 	/**
-	 * Scroll to Top Setup
+	 * Scroll to top Setup
 	 *
 	 * @return void
 	 */
@@ -49,10 +49,13 @@ class Gridbox_Pro_Scroll_To_Top {
 		// Call Credit Link function of theme if credit link is activated.
 		if ( true === $theme_options['scroll_to_top'] && ! self::is_amp() ) :
 
-			wp_enqueue_script( 'gridbox-pro-scroll-to-top', GRIDBOX_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.min.js', array(), '20220119', true );
+			wp_enqueue_script( 'gridbox-pro-scroll-to-top', GRIDBOX_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.min.js', array(), '20220924', true );
 
 			// Passing Parameters to navigation.js.
-			wp_localize_script( 'gridbox-pro-scroll-to-top', 'gridboxProScrollToTop', array( 'icon' => self::get_svg( 'collapse' ) ) );
+			wp_localize_script( 'gridbox-pro-scroll-to-top', 'gridboxProScrollToTop', array(
+				'icon'  => self::get_svg( 'collapse' ),
+				'label' => esc_attr__( 'Scroll to top', 'gridbox-pro' ),
+			) );
 
 		endif;
 	}
@@ -75,17 +78,17 @@ class Gridbox_Pro_Scroll_To_Top {
 	 */
 	static function scroll_to_top_settings( $wp_customize ) {
 
-		// Add Scroll to Top headline.
+		// Add Scroll to top headline.
 		$wp_customize->add_control( new Gridbox_Customize_Header_Control(
 			$wp_customize, 'gridbox_theme_options[scroll_top_title]', array(
-				'label'    => esc_html__( 'Scroll to Top', 'gridbox-pro' ),
+				'label'    => esc_html__( 'Scroll to top', 'gridbox-pro' ),
 				'section'  => 'gridbox_pro_section_footer',
 				'settings' => array(),
 				'priority' => 10,
 			)
 		) );
 
-		// Add Scroll to Top setting.
+		// Add Scroll to top setting.
 		$wp_customize->add_setting( 'gridbox_theme_options[scroll_to_top]', array(
 			'default'           => false,
 			'type'              => 'option',
@@ -94,7 +97,7 @@ class Gridbox_Pro_Scroll_To_Top {
 		) );
 
 		$wp_customize->add_control( 'gridbox_theme_options[scroll_to_top]', array(
-			'label'    => __( 'Display Scroll to Top Button', 'gridbox-pro' ),
+			'label'    => __( 'Display Scroll to top button', 'gridbox-pro' ),
 			'section'  => 'gridbox_pro_section_footer',
 			'settings' => 'gridbox_theme_options[scroll_to_top]',
 			'type'     => 'checkbox',
