@@ -1,9 +1,11 @@
+@use "../_variables";
+
 .before-header-widget-area,
 .after-header-widget-area,
 .before-footer-widget-area {
 	margin: 0 auto;
 	padding: 2.5em 2.5em 0;
-	max-width: $contentFullwidth;
+	max-width: variables.$contentFullwidth;
 }
 
 @media only screen and (max-width: 80em) {

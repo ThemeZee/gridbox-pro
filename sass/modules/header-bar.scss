@@ -1,6 +1,8 @@
+@use "../_mixins";
+
 .header-bar-wrap {
-	@include background(--header-bar-background-color);
-	@include color(--header-bar-text-color);
+	@include mixins.background(--header-bar-background-color);
+	@include mixins.color(--header-bar-text-color);
 }
 
 .header-bar {
@@ -38,22 +40,22 @@
 	padding: 0.75em;
 	border: none;
 	background: none;
-	@include color(--header-bar-text-color);
+	@include mixins.color(--header-bar-text-color);
 	text-decoration: none;
-	@include font-size(13);
+	@include mixins.font-size(13);
 	text-align: left;
 	align-items: center;
 }
 
 .secondary-menu-toggle:focus {
 	outline: thin dotted;
-	@include color(--header-bar-text-color);
+	@include mixins.color(--header-bar-text-color);
 	background: none;
 }
 
 .secondary-menu-toggle:hover,
 .secondary-menu-toggle:active {
-	@include color(--header-bar-text-hover-color);
+	@include mixins.color(--header-bar-text-hover-color);
 	background: none;
 	cursor: pointer;
 }
@@ -63,12 +65,12 @@
 	width: 18px;
 	height: 18px;
 	vertical-align: top;
-	@include fill(--header-bar-text-color);
+	@include mixins.fill(--header-bar-text-color);
 }
 
 .secondary-menu-toggle:hover .icon,
 .secondary-menu-toggle:active .icon {
-	@include fill(--header-bar-text-hover-color);
+	@include mixins.fill(--header-bar-text-hover-color);
 }
 
 .secondary-menu-toggle[aria-expanded="true"] .icon-menu,
@@ -84,14 +86,14 @@
 .top-navigation ul {
 	margin: 0;
 	padding: 0;
-	@include color(--header-bar-text-color);
+	@include mixins.color(--header-bar-text-color);
 	list-style: none;
-	@include font-size(13);
+	@include mixins.font-size(13);
 }
 
 .top-navigation > ul {
 	border-top: 1px solid;
-	@include border-color(--header-bar-border-color);
+	@include mixins.border-color(--header-bar-border-color);
 	margin-bottom: 1.5em;
 }
 
@@ -105,21 +107,21 @@
 	margin: 0;
 	padding: 1em 1.25em;
 	border-bottom: 1px solid;
-	@include border-color(--header-bar-border-color);
+	@include mixins.border-color(--header-bar-border-color);
 	text-decoration: none;
 }
 
 .top-navigation ul a,
 .top-navigation ul a:link,
 .top-navigation ul a:visited {
-	@include color(--header-bar-text-color);
+	@include mixins.color(--header-bar-text-color);
 	text-decoration: none;
 }
 
 .top-navigation ul a:hover,
 .top-navigation ul a:active,
 .top-navigation ul a:focus {
-	@include color(--header-bar-text-hover-color);
+	@include mixins.color(--header-bar-text-hover-color);
 }
 
 .top-navigation ul li.current-menu-item > a {
@@ -170,12 +172,12 @@
 	width: 16px;
 	height: 16px;
 	vertical-align: top;
-	@include fill(--header-bar-text-color);
+	@include mixins.fill(--header-bar-text-color);
 }
 
 .top-navigation .dropdown-toggle:hover .icon,
 .top-navigation .dropdown-toggle:active .icon {
-	@include fill(--header-bar-text-hover-color);
+	@include mixins.fill(--header-bar-text-hover-color);
 }
 
 .top-navigation .dropdown-toggle.toggled-on .icon {
@@ -226,8 +228,8 @@
 		top: 100%;
 		z-index: 99999;
 		border-top: 1px solid;
-		@include border-color(--header-bar-border-color);
-		@include background(--header-bar-background-color);
+		@include mixins.border-color(--header-bar-border-color);
+		@include mixins.background(--header-bar-background-color);
 	}
 
 	.top-navigation ul li:hover > ul,
@@ -266,7 +268,7 @@
 		top: 0.05rem;
 		width: 10px;
 		height: 10px;
-		@include fill(--header-bar-text-color);
+		@include mixins.fill(--header-bar-text-color);
 	}
 
 	.top-navigation ul ul .menu-item-has-children > a > .icon {
@@ -281,6 +283,6 @@
 	}
 
 	.top-navigation ul .menu-item-has-children > a:hover > .icon {
-		@include fill(--header-bar-text-hover-color);
+		@include mixins.fill(--header-bar-text-hover-color);
 	}
 }

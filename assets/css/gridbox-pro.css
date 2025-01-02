@@ -103,12 +103,12 @@
 	fill: var(--header-bar-text-hover-color);
 }
 
-.secondary-menu-toggle[aria-expanded="true"] .icon-menu,
-.secondary-menu-toggle[aria-expanded="false"] .icon-close {
+.secondary-menu-toggle[aria-expanded=true] .icon-menu,
+.secondary-menu-toggle[aria-expanded=false] .icon-close {
 	display: none;
 }
 
-.secondary-menu-toggle[aria-expanded="true"] .icon-close {
+.secondary-menu-toggle[aria-expanded=true] .icon-close {
 	display: inline-block;
 }
 
@@ -328,7 +328,6 @@
 		fill: var(--header-bar-text-hover-color);
 	}
 }
-
 /*--------------------------------------------------------------
 # Header Search
 --------------------------------------------------------------*/
@@ -398,7 +397,6 @@
 		display: none;
 	}
 }
-
 /*--------------------------------------------------------------
 # Widget Areas
 --------------------------------------------------------------*/
@@ -417,7 +415,6 @@
 		padding: 2em 2em 0;
 	}
 }
-
 @media only screen and (max-width: 30em) {
 	.before-header-widget-area,
 	.after-header-widget-area,
@@ -425,7 +422,6 @@
 		padding: 1.5em 1.5em 0;
 	}
 }
-
 /*--------------------------------------------------------------
 # Social Icons
 --------------------------------------------------------------*/
@@ -587,7 +583,6 @@
 		font-size: 1.25rem;
 	}
 }
-
 @media only screen and (max-width: 70em) {
 	.widget-magazine-posts .large-post .entry-title {
 		font-size: 24px;
@@ -599,7 +594,6 @@
 		font-size: 1.125rem;
 	}
 }
-
 @media only screen and (max-width: 60em) {
 	.widget-magazine-posts .large-post .entry-title {
 		font-size: 22px;
@@ -619,13 +613,11 @@
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 55em) {
 	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content {
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 50em) {
 	.widget-magazine-posts .magazine-horizontal-box .large-post .wp-post-image,
 	.widget-magazine-posts .magazine-horizontal-box .large-post .post-content {
@@ -648,14 +640,12 @@
 		display: inline-block;
 	}
 }
-
 @media only screen and (max-width: 47em) {
 	.widget-magazine-posts .magazine-vertical-box .large-post .entry-content,
 	.widget-magazine-posts .small-post .entry-meta {
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 40em) {
 	.widget-magazine-posts .magazine-vertical-box .large-post,
 	.widget-magazine-posts .magazine-vertical-box .small-posts,
@@ -690,7 +680,6 @@
 		display: inline-block;
 	}
 }
-
 @media only screen and (max-width: 30em) {
 	.widget-magazine-posts .magazine-vertical-box .large-post {
 		margin-bottom: 1.5em;
@@ -701,13 +690,11 @@
 		font-size: 1rem;
 	}
 }
-
 @media only screen and (max-width: 25em) {
 	.widget-magazine-posts .small-post .entry-meta {
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 20em) {
 	.widget-magazine-posts .small-post .wp-post-image {
 		margin: 0 1em 0 0;
@@ -718,7 +705,6 @@
 		font-size: 0.9375rem;
 	}
 }
-
 /*--------------------------------------------------------------
 # Author Bio
 --------------------------------------------------------------*/
@@ -775,7 +761,6 @@
 		display: block;
 	}
 }
-
 /*--------------------------------------------------------------
 # Footer Widgets
 --------------------------------------------------------------*/
@@ -801,7 +786,7 @@
 	display: -ms-flexbox;
 	display: flex;
 	box-sizing: border-box;
-	width: 33.33333333333%;
+	width: 33.3333333333%;
 	border-right: 1px solid;
 	border-bottom: 1px solid;
 	border-color: rgba(255, 255, 255, 0.1);
@@ -866,7 +851,6 @@
 		padding: 2em;
 	}
 }
-
 @media only screen and (max-width: 60em) {
 	.footer-widget-column {
 		width: 50%;
@@ -882,7 +866,6 @@
 		border-right: none;
 	}
 }
-
 @media only screen and (max-width: 40em) {
 	.footer-widget-column {
 		display: block;
@@ -891,7 +874,6 @@
 		border-right: none;
 	}
 }
-
 /*--------------------------------------------------------------
 # Footer Menu
 --------------------------------------------------------------*/
@@ -946,7 +928,6 @@
 		margin: 0 1.5em 0 0;
 	}
 }
-
 /*--------------------------------------------------------------
 # Scroll to Top Button
 --------------------------------------------------------------*/

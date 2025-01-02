@@ -1,10 +1,12 @@
+@use "../_mixins";
+
 .header-search .header-search-form {
 	position: absolute;
 	right: 0;
 	display: none;
 	margin: 0.5em 0 0;
 	padding: 1em;
-	@include background(--page-background-color);
+	@include mixins.background(--page-background-color);
 	box-shadow: 0 0 2px #bbb;
 	z-index: 99;
 }
@@ -18,14 +20,14 @@
 }
 
 .header-search .header-search-icon {
-	@include color(--navi-color);
+	@include mixins.color(--navi-color);
 	padding: 0.65em 0.75em;
 	font-size: 16px;
 	background: none;
 }
 
 .header-search .header-search-icon:hover {
-	@include color(--navi-hover-color);
+	@include mixins.color(--navi-hover-color);
 	cursor: pointer;
 }
 
